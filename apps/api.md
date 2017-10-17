@@ -7,8 +7,31 @@
 ```
 │
 ├ common
-│     ├
-│     └
+│    ├ models
+│    │   ├ const.js
+│    │   ├ device.js
+│    │   ├ device.json
+│    │   ├ hist-data.js
+│    │   ├ hist-data.json 
+│    │   ├ project.js
+│    │   ├ project.json
+│    │   ├ real-data.js
+│    │   ├ real-data.json
+│    │   ├ role-info.js
+│    │   ├ role-info.json
+│    │   ├ scada.js
+│    │   ├ scada.json
+│    │   ├ scope-info.js
+│    │   ├ scope-info.json
+│    │   ├ status.js
+│    │   ├ status.json
+│    │   ├ tag.js
+│    │   ├ tag.json
+│    │   ├ token.js
+│    │   ├ token.json
+│    │   ├ user-info.js
+│    │   └ user-info.json
+│    └ utils
 ├ scripts
 ├ server
 ├ test
