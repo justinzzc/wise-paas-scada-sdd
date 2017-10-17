@@ -9,4 +9,5 @@
   * [API](apps/api.md)
   * [Portal](apps/portal.md)
   * [ETL](apps/etl.md)
+  * [Database](apps/database.md)
 
