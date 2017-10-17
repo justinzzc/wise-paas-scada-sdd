@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
   * [Development Environment](development-environment.md)
+  * [Architecture](architecture.md)
   * [Cloud Foundry](cloud-foundry.md)
 * [APPs](apps.md)
   * [DataWorker](apps/dataworker.md)
