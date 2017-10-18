@@ -143,6 +143,7 @@
 ##### 3.1.1.1 Scada
 - Data Source: scada_list
 - Properties: 
+
 |Name|Data Type|Id|Column Name|Description|
 |:--:|:-------:|:-:|:--------:|:---------:|
 |scadaId|String|V|scada_id||
