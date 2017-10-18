@@ -143,7 +143,7 @@
 - Data Source: scada_list
 - Properties: 
 
-|Name|Data Type|Id|Column Name|Description|
+|Name|Data Type|Primary Key|Column Name|Description|
 |:--:|:-------:|:-:|:--------:|:---------:|
 |scadaId|String|V|scada_id||
 |scadaType|Number||scada_type||
@@ -152,21 +152,32 @@
 |primaryScadaIP|String||primary_scada_ip||
 |backupScadaIP|String||backup_scada_ip||
 |PrimaryScadaPort|Number||primary_scada_port||
-|backupScadaPort|Number||backup_scada_port|||
+|backupScadaPort|Number||backup_scada_port||
 
 ##### 3.1.1.2 ScadaCount
 - Properties:
 
-|Name|Data Type|Id|Description|
+|Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|list|Array|V|[SCADA](#model_scada) Object|
-|scadaType|Number|scada_type||
-|scadaName|String|scada_name||
-|scadaDesc|String|scada_description||
-|primaryScadaIP|String|primary_scada_ip||
-|backupScadaIP|String|backup_scada_ip||
-|PrimaryScadaPort|Number|primary_scada_port||
-|backupScadaPort|Number|backup_scada_port|||
+|list|Array|[SCADA](#model_scada) Object|
+|totalCount|Number||
+|index|Number||
+|count|Number||
+
+##### 3.1.1.3 ScadaInstance
+- Properties:
+
+|Name|Data Type|Description|
+|:--:|:-------:|:-:|:--------:|
+|scadaId|String|scada_id|
+
+##### 3.1.1.3 ScadaList
+- Properties:
+
+|Name|Data Type|Description|
+|:--:|:-------:|:-:|:--------:|
+|scadaId|String|scada_id|
+|scadaName|String|scada_name|
 
 #### 3.1.2 Function
 ##### 3.1.2.1 listAllScada
