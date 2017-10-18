@@ -152,7 +152,7 @@
 |primaryScadaIP|String||primary_scada_ip||
 |backupScadaIP|String||backup_scada_ip||
 |PrimaryScadaPort|Number||primary_scada_port||
-|backupScadaPort|Number||backup_scada_port||
+|backupScadaPort|Number||backup_scada_port|||
 
 ##### 3.1.1.2 ScadaCount
 - Properties:
@@ -166,7 +166,7 @@
 |primaryScadaIP|String|primary_scada_ip||
 |backupScadaIP|String|backup_scada_ip||
 |PrimaryScadaPort|Number|primary_scada_port||
-|backupScadaPort|Number|backup_scada_port||
+|backupScadaPort|Number|backup_scada_port|||
 
 #### 3.1.2 Function
 ##### 3.1.2.1 listAllScada
