@@ -138,12 +138,42 @@
 ```
 ## 3. Component-Level Design
 ### 3.1 SCADA
-#### 3.1.1 listAllScada
+#### 3.1.1 Models
+##### 3.1.1.1 Scada
+- Data Source:
+- Properties: 
+|Name|Data Type|Id|Column Name|Description|
+|:--:|:-------:|:-:|:--------:|:---------:|
+|scadaId|String|V|scada_id||
+|scadaType|Number||scada_type||
+|scadaName|String||scada_name||
+|scadaDesc|String||scada_description||
+|primaryScadaIP|String||primary_scada_ip||
+|backupScadaIP|String||backup_scada_ip||
+|PrimaryScadaPort|Number||primary_scada_port||
+|backupScadaPort|Number||backup_scada_port||
+
+##### 3.1.1.2 Scada
+- Data Source:
+- Properties: 
+|Name|Data Type|Id|Column Name|Description|
+|:--:|:-------:|:-:|:--------:|:---------:|
+|scadaId|String|V|scada_id||
+|scadaType|Number||scada_type||
+|scadaName|String||scada_name||
+|scadaDesc|String||scada_description||
+|primaryScadaIP|String||primary_scada_ip||
+|backupScadaIP|String||backup_scada_ip||
+|PrimaryScadaPort|Number||primary_scada_port||
+|backupScadaPort|Number||backup_scada_port||
+
+#### 3.1.2 Function
+##### 3.1.2.1 listAllScada
 - Purpose: List all SCADA information
 - Input: 
 
 |Name|Data Type|Necessary|Default|Description|
-|:---:|:---:|:---:|:---:|:---:|
+|:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
 |count|Integer||1000|Data retrived. limit: 1000|
 |index|Integer||1|Starting Index|
@@ -151,39 +181,39 @@
 |scadaDesc|String|||Filter Scada Description|
 |sortby|String|||Sort by the specified property|
 |order|String||DESC|ascending (ASC) or descending (DESC) only|
-request object, 
+
 - Output:
 - Logical description:
 
-#### 3.1.2 listAllScadaName
+##### 3.1.2.2 listAllScadaName
 - Purpose: 
 - Input: request object
 - Output:
 - Logical description:
 
 
-#### 3.1.3 listScadaById
+##### 3.1.2.3 listScadaById
 - Purpose: 
 - Input:
 - Output:
 - Logical description:
 
 
-#### 3.1.4 updateScada
+##### 3.1.2.4 updateScada
 - Purpose: 
 - Input:
 - Output:
 - Logical description:
 
 
-#### 3.1.5 syncScada
+##### 3.1.2.5 syncScada
 - Purpose: 
 - Input:
 - Output:
 - Logical description:
 
 
-#### 3.1.6 _startUpdateTransaction
+##### 3.1.2.6 _startUpdateTransaction
 - Purpose: 
 - Input:
 - Output:
