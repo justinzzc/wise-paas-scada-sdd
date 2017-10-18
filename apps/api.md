@@ -32,11 +32,35 @@
 │   │   ├ user-info.js
 │   │   └ user-info.json
 │   └ utils
-│   │   ├ db.js
-│   │   ├ error.js
-│   │   └ utils.js
+│        ├ db.js
+│        ├ error.js
+│        └ utils.js
 ├ scripts
+│   ├ gen_man.bat
+│   └ gen_yml.bat
 ├ server
+│   ├ explorer
+│   │   ├ bwclient.ico
+│   │   ├ index.html
+│   │   ├ index.yml
+│   │   ├ swagger-ui-bundle.js
+│   │   ├ swagger-ui-bundle.js.map
+│   │   ├ swagger-ui-standalone-preset.js
+│   │   ├ swagger-ui-standalone-preset.js.map
+│   │   ├ swagger-ui.css
+│   │   ├ swagger-ui.css.map
+│   │   ├ swagger-ui.js
+│   │   └ swagger-ui.js.map
+│   ├ models
+│   ├ component-config.json
+│   ├ config.json
+│   ├ datasources.development.json
+│   ├ datasources.json
+│   ├ datasources.production.js
+│   ├ middleware.development.json
+│   ├ middleware.json
+│   ├ model-config.json
+│   └ server.js
 ├ test
 ├ .babelrc
 ├ .cfignore
