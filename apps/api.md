@@ -139,7 +139,7 @@
 ## 3. Component-Level Design
 ### 3.1 SCADA
 #### 3.1.1 Models
-##### 3.1.1.1 Scada
+##### Scada
 - Data Source:
 - Properties: 
 |Name|Data Type|Id|Column Name|Description|
@@ -153,19 +153,18 @@
 |PrimaryScadaPort|Number||primary_scada_port||
 |backupScadaPort|Number||backup_scada_port||
 
-##### 3.1.1.2 Scada
-- Data Source:
+##### 3.1.1.2 ScadaCount
 - Properties: 
-|Name|Data Type|Id|Column Name|Description|
-|:--:|:-------:|:-:|:--------:|:---------:|
-|scadaId|String|V|scada_id||
-|scadaType|Number||scada_type||
-|scadaName|String||scada_name||
-|scadaDesc|String||scada_description||
-|primaryScadaIP|String||primary_scada_ip||
-|backupScadaIP|String||backup_scada_ip||
-|PrimaryScadaPort|Number||primary_scada_port||
-|backupScadaPort|Number||backup_scada_port||
+|Name|Data Type|Id|Description|
+|:--:|:-------:|:-:|:---------:|
+|list|Array|V|[SCADA](#scada)|
+|scadaType|Number|scada_type||
+|scadaName|String|scada_name||
+|scadaDesc|String|scada_description||
+|primaryScadaIP|String|primary_scada_ip||
+|backupScadaIP|String|backup_scada_ip||
+|PrimaryScadaPort|Number|primary_scada_port||
+|backupScadaPort|Number|backup_scada_port||
 
 #### 3.1.2 Function
 ##### 3.1.2.1 listAllScada
