@@ -139,11 +139,57 @@
 ## 3. Component-Level Design
 ### 3.1 SCADA
 #### 3.1.1 listAllScada
+- Purpose: List all SCADA information
+- Input: 
+
+|Name|Data Type|Necessary|Default|Description|
+|:---:|:---:|:---:|:---:|:---:|
+|req|Object|V||request Object|
+|count|Integer||1000|Data retrived. limit: 1000|
+|index|Integer||1|Starting Index|
+|scadaName|String|||Filter Scada Name|
+|scadaDesc|String|||Filter Scada Description|
+|sortby|String|||Sort by the specified property|
+|order|String||DESC|ascending (ASC) or descending (DESC) only|
+request object, 
+- Output:
+- Logical description:
+
 #### 3.1.2 listAllScadaName
+- Purpose: 
+- Input: request object
+- Output:
+- Logical description:
+
+
 #### 3.1.3 listScadaById
+- Purpose: 
+- Input:
+- Output:
+- Logical description:
+
+
 #### 3.1.4 updateScada
+- Purpose: 
+- Input:
+- Output:
+- Logical description:
+
+
 #### 3.1.5 syncScada
+- Purpose: 
+- Input:
+- Output:
+- Logical description:
+
+
 #### 3.1.6 _startUpdateTransaction
+- Purpose: 
+- Input:
+- Output:
+- Logical description:
+
+
 
 ### 3.2 Device
 ### 3.3 Tag
