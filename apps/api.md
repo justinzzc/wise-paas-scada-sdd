@@ -159,7 +159,7 @@
 - Properties:
 
 |Name|Data Type|Id|Description|
-|:---:|:---:|:---:|:---:|
+|:--:|:-------:|:-:|:--------:|
 |list|Array|V|<a href="#model_scada">SCADA</a> Object|
 |scadaType|Number|scada_type||
 |scadaName|String|scada_name||
