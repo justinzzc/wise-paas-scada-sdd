@@ -120,6 +120,12 @@
 │   ├ model-config.json
 │   └ server.js
 ├ test
+│   ├ deviceTest.js
+│   ├ realdataTest.js
+│   ├ roleTest.js
+│   ├ scadaTest.js
+│   ├ tagTest.js
+│   └ userTest.js
 ├ .babelrc
 ├ .cfignore
 ├ .gitignore
@@ -130,3 +136,4 @@
 ├ gulpfile.js
 └ package.json
 ```
+## 3. Component-Level Design
