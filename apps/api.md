@@ -156,7 +156,8 @@
 |backupScadaPort|Number||backup_scada_port||
 
 ##### 3.1.1.2 ScadaCount
-- Properties: 
+- Properties:
+
 |Name|Data Type|Id|Description|
 |:---:|:---:|:---:|:---:|
 |list|Array|V|<a href="#model_scada">SCADA</a> Object|
