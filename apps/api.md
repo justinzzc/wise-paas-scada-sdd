@@ -139,8 +139,7 @@
 ## 3. Component-Level Design
 ### 3.1 SCADA
 #### 3.1.1 Models
-<a name="model_scada"></a>
-##### 3.1.1.1 Scada
+##### 3.1.1.1 Scada {#model_scada}
 - Data Source: scada_list
 - Properties: 
 
@@ -160,7 +159,7 @@
 
 |Name|Data Type|Id|Description|
 |:--:|:-------:|:-:|:--------:|
-|list|Array|V|<a href="#model_scada">SCADA</a> Object|
+|list|Array|V|[SCADA](#model_scada) Object|
 |scadaType|Number|scada_type||
 |scadaName|String|scada_name||
 |scadaDesc|String|scada_description||
