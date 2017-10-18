@@ -137,3 +137,22 @@
 └ package.json
 ```
 ## 3. Component-Level Design
+### 3.1 SCADA
+#### 3.1.1 listAllScada
+#### 3.1.2 listAllScadaName
+#### 3.1.3 listScadaById
+#### 3.1.4 updateScada
+#### 3.1.5 syncScada
+#### 3.1.6 _startUpdateTransaction
+
+### 3.2 Device
+### 3.3 Tag
+### 3.4 HistData
+### 3.5 RealData
+### 3.6 Status
+### 3.7 Token
+### 3.8 UserInfo
+### 3.9 RoleInfo
+### 3.10 ScopeInfo
+### 3.11 SysParam
+
