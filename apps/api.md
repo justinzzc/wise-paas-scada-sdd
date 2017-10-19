@@ -276,7 +276,7 @@
 
 #### 3.12.2 Functions
 ##### 3.12.2.1 countList {#function_countList}
-- Purpose: Query the specify model instances using the input filter
+- Purpose: Query the specify model instances using the input filter and format the output
 - Input:
 
 |Name|Data Type|Description|
