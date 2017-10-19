@@ -179,7 +179,7 @@
 |scadaId|String|scada_id|
 |scadaName|String|scada_name|
 
-#### 3.1.2 Function
+#### 3.1.2 Functions
 ##### 3.1.2.1 listAllScada
 - Purpose: List all SCADA information
 - Input: 
@@ -196,7 +196,11 @@
 
 - Output: [ScadaCount](#model_ScadaCount) Object
 - Logical description:
- 
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
+ 3. 檢查 index 和 count
+ 4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
+ 5. 呼叫 [countList](#function_countList) query SCADA model.
 
 ##### 3.1.2.2 listAllScadaName
 - Purpose: 
@@ -240,8 +244,67 @@
 ### 3.5 RealData
 ### 3.6 Status
 ### 3.7 Token
+#### 3.7.1 Models
+#### 3.7.2 Functions
+##### 3.7.2.1 refreshToken
+##### 3.7.2.1 validToken{#function_validToken}
+##### 3.7.2.1 validScope
+##### 3.7.2.1 getToken
+##### 3.7.2.1 _validToken
+##### 3.7.2.1 _canAccessSCADASrp
 ### 3.8 UserInfo
 ### 3.9 RoleInfo
 ### 3.10 ScopeInfo
 ### 3.11 SysParam
+### 3.12 Count
+#### 3.12.1 Models
+##### 3.12.1.1 Count{#model_count}
+- Properties:
+
+|Name|Data Type|Description|
+|:--:|:-------:|:-:|:--------:|
+|list|Array|Object|
+|totalCount|Number|The total count instances of the model from the data source matched by where filter|
+|index|Number|Starting Index|
+|count|Number|Data retrived|
+
+#### 3.12.2 Functions
+##### 3.12.2.1 countList {#function_countList}
+- Purpose: Query the specify model instances using the input filter
+- Input:
+
+|Name|Data Type|Description|
+|:--:|:-------:|:---------:|
+|Model|Object|Loopback model|
+|filter|Object|Loopback filter object|
+|index|Number|Starting Index|
+|count|Number|Data retrived|
+|cb|Function|Callback function|
+
+- Output: [Count](#model_count) Object
+- Logical description:
+ 1. 計算Model中符合filter條件的instance數量(totalCount)
+ 2. Query the model instances using the filter
+ 3. 整理output [Count](#model_count) Object
+   - output.toltalCount = totalCount
+   - output.list = objs
+   - output.count = objs.length
+
+### 3.13 Utils
+#### 3.13.1 Functions
+##### 3.13.1.1 isValueExist
+##### 3.13.1.1 disableAllMethodsBut
+##### 3.13.1.1 isObject
+##### 3.13.1.1 hasValue
+##### 3.13.1.1 checkIPFormat
+##### 3.13.1.1 isEmpty
+##### 3.13.1.1 isEmptylbObj
+##### 3.13.1.1 isValueInObject
+##### 3.13.1.1 isInt
+##### 3.13.1.1 formatRegexpFilter{#function_formatRegexpFilter}
+##### 3.13.1.1 isOrder
+##### 3.13.1.1 formatCountResponse
+##### 3.13.1.1 formatSortBy{#function_formatSortBy}
+##### 3.13.1.1 formatWhereFilter
+##### 3.13.1.1 isKeyInlbObj
 
