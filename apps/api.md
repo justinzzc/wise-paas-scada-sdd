@@ -139,7 +139,7 @@
 ## 3. Component-Level Design
 ### 3.1 SCADA
 #### 3.1.1 Models
-##### 3.1.1.1 Scada {#model_scada}
+##### 3.1.1.1 Scada {#model_Scada}
 - Data Source: scada_list
 - Properties: 
 
@@ -154,24 +154,24 @@
 |PrimaryScadaPort|Number||primary_scada_port||
 |backupScadaPort|Number||backup_scada_port||
 
-##### 3.1.1.2 ScadaCount
+##### 3.1.1.2 ScadaCount {#model_ScadaCount}
 - Properties:
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|list|Array|[SCADA](#model_scada) Object|
+|list|Array|[SCADA](#model_Scada) Object|
 |totalCount|Number||
 |index|Number||
 |count|Number||
 
-##### 3.1.1.3 ScadaInstance
+##### 3.1.1.3 ScadaInstance {#model_ScadaInstance}
 - Properties:
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |scadaId|String|scada_id|
 
-##### 3.1.1.3 ScadaList
+##### 3.1.1.3 ScadaList {#model_ScadaList}
 - Properties:
 
 |Name|Data Type|Description|
@@ -194,8 +194,9 @@
 |sortby|String|||Sort by the specified property|
 |order|String||DESC|ascending (ASC) or descending (DESC) only|
 
-- Output:
+- Output: [ScadaCount](#model_ScadaCount) Object
 - Logical description:
+ 
 
 ##### 3.1.2.2 listAllScadaName
 - Purpose: 
