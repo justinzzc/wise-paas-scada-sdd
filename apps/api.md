@@ -194,7 +194,13 @@
 |sortby|String|||Sort by the specified property|
 |order|String||DESC|ascending (ASC) or descending (DESC) only|
 
-- Output: [ScadaCount](#model_ScadaCount) Object
+- Output:
+ - 200 [ScadaCount](#model_ScadaCount) Object
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+ 
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
  2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
@@ -281,14 +287,18 @@
 |count|Number|Data retrived|
 |cb|Function|Callback function|
 
-- Output: [Count](#model_count) Object
+- Output:
+ - 200 [Count](#model_count) Object
+ - 404 Result not found
+ - 500 Internal error
 - Logical description:
- 1. 計算Model中符合filter條件的instance數量(totalCount)
- 2. Query the model instances using the filter
- 3. 整理output [Count](#model_count) Object
+ 1. 計算 Model 中符合 filter 條件的 instance 數量(totalCount)
+ 2. Query model using the filter(objs)
+ 3. 整理 output [Count](#model_count) Object
    - output.toltalCount = totalCount
    - output.list = objs
    - output.count = objs.length
+   - output.index = index
 
 ### 3.13 Utils
 #### 3.13.1 Functions
