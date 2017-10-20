@@ -206,13 +206,28 @@
  2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
  3. 檢查 index 和 count
  4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
- 5. 呼叫 [countList](#function_countList) query SCADA model.
+ 5. 呼叫 [countList](#function_countList) query SCADA model
 
 ##### 3.1.2.2 listAllScadaName
-- Purpose: 
-- Input: request object
+- Purpose: 列出所有 scada Id 和 Name
+- Input: 
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
 - Output:
+ - 200 Array of [ScadaList](#model_ScadaList) Object
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+
 - Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. Query 
+ 3. 檢查 index 和 count
+ 4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
+ 5. 呼叫 [countList](#function_countList) query SCADA model
+
 
 
 ##### 3.1.2.3 listScadaById
