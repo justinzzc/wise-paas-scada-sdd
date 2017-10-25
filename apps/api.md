@@ -179,6 +179,16 @@
 |scadaId|String|scada_id|
 |scadaName|String|scada_name|
 
+##### 3.1.1.4 ScadaUpdateInstance {#model_ScadaUpdateInstance}
+- Properties:
+
+|Name|Data Type|Description|
+|:--:|:-------:|:-:|:--------:|
+|scadaDesc|String|scada_description|
+
+- Validation:
+
+
 #### 3.1.2 Functions
 ##### 3.1.2.1 listAllScada
 - Purpose: List all SCADA information
@@ -223,23 +233,36 @@
 
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. Query 
- 3. 檢查 index 和 count
- 4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
- 5. 呼叫 [countList](#function_countList) query SCADA model
-
-
+ 2. Query Scada model scadaId 和 scadaName 欄位
 
 ##### 3.1.2.3 listScadaById
-- Purpose: 
+- Purpose: 列出特定scadaId的SCADA所有資訊
 - Input:
-- Output:
-- Logical description:
 
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+
+- Output:
+ - 200 [Scada](#model_Scada) Object
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. Query Scada model by scadaId
 
 ##### 3.1.2.4 updateScada
 - Purpose: 
 - Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)
+
 - Output:
 - Logical description:
 
