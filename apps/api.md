@@ -142,6 +142,7 @@
 ##### 3.1.1.1 Scada {#model_Scada}
 - Data Source: scada_list
 - Properties: 
+
 |Name|Data Type|Primary Key|Column Name|Description|
 |:--:|:-------:|:-:|:--------:|:---------:|
 |scadaId|String|V|scada_id||
@@ -155,6 +156,7 @@
 
 ##### 3.1.1.2 ScadaCount {#model_ScadaCount}
 - Properties:
+
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |list|Array|[SCADA](#model_Scada) Object|
@@ -164,12 +166,14 @@
 
 ##### 3.1.1.3 ScadaInstance {#model_ScadaInstance}
 - Properties:
+
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |scadaId|String|scada_id|
 
 ##### 3.1.1.3 ScadaList {#model_ScadaList}
 - Properties:
+
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |scadaId|String|scada_id|
@@ -177,6 +181,7 @@
 
 ##### 3.1.1.4 ScadaUpdateInstance {#model_ScadaUpdateInstance}
 - Properties:
+
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |scadaDesc|String|scada_description|
@@ -187,6 +192,7 @@
 ##### 3.1.2.1 listAllScada
 - Purpose: List all SCADA information
 - Input: 
+
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
@@ -213,6 +219,7 @@
 ##### 3.1.2.2 listAllScadaName
 - Purpose: 列出所有 scada Id 和 Name
 - Input:
+
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
@@ -229,6 +236,7 @@
 ##### 3.1.2.3 listScadaById
 - Purpose: 列出特定scadaId的SCADA所有資訊
 - Input:
+
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
@@ -245,6 +253,7 @@
 ##### 3.1.2.4 updateScada
 - Purpose: 更新特定scadaId的SCADA資訊
 - Input:
+
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
@@ -266,6 +275,7 @@
 ##### 3.1.2.5 syncScada
 - Purpose: 同步特定scadaId的SCADAs資訊至webAccess
 - Input:
+
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |where|Object|V||request Object|
@@ -286,8 +296,9 @@
    - output.errMsg = res.message
 
 ##### 3.1.2.6 _startUpdateTransaction
-- Purpose: 
+- Purpose: 使用 transaction 處理 update scada 和 deviceManager
 - Input:
+
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |where|Object|V||Filter object|
