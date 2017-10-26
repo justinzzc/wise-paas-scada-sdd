@@ -145,46 +145,46 @@
 
 |Name|Data Type|Primary Key|Column Name|Description|
 |:--:|:-------:|:-:|:--------:|:---------:|
-|scadaId|String|V|scada_id||
-|scadaType|Number||scada_type||
-|scadaName|String||scada_name||
-|scadaDesc|String||scada_description||
-|primaryScadaIP|String||primary_scada_ip||
-|backupScadaIP|String||backup_scada_ip||
+|ScadaId|String|V|scada_id||
+|ScadaType|Number||scada_type||
+|ScadaName|String||scada_name||
+|ScadaDesc|String||scada_description||
+|PrimaryScadaIP|String||primary_scada_ip||
+|BackupScadaIP|String||backup_scada_ip||
 |PrimaryScadaPort|Number||primary_scada_port||
-|backupScadaPort|Number||backup_scada_port||
+|BackupScadaPort|Number||backup_scada_port||
 
 ##### 3.1.1.2 ScadaCount {#model_ScadaCount}
 - Properties:
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|list|Array|[SCADA](#model_Scada) Object|
-|totalCount|Number||
-|index|Number||
-|count|Number||
+|List|Array|[SCADA](#model_Scada) Object|
+|TotalCount|Number||
+|Index|Number||
+|Count|Number||
 
 ##### 3.1.1.3 ScadaInstance {#model_ScadaInstance}
 - Properties:
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|scadaId|String|scada_id|
+|ScadaId|String|scada_id|
 
 ##### 3.1.1.3 ScadaList {#model_ScadaList}
 - Properties:
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|scadaId|String|scada_id|
-|scadaName|String|scada_name|
+|ScadaId|String|scada_id|
+|ScadaName|String|scada_name|
 
 ##### 3.1.1.4 ScadaUpdateInstance {#model_ScadaUpdateInstance}
 - Properties:
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|scadaDesc|String|scada_description|
+|ScadaDesc|String|scada_description|
 - Validation:
  - **scadaDesc**: length <= 256
 
