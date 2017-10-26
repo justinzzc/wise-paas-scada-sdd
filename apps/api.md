@@ -277,7 +277,13 @@
  - 404 Result not found
  - 500 Interval error
 - Logical description:
-
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 檢查並整理傳給 deviceManager 的 array of scadaId
+ 3. 呼叫 deviceManager.syncDeviceConfig
+ 4. 整理回傳結果 (res) 成 Arrary of [ScadaInstance](#model_ScadaInstance)
+   - output.scadaId = res.id
+   - output.isSuccess = res.ok
+   - output.errMsg = res.message
 
 ##### 3.1.2.6 _startUpdateTransaction
 - Purpose: 
