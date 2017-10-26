@@ -231,7 +231,7 @@
 
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. Query Scada model scadaId 和 scadaName 欄位
+ 2. Query Scada model ScadaId 和 ScadaName 欄位
 
 ##### 3.1.2.3 listScadaById
 - Purpose: 列出特定scadaId的SCADA所有資訊
@@ -248,7 +248,7 @@
  - 500 Interval error
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. Query Scada model by scadaId
+ 2. Query Scada model by ScadaId
 
 ##### 3.1.2.4 updateScada
 - Purpose: 更新特定scadaId的SCADA資訊
@@ -269,7 +269,7 @@
  1. 呼叫 [validToken](#function_validToken) 檢查 token
  2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
  3. 將可更新 properties 整理 update obj
- 4. 檢查 scadaId 是否存在
+ 4. 檢查 ScadaId 是否存在
  5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
 
 ##### 3.1.2.5 syncScada
@@ -291,9 +291,9 @@
  2. 檢查並整理傳給 deviceManager 的 array of scadaId
  3. 呼叫 deviceManager.syncDeviceConfig
  4. 整理回傳結果 (res) 成 Arrary of [ScadaInstance](#model_ScadaInstance)
-   - output.scadaId = res.id
-   - output.isSuccess = res.ok
-   - output.errMsg = res.message
+   - output.ScadaId = res.id
+   - output.IsSuccess = res.ok
+   - output.ErrMsg = res.message
 
 ##### 3.1.2.6 _startUpdateTransaction
 - Purpose: 使用 transaction 處理 update scada 和 deviceManager
@@ -312,7 +312,7 @@
  - 500 Interval error
 - Logical description:
  1. 整理傳給 deviceManager 的 params
-   - params[scadaId] = scada
+   - params[ScadaId] = scada
  2. 開啟 transaction
  3. 更新符合 where 條件的 Scada
 
