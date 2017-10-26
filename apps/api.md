@@ -182,12 +182,13 @@
 ##### 3.1.1.4 ScadaUpdateInstance {#model_ScadaUpdateInstance}
 - Properties:
 
+
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |scadaDesc|String|scada_description|
 
 - Validation:
-
+ - **scadaDesc**: length <= 256
 
 #### 3.1.2 Functions
 ##### 3.1.2.1 listAllScada
