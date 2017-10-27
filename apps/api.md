@@ -152,7 +152,7 @@
 |PrimaryScadaIP|String||primary_scada_ip||
 |BackupScadaIP|String||backup_scada_ip||
 |PrimaryScadaPort|Number||primary_scada_port||
-|BackupScadaPort|Number||backup_scada_port||
+|BackupScadaPort|Number||backup_scada_port|||
 
 ##### 3.1.1.2 ScadaCount {#model_ScadaCount}
 - Properties:
@@ -160,9 +160,9 @@
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |List|Array|[SCADA](#model_Scada) Object|
-|TotalCount|Number||
-|Index|Number||
-|Count|Number||
+|TotalCount|Number|The total count instances of the model from the data source matched by where filter|
+|Index|Number|Starting Index|
+|Count|Number|Data retrived|
 
 ##### 3.1.1.3 ScadaInstance {#model_ScadaInstance}
 - Properties:
@@ -393,6 +393,7 @@
 #### 3.14.1 Models
 ##### 3.14.1.1 SyncRes {#model_SyncRes}
 - Properties:
+
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
 |ScadaId|String|Scada Id|
