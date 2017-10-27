@@ -317,6 +317,22 @@
  3. 更新符合 where 條件的 Scada
 
 ### 3.2 Device
+#### 3.2.1 Models
+##### 3.2.1.1 Device {#model_Device}
+- Data Source: device_list
+- Properties: 
+
+|Name|Data Type|Primary Key|Column Name|Description|
+|:--:|:-------:|:-:|:--------:|:---------:|
+|ScadaId|String|V|scada_id||
+|DeviceId|String|V|device_id||
+|DeviceName|String||device_name||
+|DeviceType|Number||devcie_type||
+|DeviceIP|String||device_ip||
+|DeviceDesc|String||device_description||
+|ComportNbr|Number||comport_nbr|||
+
+#### 3.2.2 Functions
 ### 3.3 Tag
 ### 3.4 HistData
 ### 3.5 RealData
