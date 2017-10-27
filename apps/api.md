@@ -295,7 +295,7 @@
    - output.IsSuccess = res.ok
    - output.ErrMsg = res.message
 
-##### 3.1.2.6 _startUpdateTransaction
+##### 3.1.2.6 _startUpdateTransaction #{function__startUpdateTransaction}
 - Purpose: 使用 transaction 處理 update scada 和 deviceManager
 - Input:
 
