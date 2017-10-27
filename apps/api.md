@@ -341,10 +341,10 @@
 
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|list|Array|Object|
-|totalCount|Number|The total count instances of the model from the data source matched by where filter|
-|index|Number|Starting Index|
-|count|Number|Data retrived|
+|List|Array|Object|
+|TotalCount|Number|The total count instances of the model from the data source matched by where filter|
+|Index|Number|Starting Index|
+|Count|Number|Data retrived|
 
 #### 3.12.2 Functions
 ##### 3.12.2.1 countList {#function_countList}
@@ -367,10 +367,10 @@
  1. 計算 Model 中符合 filter 條件的 instance 數量(totalCount)
  2. Query model using the filter(objs)
  3. 整理 output [Count](#model_count) Object
-   - output.toltalCount = totalCount
-   - output.list = objs
-   - output.count = objs.length
-   - output.index = index
+   - output.ToltalCount = totalCount
+   - output.List = objs
+   - output.Count = objs.length
+   - output.Index = index
 
 ### 3.13 Utils
 #### 3.13.1 Functions
@@ -395,8 +395,8 @@
 - Properties:
 |Name|Data Type|Description|
 |:--:|:-------:|:-:|:--------:|
-|scadaId|String|Scada Id|
-|isSuccess|Boolean|If synchronized successfully or not|
-|errMsg|String|Error message|
+|ScadaId|String|Scada Id|
+|IsSuccess|Boolean|If synchronized successfully or not|
+|ErrMsg|String|Error message|
 
 
