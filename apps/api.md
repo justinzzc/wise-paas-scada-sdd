@@ -380,11 +380,11 @@
  - 404 Result not found
  - 500 Interval error
 - Logical description:
- 1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
- 3. 將可更新 properties 整理 update obj
- 4. 檢查 ScadaId 是否存在
- 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+1. 呼叫 [validToken](#function_validToken) 檢查 token
+2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
+3. 檢查 index 和 count
+4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
+5. 呼叫 [countList](#function_countList) query Device model
 
 
 ##### 3.2.2.3 listAllDeviceNameByScada {#function_listAllDeviceNameByScada}
