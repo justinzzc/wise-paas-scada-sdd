@@ -412,7 +412,8 @@
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
 |scadaId|String|V||Scada Id|
-|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+|deviceId|String|V||Device Id|
+
 - Output: 
  - 200 Boolean. return true, if update successfully.
  - 400 Input invalid
