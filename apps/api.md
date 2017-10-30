@@ -374,7 +374,7 @@
 |sortby|String|||Sort by the specified property|
 |order|String||DESC|ascending (ASC) or descending (DESC) only|
 - Output: 
- - 200 Boolean. return true, if update successfully.
+ - 200 [DeviceCount](#model_DeviceCount)
  - 400 Input invalid
  - 401 No Authorization or token format error
  - 404 Result not found
