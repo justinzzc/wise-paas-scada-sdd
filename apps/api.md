@@ -348,7 +348,7 @@
 |sortby|String|||Sort by the specified property|
 |order|String||DESC|ascending (ASC) or descending (DESC) only|
 - Output: 
- - 200 Boolean. return true, if update successfully.
+ - 200 [DeviceCount](#model_DeviceCount) Object
  - 400 Input invalid
  - 401 No Authorization or token format error
  - 404 Result not found
@@ -361,14 +361,18 @@
  5. 呼叫 [countList](#function_countList) query Device model
 
 ##### 3.2.2.2 listAllDevice {#function_listAllDevice}
-- Purpose: 更新特定scadaId的SCADA資訊
+- Purpose: List all device information
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
-|scadaId|String|V||Scada Id|
-|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+|count|Integer||1000|Data retrived. limit: 1000|
+|index|Integer||1|Starting Index|
+|deviceName|String|||Filter Scada Name|
+|deviceDesc|String|||Filter Scada Description|
+|sortby|String|||Sort by the specified property|
+|order|String||DESC|ascending (ASC) or descending (DESC) only|
 - Output: 
  - 200 Boolean. return true, if update successfully.
  - 400 Input invalid
