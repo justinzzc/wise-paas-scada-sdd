@@ -333,6 +333,145 @@
 |ComportNbr|Number||comport_nbr|||
 
 #### 3.2.2 Functions
+##### 3.2.2.1 listAllDeviceByScadaId {#function_listAllDeviceByScadaId}
+- Purpose: List all device information in the specified SCADA
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|count|Integer||1000|Data retrived. limit: 1000|
+|index|Integer||1|Starting Index|
+|deviceName|String|||Filter Scada Name|
+|deviceDesc|String|||Filter Scada Description|
+|sortby|String|||Sort by the specified property|
+|order|String||DESC|ascending (ASC) or descending (DESC) only|
+- Output: 
+ - 200 Boolean. return true, if update successfully.
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
+ 3. 檢查 index 和 count
+ 4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
+ 5. 呼叫 [countList](#function_countList) query Device model
+
+##### 3.2.2.2 listAllDevice {#function_listAllDevice}
+- Purpose: 更新特定scadaId的SCADA資訊
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+- Output: 
+ - 200 Boolean. return true, if update successfully.
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
+ 3. 將可更新 properties 整理 update obj
+ 4. 檢查 ScadaId 是否存在
+ 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+
+
+##### 3.2.2.3 listAllDeviceNameByScada {#function_listAllDeviceNameByScada}
+- Purpose: 更新特定scadaId的SCADA資訊
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+- Output: 
+ - 200 Boolean. return true, if update successfully.
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
+ 3. 將可更新 properties 整理 update obj
+ 4. 檢查 ScadaId 是否存在
+ 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+
+##### 3.2.2.4 listDeviceByDeviceId {#function_listDeviceByDeviceId}
+- Purpose: 更新特定scadaId的SCADA資訊
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+- Output: 
+ - 200 Boolean. return true, if update successfully.
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
+ 3. 將可更新 properties 整理 update obj
+ 4. 檢查 ScadaId 是否存在
+ 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+
+##### 3.1.2.4 updateDevice {#function_updateDevice}
+- Purpose: 更新特定scadaId的SCADA資訊
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+- Output: 
+ - 200 Boolean. return true, if update successfully.
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
+ 3. 將可更新 properties 整理 update obj
+ 4. 檢查 ScadaId 是否存在
+ 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+
+##### 3.1.2.4 _startUpdateTransaction {#function__startUpdateTransaction}
+- Purpose: 更新特定scadaId的SCADA資訊
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+- Output: 
+ - 200 Boolean. return true, if update successfully.
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
+ 3. 將可更新 properties 整理 update obj
+ 4. 檢查 ScadaId 是否存在
+ 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+
+
 ### 3.3 Tag
 ### 3.4 HistData
 ### 3.5 RealData
