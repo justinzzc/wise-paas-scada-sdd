@@ -281,7 +281,7 @@
 |where|Object|V||request Object|
 |data|Array|V||Arrary of [ScadaInstance](#model_ScadaInstance)|
 - Output:
-- 200 Array of SyncRes(#model_SyncRes)
+ - 200 Array of [SyncRes](#model_SyncRes)
  - 400 Input invalid
  - 401 No Authorization or token format error
  - 404 Result not found
@@ -388,29 +388,24 @@
 
 
 ##### 3.2.2.3 listAllDeviceNameByScada {#function_listAllDeviceNameByScada}
-- Purpose: 更新特定scadaId的SCADA資訊
+- Purpose: List all device Id and device name in the specified SCADA
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
 |scadaId|String|V||Scada Id|
-|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
 - Output: 
- - 200 Boolean. return true, if update successfully.
- - 400 Input invalid
+ - 200 Array of [DeviceList](#model_DeviceList)
  - 401 No Authorization or token format error
  - 404 Result not found
  - 500 Interval error
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
- 3. 將可更新 properties 整理 update obj
- 4. 檢查 ScadaId 是否存在
- 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+ 2. Query Device model 中屬於 scadaId 的 DeviceId 和 DeviceName 欄位
 
 ##### 3.2.2.4 listDeviceByDeviceId {#function_listDeviceByDeviceId}
-- Purpose: 更新特定scadaId的SCADA資訊
+- Purpose: 更新特定deviceId的Device資訊
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
