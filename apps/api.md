@@ -505,7 +505,7 @@
 
 ### 3.3 Tag
 #### 3.3.1 Models
-##### 3.3.1.1 Tag{#model_Tag}
+##### 3.3.1.1 Tag {#model_Tag}
 - Data Source: tag_list
 - Properties: 
 
@@ -521,6 +521,39 @@
 |ReadOnly|Boolean||read_only|||
 
 #### 3.3.2 Functions
+##### 3.3.2.1 getTagsListWithScadaAndDevice {#function_getTagsListWithScadaAndDevice}
+##### 3.3.2.2 getTagsListWithScada {#function_getTagsListWithScada}
+##### 3.3.2.3 getTagsList {#function_getTagsList}
+##### 3.3.2.4 listAllTagsName {#function_listAllTagsName}
+- Purpose: 列出特定 Device Id 中所有 Tag name
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|deviceId|String|V||Device Id|
+|count|Number|||Data retrived|
+|index|Number|||Starting index|
+- Output: 
+ - 200 Array of [TagList](#model_TagList)
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 3. 檢查 index 和 count
+ 5. 呼叫 [countList](#function_countList) query Tag mode with ScadaId and DeviceId
+
+##### 3.3.2.5 listTagByTagId {#function_listTagByTagId}
+##### 3.3.2.6 _queryInfo {#function__queryInfo}
+##### 3.3.2.7 updateTag {#function_updateTag}
+##### 3.3.2.8 _formatUpdateContent {#function__formatUpdateContent}
+##### 3.3.2.9 _startUpdateTransaction {#function__startUpdateTransaction}
+##### 3.3.2.10 _addModifiedConfigRecord {#function__addModifiedConfigRecord}
+##### 3.3.2.11 _countTagList {#function__countTagList}
+##### 3.3.2.12 _queryTagList{#function__queryTagList}
 
 ### 3.4 HistData
 ### 3.5 RealData
