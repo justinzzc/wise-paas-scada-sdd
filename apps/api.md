@@ -314,7 +314,7 @@
  1. 整理傳給 deviceManager 的 params
    - params[ScadaId] = scada
  2. 開啟 transaction
- 3. 更新符合 where 條件的 Scada
+ 3. 更新符合 where 條件的 Scada 並呼叫deviceManager.addModifiecConfigRecord
 
 ### 3.2 Device
 #### 3.2.1 Models
@@ -436,7 +436,7 @@
  2. Query Device model 中屬於 scadaId 的 DeviceId 和 DeviceName 欄位
 
 ##### 3.2.2.4 listDeviceByDeviceId {#function_listDeviceByDeviceId}
-- Purpose: 更新特定deviceId的Device資訊
+- Purpose: 更新特定 deviceId 的 Device 資訊
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
@@ -447,19 +447,15 @@
 
 - Output: 
  - 200 Boolean. return true, if update successfully.
- - 400 Input invalid
  - 401 No Authorization or token format error
  - 404 Result not found
  - 500 Interval error
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
- 3. 將可更新 properties 整理 update obj
- 4. 檢查 ScadaId 是否存在
- 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
+ 2. Query Device model with scadaId and deviceId
 
 ##### 3.1.2.4 updateDevice {#function_updateDevice}
-- Purpose: 更新特定scadaId的SCADA資訊
+- Purpose: 更新特定 deviceId 的 Device 資訊
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
@@ -481,7 +477,7 @@
  5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
 
 ##### 3.1.2.4 _startUpdateTransaction {#function__startUpdateTransaction}
-- Purpose: 更新特定scadaId的SCADA資訊
+- Purpose: 使用 transaction 處理 update device 和 deviceManager
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
@@ -496,12 +492,10 @@
  - 404 Result not found
  - 500 Interval error
 - Logical description:
- 1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
- 3. 將可更新 properties 整理 update obj
- 4. 檢查 ScadaId 是否存在
- 5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
-
+ 1. 整理傳給 deviceManager 的 params
+   - params[ScadaId] = {Device: {DeviceId: device}}
+ 2. 開啟 transaction
+ 3. 更新符合 where 條件的 Device 並呼叫deviceManager.addModifiecConfigRecord
 
 ### 3.3 Tag
 #### 3.3.1 Models
@@ -522,7 +516,7 @@
 
 #### 3.3.2 Functions
 ##### 3.3.2.1 getTagsListWithScadaAndDevice {#function_getTagsListWithScadaAndDevice}
-- Purpose: List all SCADA information
+- Purpose: 列出所有特定 scadaId 和 deviceId 下的所有 Tags
 - Input: 
 
 |Name|Data Type|Necessary|Default|Description|
@@ -552,7 +546,8 @@
  5. 呼叫 [countList](#function_countList) query Tag model with Scada Id and Device Id
 
 ##### 3.3.2.2 getTagsListWithScada {#function_getTagsListWithScada}
-- Purpose: List all SCADA information
+- Purpose: 列出所有特定 scadaId 下的所有 Tags
+
 - Input: 
 
 |Name|Data Type|Necessary|Default|Description|
@@ -581,7 +576,8 @@
  5. 呼叫 [countList](#function_countList) query Tag model with ScadaId
 
 ##### 3.3.2.3 getTagsList {#function_getTagsList}
-- Purpose: List all SCADA information
+- Purpose: 列出所有 Tags
+
 - Input: 
 
 |Name|Data Type|Necessary|Default|Description|
@@ -609,7 +605,7 @@
  5. 呼叫 [countList](#function_countList) query Tag model
 
 ##### 3.3.2.4 listAllTagsName {#function_listAllTagsName}
-- Purpose: 列出特定 Device Id 中所有 Tag name
+- Purpose: 列出特定 scadaId 和 deviceId 中所有 Tag name
 - Input:
 
 |Name|Data Type|Necessary|Default|Description|
@@ -631,13 +627,39 @@
  5. 呼叫 [countList](#function_countList) query Tag mode with ScadaId and DeviceId
 
 ##### 3.3.2.5 listTagByTagId {#function_listTagByTagId}
-##### 3.3.2.6 _queryInfo {#function__queryInfo}
-##### 3.3.2.7 updateTag {#function_updateTag}
-##### 3.3.2.8 _formatUpdateContent {#function__formatUpdateContent}
-##### 3.3.2.9 _startUpdateTransaction {#function__startUpdateTransaction}
-##### 3.3.2.10 _addModifiedConfigRecord {#function__addModifiedConfigRecord}
-##### 3.3.2.11 _countTagList {#function__countTagList}
-##### 3.3.2.12 _queryTagList{#function__queryTagList}
+- Purpose: 列出特定 Tag Name 所有information
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|scadaId|String|V||Scada Id|
+|deviceId|String|V||Device Id|
+|tagName|String|V||Tag name|
+- Output: 
+ - 200 Array of [TagList](#model_TagList)
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 呼叫 TagDao.getTag
+ 3. 呼叫 [_formatTagInfo](#function__formatTagInfo) 整理 output
+
+##### 3.3.2.6 updateTag {#function_updateTag}
+##### 3.3.2.7 _formatUpdateContent {#function__formatUpdateContent}
+##### 3.3.2.8 _startUpdateTransaction {#function__startUpdateTransaction}
+##### 3.3.2.9 _addModifiedConfigRecord {#function__addModifiedConfigRecord}
+##### 3.3.2.10 _formatTagInfo {#function__formatTagInfo}
+- Purpose: 整理Tag output
+- Input:
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|obj|Object|V||||
+- Output: Object
+- Logical description:
+ 1. 對應 obj 的 key 為 Tag 的properties
 
 ### 3.4 HistData
 ### 3.5 RealData
