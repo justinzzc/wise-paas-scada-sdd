@@ -524,6 +524,33 @@
 ##### 3.3.2.1 getTagsListWithScadaAndDevice {#function_getTagsListWithScadaAndDevice}
 ##### 3.3.2.2 getTagsListWithScada {#function_getTagsListWithScada}
 ##### 3.3.2.3 getTagsList {#function_getTagsList}
+- Purpose: List all SCADA information
+- Input: 
+
+|Name|Data Type|Necessary|Default|Description|
+|:--:|:-------:|:-------:|:-----:|:---------:|
+|req|Object|V||request Object|
+|count|Integer||1000|Data retrived. limit: 1000|
+|index|Integer||1|Starting Index|
+|tagName|String|||Filter Tag Name|
+|tagDesc|String|||Filter Tag Description|
+|tagType|Integer|||Filter Tag Type|
+|sortby|String|||Sort by the specified property|
+|order|String||DESC|ascending (ASC) or descending (DESC) only|
+- Output:
+ - 200 [TagCount](#model_TagCount) Object
+ - 400 Input invalid
+ - 401 No Authorization or token format error
+ - 404 Result not found
+ - 500 Interval error
+ 
+- Logical description:
+ 1. 呼叫 [validToken](#function_validToken) 檢查 token
+ 2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
+ 3. 檢查 index 和 count
+ 4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
+ 5. 呼叫 [countList](#function_countList) query Tag model
+
 ##### 3.3.2.4 listAllTagsName {#function_listAllTagsName}
 - Purpose: 列出特定 Device Id 中所有 Tag name
 - Input:
