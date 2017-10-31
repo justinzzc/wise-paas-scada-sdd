@@ -158,7 +158,7 @@
 - Properties:
 
 |Name|Data Type|Description|
-|:--:|:-------:|:-:|:--------:|
+|:--:|:-------:|:--------:|
 |List|Array|[SCADA](#model_Scada) Object|
 |TotalCount|Number|The total count instances of the model from the data source matched by where filter|
 |Index|Number|Starting Index|
@@ -168,14 +168,14 @@
 - Properties:
 
 |Name|Data Type|Description|
-|:--:|:-------:|:-:|:--------:|
+|:--:|:-------:|:--------:|
 |ScadaId|String|scada_id|
 
 ##### 3.1.1.3 ScadaList {#model_ScadaList}
 - Properties:
 
 |Name|Data Type|Description|
-|:--:|:-------:|:-:|:--------:|
+|:--:|:-------:|:--------:|
 |ScadaId|String|scada_id|
 |ScadaName|String|scada_name|
 
@@ -183,10 +183,10 @@
 - Properties:
 
 |Name|Data Type|Description|
-|:--:|:-------:|:-:|:--------:|
+|:--:|:-------:|:--------:|
 |ScadaDesc|String|scada_description|
 - Validation:
- - **scadaDesc**: length <= 256
+ - **ScadaDesc**: length <= 256
 
 #### 3.1.2 Functions
 ##### 3.1.2.1 listAllScada
@@ -332,6 +332,37 @@
 |DeviceDesc|String||device_description||
 |ComportNbr|Number||comport_nbr|||
 
+##### 3.2.1.2 DeviceCount {#model_DeviceCount}
+- Properties: 
+
+|Name|Data Type|Description|
+|:--:|:-------:|:--------:|
+|List|Array|[Device](#model_Device) Object|
+|TotalCount|Number|The total count instances of the model from the data source matched by where filter|
+|Index|Number|Starting Index|
+|Count|Number|Data retrived|
+
+##### 3.2.1.2 DeviceList {#model_DeviceList}
+- Properties: 
+
+|Name|Data Type|Description|
+|:--:|:-------:|:--------:|
+|DeviceId|String|Device Id|
+|DeviceName|String|Device Name|
+
+##### 3.2.1.2 DeviceUpdateInstance {#model_DeviceUpdateInstance}
+- Properties: 
+
+|Name|Data Type|Description|
+|:--:|:-------:|:--------:|
+|DevicePort|Number|Device port|
+|DeviceIP|String|Device IP|
+|DeviceDesc|String|Device description|
+- Validation:
+ - **DevicePort**: 0 < DevicePort < 65535
+ - **DeviceIP**: X.X.X.X, 其中 X < 256
+ - **DeviceDesc**: length < 256
+
 #### 3.2.2 Functions
 ##### 3.2.2.1 listAllDeviceByScadaId {#function_listAllDeviceByScadaId}
 - Purpose: List all device information in the specified SCADA
@@ -435,7 +466,7 @@
 |:--:|:-------:|:-------:|:-----:|:---------:|
 |req|Object|V||request Object|
 |scadaId|String|V||Scada Id|
-|obj|[ScadaUpdataInstance](#model_ScadaUpdataInstance)|V||object of update properties|
+|obj|[DeviceUpdataInstance](#model_DeviceUpdataInstance)|V||object of update properties|
 - Output: 
  - 200 Boolean. return true, if update successfully.
  - 400 Input invalid
@@ -444,7 +475,7 @@
  - 500 Interval error
 - Logical description:
  1. 呼叫 [validToken](#function_validToken) 檢查 token
- 2. 檢查 [ScadaUpdataInstance](#model_ScadaUpdateInstance) 是否合法
+ 2. 檢查 [DeviceUpdataInstance](#model_DeviceUpdataInstance) 是否合法
  3. 將可更新 properties 整理 update obj
  4. 檢查 ScadaId 是否存在
  5. 呼叫 [_startUpdateTransaction](#function__startUpdateTransaction) 更新scada
@@ -473,6 +504,24 @@
 
 
 ### 3.3 Tag
+#### 3.3.1 Models
+##### 3.3.1.1 Tag{#model_Tag}
+- Data Source: tag_list
+- Properties: 
+
+|Name|Data Type|Primary Key|Column Name|Description|
+|:--:|:-------:|:-:|:--------:|:---------:|
+|ScadaId|String|V|scada_id||
+|DeviceId|String|V|device_id||
+|TagName|String|V|tag_name||
+|TagType|Number||tagtype||
+|TagDesc|String||tag_description||
+|ArraySize|Number||array_size||
+|DataLog|Boolean||data_log||
+|ReadOnly|Boolean||read_only|||
+
+#### 3.3.2 Functions
+
 ### 3.4 HistData
 ### 3.5 RealData
 ### 3.6 Status
