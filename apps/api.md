@@ -549,7 +549,7 @@
  2. 利用 [formatRegexpFilter](#function_formatRegexpFilter) 產生 filter.where
  3. 檢查 index 和 count
  4. 利用 [formatSortBy](#function_formatSortBy) 產生 filter.order
- 5. 呼叫 [countList](#function_countList) query Tag model with ScadaId
+ 5. 呼叫 [countList](#function_countList) query Tag model with Scada Id and Device Id
 
 ##### 3.3.2.2 getTagsListWithScada {#function_getTagsListWithScada}
 - Purpose: List all SCADA information
