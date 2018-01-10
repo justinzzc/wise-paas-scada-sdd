@@ -39,7 +39,7 @@
 2.8   使用者帳號管理
   2.8.1   Profile 頁面
     2.8.1.1   UserInfo.vue
-  2.8.2   logout   
+  2.8.2   logout
 ```
 
 --
@@ -66,13 +66,13 @@
        　1.2 執行mounted function，檢查$cookie.get\("EIName"\)狀態，使用者是否登錄過。  
        　　1.2.1 若為true，執行checkToken function。  
        　　　1.2.1.1 呼叫$http.get\("/Users/me"\) 進入Device Management頁面。  
-       　　1.2.2 若為false，則等待使用者按下①按鈕。  
+       　　1.2.2 若為false，則等待使用者按下1號按鈕。  
        2.將帳號密碼輸入完後按下①按鈕，執行login function，檢查Conf.ValidSSO && Conf.mode === 'development'狀態。  
        　2.1 若為false，定義user這個objecct 並進入Device Management頁面。  
        　2.2 若為true，檢查帳號密碼是否已輸入。  
        　　2.2.1 呼叫axios.post\(Conf.SSOUrl + "/auth", obj\)檢查response.data.status === 'locked'狀態，使用者是否第一次註冊。  
        　　　2.2.1.1 若為true，addVisible=true   
-       　　　2.2.1.2 若為false，檢查rememberMe狀態，\#②按鈕是否被打勾，並且執行checkToken function。  
+       　　　2.2.1.2 若為false，檢查rememberMe狀態，2號按鈕是否被打勾，並且執行checkToken function。  
        　　　　2.2.1.2.1 若為true，記下帳號密碼，呼叫$http.get\("/Users/me"\) 進入 Device Management 頁面。   
        　　    2.2.1.2.2 若為false，直接呼叫$http.get\("/Users/me"\) 進入 Device Management 頁面。   
 
