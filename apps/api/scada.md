@@ -1,7 +1,6 @@
-## 3. Component-Level Design
-### 3.1 SCADA
-#### 3.1.1 Models
-##### 3.1.1.1 Scada {#model_Scada}
+### SCADA
+#### Models
+##### Scada {#model_Scada}
 - Data Source: scada_list
 - Properties: 
 
