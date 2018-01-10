@@ -25,16 +25,16 @@
 #### Functions
 #####
 #### API
-|                HTTP Request               |          URL         | Authorization |               Description              |
-|:-----------------------------------------:|:--------------------:|:-------------:|:--------------------------------------:|
-|         [POST](#api_POST/Projects)        |       /Projects      |  Edit_Config  |          Create a new project          |
-|          [GET](#api_GET/Projects)         |       /Projects      |               |            List all projects           |
-|    [GET](#api_GET/Projects/:projectId)    | /Projects/:projectId |               | List the specified project information |
-|    [PUT](#api_PUT/Projects/:projectId)   | /Projects/:projectId |  Edit_Config  |       Update an existing project       |
-| [DELETE](#api_DELETE/Projects/:projectId) | /Projects/:projectId |  Edit_Config  |      Delete the specified project      |
+|         HTTP Request         |          URL         | Authorization |               Description              |
+|:----------------------------:|:--------------------:|:-------------:|:--------------------------------------:|
+|  [POST](#api_insertProject)  |       /Projects      |  Edit_Config  |          Create a new project          |
+|   [GET](#api_listProjects)   |       /Projects      |               |            List all projects           |
+|    [GET](#api_getProject)    | /Projects/:projectId |               | List the specified project information |
+|   [PUT](#api_updateProject)  | /Projects/:projectId |  Edit_Config  |       Update an existing project       |
+| [DELETE](#api_deleteProject) | /Projects/:projectId |  Edit_Config  |      Delete the specified project      |
 
-##### `POST /Projects` {#api_POST/Projects}
-##### `GET /Projects` {#api_GET/Projects}
-##### `GET /Projects/:projectId` {#api_GET/Projects/:projectId}
-##### `PUT /Projects/:projectId` {#api_PUT/Projects/:projectId}
-##### `DELETE /Projects/:projectId` {#api_DELETE/Projects/:projectId}
+##### `POST /Projects` {#api_insertProject}
+##### `GET /Projects` {#api_listProjects}
+##### `GET /Projects/:projectId` {#api_getProject}
+##### `PUT /Projects/:projectId` {#api_updateProject}
+##### `DELETE /Projects/:projectId` {#api_deleteProject}
