@@ -70,11 +70,13 @@
     2. 將帳號密碼輸入完後按下①按鈕，執行login function，檢查Conf.ValidSSO && Conf.mode === 'development'狀態。  
        　2.1 若為false，定義user這個objecct 並進入Device Management頁面。  
        　2.2 若為true，檢查帳號密碼是否已輸入。  
-       　　2.2.1 呼叫axios.post\(Conf.SSOUrl + "/auth", obj\)檢查response.data.status === 'locked'狀態，使用者是否第一次註冊。  
-       　　　2.2.1.1 若為true，addVisible=true   
-       　　　2.2.1.2 若為false，檢查rememberMe狀態，2號按鈕是否被打勾，並且執行checkToken function。  
-       　　　　2.2.1.2.1 若為true，記下帳號密碼，呼叫$http.get\("/Users/me"\) 進入 Device Management 頁面。   
-       　　    2.2.1.2.2 若為false，直接呼叫$http.get\("/Users/me"\) 進入 Device Management 頁面。   
+       　　2.2.1 呼叫axios.post\(Conf.SSOUrl + "/auth", obj\)檢查response.data.status === 'locked'狀態，使用者是否第一次  
+
+     　　　　　　 註冊。  
+    　　　2.2.1.1 若為true，addVisible=true   
+    　　　2.2.1.2 若為false，檢查rememberMe狀態，2號按鈕是否被打勾，並且執行checkToken function。  
+    　　　　2.2.1.2.1 若為true，記下帳號密碼，呼叫$http.get\("/Users/me"\) 進入 Device Management 頁面。   
+    　　    　2.2.1.2.2 若為false，直接呼叫$http.get\("/Users/me"\) 進入 Device Management 頁面。   
 
 
 
