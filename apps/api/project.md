@@ -128,7 +128,7 @@
 9. 呼叫`ScadaDao.deleteScada(deleteScadas, trans)`刪除 scadas 及其下所有 devices
 1. 呼叫`ProjectDao.deleteProject(projectId, trans)`刪除 project 及其下所有 scada 和 device
 7. 如果 Transaction 失敗, 則rollback並回傳錯誤, 如果成功則整理 output
-    - output 為每個 scada 的 config [同步狀況](#model_SyncRes)
+    - output 為每個 scada 的 config [同步狀況](otherModel.md#model_SyncRes)
     - 若 project 下沒有 scada 則回傳空 Array
     - 若 scada 不需要同步, 則 isSuccess = true
 
