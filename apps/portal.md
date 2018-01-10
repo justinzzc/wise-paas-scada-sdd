@@ -1,5 +1,5 @@
 # Portal
---
+-----------
 
 ## Table of Contents
 #### 1. Overview
@@ -42,6 +42,11 @@
 ### 2. Front-end architecture description  
 ##### 2.1 登入頁面
 - 2.1.1 Login.vue    
-  - 目的:使用者輸入帳號密碼應登入WebAccess/SCADA  
-  - 
-  
+  - 目的:使用者輸入帳號密碼以登入WebAccess/SCADA  
+  - 資料物件說明:  
+  Vue-components  
+  　　src/components/Login.vue  
+  Vue-router  
+  　　src/router/index.js  
+  - UI:
+![](/assets/login.png)
