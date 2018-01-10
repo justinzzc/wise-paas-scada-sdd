@@ -66,8 +66,8 @@
        　1.2 執行mounted function，檢查$cookie.get\("EIName"\)狀態，使用者是否登錄過。  
        　　1.2.1 若為true，執行checkToken function。  
        　　　1.2.1.1 呼叫$http.get\("/Users/me"\) 進入Device Management頁面。  
-       　　1.2.2 若為false，則等待使用者按下1號按鈕。  
-       2.將帳號密碼輸入完後按下①按鈕，執行login function，檢查Conf.ValidSSO && Conf.mode === 'development'狀態。  
+       　　1.2.2 若為false，則等待使用者按下1號按鈕。    
+    2. 將帳號密碼輸入完後按下①按鈕，執行login function，檢查Conf.ValidSSO && Conf.mode === 'development'狀態。  
        　2.1 若為false，定義user這個objecct 並進入Device Management頁面。  
        　2.2 若為true，檢查帳號密碼是否已輸入。  
        　　2.2.1 呼叫axios.post\(Conf.SSOUrl + "/auth", obj\)檢查response.data.status === 'locked'狀態，使用者是否第一次註冊。  
