@@ -146,3 +146,85 @@
 ├ gulpfile.js
 └ package.json
 ```
+
+- `server/model-config.json`定義出所有的 model 以及此 model 是否為 public(外部是否可對 model 進行調用與操作)
+- 每個 model 由一個 js 和一個 json 組成, 其中 json 定義 model 的 properties, js 則是定義 model 的驗證, 邏輯, 和對外的 interface
+- 在`common/models`下的 model 皆為 public model, 主要用來提供 API url 的操作
+- 在`server/models`下的 model 皆為 private mode, 主要用來 document 顯示, 以及 input 的驗證檢查
+
+- model 的 js 檔中架構為 (以`common/models/project.js`為例)
+
+```
+'use strict';
+/* import node modules */
+var ScadaDBManager = require('scada-dbmanager');
+
+module.exports = function (Project) {
+  Utils.disableAllMethodsBut(Project, []);
+
+  /* model properies 的驗證　*/
+  Project.validatesPresenceOf('projectId');
+  Project.validatesLengthOf('projectId', {max: 32, message: {max: 'too long'}});
+  Project.validatesLengthOf('description', {max: 256, message: {max: 'too long'}, allowNull: true});
+  Project.validate('projectId', checkSpecial, {message: 'is invalid. contain invalid characters.'});
+
+  /* 驗證 function */
+  function checkSpecial (err) {
+    if (Utils.hasSpecial(this.projectId)) {
+      err();
+    }
+  }
+
+  /* function */
+  Project.createProject = function (req, projectObj, cb) {
+    app.models.Token.validScope(req, Const.Scope.EditConfig, function (err, token) {
+      if (err) {
+        return cb(err);
+      }
+      let userName = jwt.decode(token, { complete: true }).payload.username;
+      /* 呼叫 model 驗證 */
+      projectObj.isValid(function (valid) {
+        if (!valid) {            
+          /* 回傳Error Object */
+          return cb(Err.paramsInvalidWithlbValidation(projectObj.errors));
+        }
+        ProjectDao.checkProjectRightByUserName(userName).then((res) => {
+          if (res.find((raw) => raw.projectId === projectObj.projectId)) {
+            return cb(Err.paramsIsDuplicate('projectId'));
+          }
+          return UserDao.getUserByName(userName).then((user) => {
+            return ScadaDBManager.conn().transaction().then((trans) => {
+              ProjectDao.insertProject(projectObj, trans).then((project) => {
+                return UserAllowDeviceDao.insertAccessRight([{userId: user.userId, projectId: project.projectId}], trans).then((result) => {
+                  trans.commit();
+                  /* 回傳 response true */
+                  return cb(null, true);
+                });
+              }).catch((err) => {
+                trans.rollback();
+                return cb(Err.internalError(err.message));
+              });
+            });
+          });
+        }).catch((err) => {
+          return cb(Err.internalError(err.message));
+        });
+      });
+    });
+  };
+
+  /* 對外 API (remote method) */
+  Project.remoteMethod('createProject', {
+    http: { path: '/', verb: 'POST' },
+     /* api request */
+    accepts: 
+      { arg: 'req', type: 'object', 'http': { source: 'req' } },
+      { arg: 'data', type: 'Project', required: true, http: { source: 'body' }, description: 'project instance' }
+    ],
+     /* api response */
+    returns: { arg: '', type: 'boolean', root: true },
+    description: 'Create a new project'
+  });
+};
+
+```
