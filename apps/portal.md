@@ -49,4 +49,4 @@
   Vue-router  
   　　src/router/index.js  
   - UI:
-![](/assets/login.png)
+   ![](/assets/login.PNG)
