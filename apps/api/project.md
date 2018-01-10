@@ -234,7 +234,7 @@
 
 | Status Code |     Type     |                                      Description                                      |
 |:-----------:|:------------:|:-------------------------------------------------------------------------------------:|
-|     200     |     Array    | [SyncRes](#model_SyncRes) Object <br> Return each Scada status, which is in ProjectId |
+|     200     |     Array    | [SyncRes](otherModel.md#model_SyncRes) Object <br> Return each Scada status, which is in ProjectId |
 |     400     | Error Object |                                     Input Invalid                                     |
 |     401     | Error Object |                         No Authorization or Token Tormat Error                        |
 |     403     | Error Object |                                   Permission Denied                                   |
