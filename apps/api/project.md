@@ -1,14 +1,14 @@
 ## 3. Component-Level Design
 
 ### Project
-#### Models
-##### Project {#model_Project}
+#### 1. Models
+##### 1.1 Project {#model_Project}
 |     Name    | Id |     Type    | allowNull |      Validation      |
 |:-----------:|:--:|:-----------:|:---------:|:--------------------:|
 |  projectId  |  v |  String(32) |   false   | Length, special char |
 | description |    | String(256) |    true   |        Length        |
 
-##### ProjectCount {#model_ProjectCount}
+##### 1.2 ProjectCount {#model_ProjectCount}
 |    Name    | Id |  Type  |            Description           |
 |:----------:|:--:|:------:|:--------------------------------:|
 |    list    |  v |  Array | [Project](#model_Project) Object |
@@ -16,14 +16,14 @@
 |    index   |    | Number |          Starting Index          |
 |    count   |    | Number |           Data retrived          |
 
-##### ProjectUpdateInstance {#model_ProjectUpdateInstance}
+##### 1.3 ProjectUpdateInstance {#model_ProjectUpdateInstance}
 |     Name    | Id |     Type    | allowNull |      Validation      |
 |:-----------:|:--:|:-----------:|:---------:|:--------------------:|
 |  projectId  |  v |  String(32) |    true   | Length, special char |
 | description |    | String(256) |    true   |        Length        |
 
-#### Functions
-##### createProject {#function_createProject}
+#### 2. Functions
+##### 2.1 createProject {#function_createProject}
 ###### Description: check input and create Project
 ###### input
 |    Name    |   Type   | Default |            Note           |
@@ -41,7 +41,7 @@
 6. 呼叫`UserAllowDeviceDao.insertAccessRight([userId, projectId], trans)` insert Project 存取權限
 7. 如果 Transaction 成功, 回傳true, 否則rollback並回傳錯誤
 
-##### listAllProjects {#function_listAllProjects}
+##### 2.2 listAllProjects {#function_listAllProjects}
 ###### Description: check input and get project list
 ###### input
 |     Name    |   Type   |  Default  |        Note       |
@@ -74,7 +74,7 @@
     - output.index = index
     - output.count = res.rows.length
 
-##### listProjectById {#function_listProjectById}
+##### 2.3 listProjectById {#function_listProjectById}
 ###### Description: check input and get the specified project 
 ###### input
 |    Name   |   Type   | Default |        Note       | 
@@ -88,7 +88,7 @@
 2. 呼叫`ProjectDao.checkProjectRightByUserName(userName)` 檢查 user 是否有存取 projectId 的權限
 3. 呼叫`ProjectDao.getProject(projectId)`取得 project 的資訊, 並回傳 response
 
-##### updateProject {#function_updateProject}
+##### 2.4 updateProject {#function_updateProject}
 ###### Description: check input and update the specified project
 ###### input
 |     Name   |   Type   | Default |                          Note                         | 
@@ -107,7 +107,7 @@
 6. 呼叫`ProjectDao.updateProject(projectId, obj, trans)` update Project
 7. 如果 Transaction 成功, 回傳true, 否則rollback並回傳錯誤
 
-##### deleteProject {#function_deleteProject}
+##### 2.5 deleteProject {#function_deleteProject}
 ###### Description: check input and delete the specified project, and the SCADAs and Devices in the project
 ###### input
 |    Name   |   Type   | Default |        Note       | 
@@ -132,7 +132,7 @@
     - 若 project 下沒有 scada 則回傳空 Array
     - 若 scada 不需要同步, 則 isSuccess = true
 
-#### API
+#### 3. API
 |         HTTP Request         |          URL         | Authorization |               Description              |                   Function                   |
 |:----------------------------:|:--------------------:|:-------------:|:--------------------------------------:|:--------------------------------------------:|
 |  [POST](#api_insertProject)  |       /Projects      |  Edit_Config  |          Create a new project          |   [createProject](#function_createProject)   |
@@ -140,7 +140,8 @@
 |    [GET](#api_getProject)    | /Projects/:projectId |               | List the specified project information | [listProjectById](#function_listProjectById) |
 |   [PUT](#api_updateProject)  | /Projects/:projectId |  Edit_Config  |       Update an existing project       |   [updateProject](#function_updateProject)   |
 | [DELETE](#api_deleteProject) | /Projects/:projectId |  Edit_Config  |      Delete the specified project      |   [deleteProject](#function_deleteProject)   |
-- `POST /Projects` {#api_insertProject}
+
+##### 3.1 `POST /Projects` {#api_insertProject}
 
 ###### Description: Create a new project 
 ###### Input
@@ -157,7 +158,8 @@
 |     401     | Error Object | No Authorization or Token Format Error |
 |     403     | Error Object |            Permission Denied           |
 |     500     | Error Object |             Internal Error             |
-- `GET /Projects` {#api_listProjects}
+
+##### 3.2 `GET /Projects` {#api_listProjects}
 
 ###### Description: List all projects
 ###### Input
@@ -180,7 +182,7 @@
 |     403     | Error Object |              Permission Denied             |
 |     500     | Error Object |               Internal Error               |
 
-- `GET /Projects/:projectId` {#api_getProject}
+##### 3.3 `GET /Projects/:projectId` {#api_getProject}
 
 ###### Description: List the specified project information
 ###### Input
@@ -199,7 +201,7 @@
 |     404     | Error Object |            Result Not Found            |
 |     500     | Error Object |             Internal Error             |
 
-- `PUT /Projects/:projectId` {#api_updateProject}
+##### 3.4 `PUT /Projects/:projectId` {#api_updateProject}
 
 ###### Description: Update an existing project
 ###### Input
@@ -218,7 +220,8 @@
 |     403     | Error Object |             Permission Denied            |
 |     404     | Error Object |             Result Not Found             |
 |     500     | Error Object |              Internal Error              |
-- `DELETE /Projects/:projectId` {#api_deleteProject}
+
+##### 3.5 `DELETE /Projects/:projectId` {#api_deleteProject}
 
 ###### Delete the specified project
 ###### Input
