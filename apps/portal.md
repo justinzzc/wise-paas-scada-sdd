@@ -51,5 +51,13 @@
   - UI:
    ![](/assets/login.PNG)  
   - 邏輯說明:  
-  1.   
-  
+        1. Login Page  
+        　1.1 進入Url: https://portal-scada-1-1-12-develop.wise-paas.com/#/。  
+        　1.2 執行mounted function，判斷$cookie.get("EIName")狀態，使用者是否登錄過。  
+        　　1.2.1 若為true，執行checkToken function。  
+        　　　1.2.1.1 呼叫 $http.get("/Users/me") 進入 Device Management 頁面。  
+        　　1.2.2 若為false，則等待使用者按下①按鈕。  
+        2.將帳號密碼輸入完後按下①按鈕，執行login function，判斷Conf.ValidSSO && Conf.mode === 'development'是否為false。  
+        　2.1 若為false，定義user這個objecct 並進入 Device Management 頁面。  
+        　2.2 若為true，判斷帳號密碼是否已輸入，並將執行 checkToken function。  
+        　　2.2.1 呼叫 $http.get("/Users/me") 進入 Device Management 頁面。  
