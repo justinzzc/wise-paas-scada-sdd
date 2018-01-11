@@ -14,8 +14,8 @@
   　　src/router/index.js   
   - UI:  
   ![](/assets/projectlist.PNG)
-  ![](/assets/project_edit.PNG)
-  ![](/assets/project_save.PNG)   
+  ![](/assets/project_edit.png)
+  ![](/assets/project_save.png)   
   - 邏輯說明:  
         1. 在Device Management中編輯Project的頁面(Url: /Login/CloudManager/DeviceManagement)  
         　1.1 透過src/components/MenuBar.vue按下1號按鈕執行select function，透過src/router/index.js呼叫src/components/ProjectList.vue進入可編輯Project的頁面。  
