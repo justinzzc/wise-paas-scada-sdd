@@ -70,15 +70,28 @@
         　　　　　　4.1.1.1.1.2.1 呼叫API: PUT /Projects/:projectId。  
         　　　　　　　4.1.1.1.1.2.1.1 若呼叫成功即完成編輯。  
         　　　　　　　4.1.1.1.1.2.1.2 若呼叫失敗回傳errMsg。  
-        　　　　　4.1.1.1.1.3 按下9號按鈕，令editObj = {}並關閉視窗。  
-        　　　　　4.1.1.1.1.4 按下10號按鈕，令tempProject = {}並關閉視窗。  
+        　　　　　4.1.1.1.1.3 按下9號按鈕，令editObj = {}並令detailVisible = False關閉視窗。  
+        　　　　　4.1.1.1.1.4 按下10號按鈕，令tempProject = {}並令detailVisible = False關閉視窗。  
         　　　4.1.2 若呼叫失敗執行$checkToken。  
         5. 按下4號按鈕執行handleDeleteClick。  
         　5.1 將選取的project資訊存入tempProject物件中，並令deleteVisiable = true。  
         　　5.1.1 呼叫src/components/Common/Modal.vue，顯示delete視窗。  
         　　　5.1.1.1 按下11號按鈕執行handleDeleteSubmit。  
-        　　　　5.1.1.1.1 執行deleteProject並呼叫API: DELETE /Projects/:projectId，  
-        　　　5.1.1.2 按下12號按鈕執行handleCancelClick。     
+        　　　　5.1.1.1.1 執行deleteProject並呼叫API: DELETE /Projects/:projectId。  
+        　　　　　5.1.1.1.1.1 若呼叫成功，將畫面上選取的project資訊刪除，並令deleteVisiable = false關閉視窗。  
+        　　　　　5.1.1.1.1.2 若呼叫失敗，顯示errStr，並令deleteVisiable = false關閉視窗。  
+        　　　5.1.1.2 按下12號按鈕執行handleCancelClick。  
+        　　　　5.1.1.2.1 令tempProject = {}，並令deleteVisiable = false關閉視窗。  
+        6. 按下5號按鈕執行handleAddClick。  
+        　6.1 令addVisible = true和tempProject = {}。  
+        　　6.1.1 呼叫src/components/Common/Modal.vue，顯示New Project視窗。  
+        　　　6.1.1.1 按下13號按鈕執行handleAddSubmitClick。  
+        　　　　6.1.1.1.1 判斷tempProject.projectId狀態。  
+        　　　　　6.1.1.1.1.1 若為true，顯示errMsg。  
+        　　　　　6.1.1.1.1.2 若為false，執行createNewProject。  
+        　　　　　　6.1.1.1.1.2.1 呼叫API: POST /Projects。  
+        　　　　　　　6.1.1.1.1.2.1.1 若呼叫成功執行getProjectList，並令addVisible = false關閉視窗。  
+        　　　　　　　6.1.1.1.1.2.1.2 若呼叫失敗顯示errMsg。      
           
         
 
