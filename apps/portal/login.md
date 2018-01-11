@@ -2,7 +2,7 @@
 
 ---
 
-- 1. Login.vue    
+- 1.Login.vue    
   - 目的:使用者輸入帳號密碼以登入WebAccess/SCADA  
   - 架構說明:  
   Vue-components  
@@ -14,7 +14,7 @@
   - 邏輯說明:  
         1. Login Page  
         　1.1 進入Url: /Login。  
-        　　1.1.1 透過index.js 進入Login.vue  
+        　　1.1.1 透過src/router/index.js進入src/components/Login.vue  
         　1.2 執行mounted function，檢查$cookie.get("EIName")狀態，使用者是否登錄過。  
         　　1.2.1 若為true，執行checkToken function。  
         　　　1.2.1.1 呼叫$http.get("/Users/me") 進入Device Management頁面。  
@@ -26,7 +26,7 @@
         　　　2.2.1.1 若為true，addVisible=true   
         　　　2.2.1.2 若為false，檢查rememberMe狀態，2號按鈕是否被打勾，並且執行checkToken function。  
         　　　　2.2.1.2.1 若為true，記下帳號密碼，呼叫$http.get("/Users/me") 進入 Device Management 頁面。  
-        　　　　2.2.1.2.2 若為false，直接呼叫$http.get("/Users/me") 進入 Device Management 頁面。   
+        　　　　2.2.1.2.2 若為false，直接呼叫$http.get("/Users/me") 進入 Device Management 頁面。    
 
 
 

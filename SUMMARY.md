@@ -27,6 +27,7 @@
     * [Overview](apps/portal/overview.md)
     * [Directory Tree](apps/portal/directoryTree.md)
     * [Login](apps/portal/login.md)
+    * [Device Management](apps/portal/deviceManagement.md)
   * [ETL](apps/etl.md)
   * [Database](apps/database.md)
 
