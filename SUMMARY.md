@@ -24,6 +24,11 @@
       * [ScopeInfo](apps/api/scopeInfo.md)
       * [Other Models](apps/api/otherModel.md)
   * [Portal](apps/portal.md)
+    * [Overview](apps/portal/overview.md)
+    * [Directory Tree](apps/portal/directoryTree.md)
+    * [Login](apps/portal/login.md)
   * [ETL](apps/etl.md)
   * [Database](apps/database.md)
+
+
 
