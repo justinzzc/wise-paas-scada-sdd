@@ -2,8 +2,7 @@
 
 ---
 
-#####  登入頁面
-- 2.1.1 Login.vue    
+- 1. Login.vue    
   - 目的:使用者輸入帳號密碼以登入WebAccess/SCADA  
   - 架構說明:  
   Vue-components  
