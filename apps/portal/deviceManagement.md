@@ -39,11 +39,11 @@
         　　　　　4.1.1.1.1.1 若typeEdit=true即顯示7號按鈕，按下7號按鈕執行handleEditClick。  
         　　　　　　4.1.1.1.1.1.1 分別將顯示的參數存入showObj物件，編輯參數存入editObj物件，並判斷obj.alarm!==undefined。  
         　　　　　　　4.1.1.1.1.1.1.1 若為true將obj.alarm參數存入showAlarm和editAlarm。  
-        　　　　　4.1.1.1.1.2 若有按下7號按鈕則轉成8號按鈕，編輯完後按下8號按鈕執行handleSaveClick。  
+        　　　　　4.1.1.1.1.2 編輯完後按下9號按鈕執行handleSaveClick。  
         　　　　　　4.1.1.1.1.2.1 呼叫API: PUT /Projects/:projectId。  
         　　　　　　　4.1.1.1.1.2.1.1 若呼叫成功即完成編輯。  
         　　　　　　　4.1.1.1.1.2.1.2 若呼叫失敗回傳errMsg。  
-        　　　　　4.1.1.1.1.3 按下9號按鈕，令editObj = {}並令detailVisible = False關閉視窗。  
+        　　　　　4.1.1.1.1.3 按下8號按鈕，令editObj = {}並回到一開始detail畫面。  
         　　　　　4.1.1.1.1.4 按下10號按鈕，令tempProject = {}並令detailVisible = False關閉視窗。  
         　　　4.1.2 若呼叫失敗執行$checkToken。  
         5. 按下4號按鈕執行handleDeleteClick。  
@@ -67,6 +67,8 @@
         　　　　　　　6.1.1.1.1.2.1.2 若呼叫失敗顯示errMsg。      
           
         
+
+
 
 
 
