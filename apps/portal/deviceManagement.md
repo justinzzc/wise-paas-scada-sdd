@@ -15,7 +15,8 @@
   - UI:  
   ![](/assets/projectlist.PNG)
   ![](/assets/project_edit.png)
-  ![](/assets/project_save.png)   
+  ![](/assets/project_delete.png)  
+  ![](/assets/newproject.png)  
   - 邏輯說明:  
         1. 在Device Management中編輯Project的頁面(Url: /Login/CloudManager/DeviceManagement)  
         　1.1 透過src/components/MenuBar.vue按下1號按鈕執行select function，透過src/router/index.js呼叫src/components/ProjectList.vue進入可編輯Project的頁面。  
@@ -26,7 +27,7 @@
           　2.1.2 若為false即不顯示4、5號按鈕。  
           　2.2 執行getProjectList列出所有project相關資訊。  
         　　2.2.1 呼叫API: GET /Projects。  
-        　　　2.2.1.1 若呼叫成功列出列出project資料，並將要顯示資訊存到projects陣列中。  
+        　　　2.2.1.1 若呼叫成功列出project資料，並將要顯示資訊存到projects陣列中。  
         　　　2.2.1.2 若呼叫失敗則判斷err.response.status === 404狀態。  
         　　　　2.2.1.2.1 若為true，令projects = []。  
         　　　　2.2.1.2.2 若為false，執行$checkToken。   
@@ -64,7 +65,31 @@
         　　　　　6.1.1.1.1.2 若為false，執行createNewProject。  
         　　　　　　6.1.1.1.1.2.1 呼叫API: POST /Projects。  
         　　　　　　　6.1.1.1.1.2.1.1 若呼叫成功執行getProjectList，並令addVisible = false關閉視窗。  
-        　　　　　　　6.1.1.1.1.2.1.2 若呼叫失敗顯示errMsg。      
+        　　　　　　　6.1.1.1.1.2.1.2 若呼叫失敗顯示errMsg。  
+         　　　　6.1.1.2 按下14號按鈕  
+        7. 按下6號按鈕執行handleProjectClick。  
+        　7.1 透過src/router/index.js呼叫src/components/ScadaList.vue進入可編輯SCADA的頁面。     
+  
+  
+  
+
+          
+        
+
+
+- 1.ScadaList.vue  
+  - 目的:使用者在Device Management 頁面可以編輯SCADA的Name、敘述、新增新的SCADA項目、同步、將SCADA移動至其他Project，另外也可以執行刪除動作。 
+  - 架構說明:  
+  Vue-components  
+  　　src/components/ProjectManger/ScadaList.vue  
+  　　src/components/Common/Modal.vue  
+  　　src/components/Common/ConfigModal.vue   
+  Vue-router  
+  　　src/router/index.js   
+  - UI:  
+  ![](/assets/projectlist.PNG)  
+  - 邏輯說明:  
+        1. 在Device Management中編輯SCADA的頁面(Url: /Login/CloudManager/DeviceManagement/:projectId)       
           
         
 
