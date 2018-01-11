@@ -44,7 +44,7 @@
         　　　　　4.1.1.1.1.3 按下9號按鈕，令editObj = {}並關閉視窗。  
         　　　　　4.1.1.1.1.4 按下10號按鈕，令tempProject = {}並關閉視窗。  
         　　　4.1.2 若呼叫失敗執行$checkToken。  
-       　5.按下4號按鈕執行handleDeleteClick。  
+       　5. 按下4號按鈕執行handleDeleteClick。  
        　　5.1 將選取的project資訊存入tempProject物件中，並令deleteVisiable = true。  
        　　　5.1.1 呼叫src/components/Common/Modal.vue，顯示delete視窗。  
        　　　　5.1.1.1 按下11號按鈕執行handleDeleteSubmit。  
