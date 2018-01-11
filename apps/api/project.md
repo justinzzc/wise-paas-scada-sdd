@@ -47,7 +47,7 @@
 |     Name    |   Type   |  Default  |        Note       |
 |:-----------:|:--------:|:---------:|:-----------------:|
 |     req     |  Object  |           |                   |
-|    count    |  Number  |    1000   |    Limit 10000    |
+|    count    |  Number  |    1000   |    Limit 1000    |
 |    index    |  Number  |     1     |                   |
 |  projectId  |  String  |    null   |                   |
 | description |  String  |    null   |                   |
@@ -95,17 +95,18 @@
 |:----------:|:--------:|:-------:|:-----------------------------------------------------:|
 |     req    |  Object  |         |                                                       |
 |  projectId |  String  |         |                                                       |
-| projectObj |  Object  |         | [ProjectUpdateInstance](#model_ProjectUpdateInstance) |
+| projectObj |  Object  |    {}   | [ProjectUpdateInstance](#model_ProjectUpdateInstance) |
 |      cb    | Function |         |                   callback function                   |
 
 ###### Logical
 1. 檢查 Token 和 user scope, 並取得 userName
-2. 檢查 [projectObj](#model_ProjectUpdateInstance) 是否合法
-3. 整理 obj, 擷取可以Project更新的properties(#model_ProjectUpdateInstance)
-4. 呼叫`ProjectDao.checkProjectRightByUserName(userName)` 檢查 user 是否有存取 projectId 的權限, 及 projectId 是否存在
-5. 開啟 Transaction
-6. 呼叫`ProjectDao.updateProject(projectId, obj, trans)` update Project
-7. 如果 Transaction 成功, 回傳true, 否則rollback並回傳錯誤
+2. 檢查 projectObj 是否為空
+3. 檢查 [projectObj](#model_ProjectUpdateInstance) 是否合法
+4. 整理 obj, 擷取可以Project更新的properties(#model_ProjectUpdateInstance)
+5. 呼叫`ProjectDao.checkProjectRightByUserName(userName)` 檢查 user 是否有存取 projectId 的權限, 及 projectId 是否存在
+6. 開啟 Transaction
+7. 呼叫`ProjectDao.updateProject(projectId, obj, trans)` update Project
+8. 如果 Transaction 成功, 回傳true, 否則rollback並回傳錯誤
 
 ##### 2.5 deleteProject {#function_deleteProject}
 ###### Description: check input and delete the specified project, and the SCADAs and Devices in the project
@@ -119,15 +120,15 @@
 ###### Logical
 1. 檢查 Token 和 user scope, 並取得 userName
 2. 呼叫`ProjectDao.checkProjectRightByUserName(userName)` 檢查 user 是否有存取 projectId 的權限
-5. 呼叫`ScadaDao.checkScadaRightByUserName(userName)`和`DeviceDao.checkDeviceRightByUserName(userName)`檢查 user 是否有存取 projectId 下所有 scada 和 device的權限
-5. 開啟 Transaction
-6. 如果 scada configUploaded 是 true, 則呼叫`scadaManager.addModifiedConfigRecord(scadaId, {scadaId: null})`, 通知 scadaManager 刪除 scada, 並將 scadaId 加入 scadaIds 中
-7. 如果 scada configUploaded 是 false, 則將 scadaId 加入 deleteScadas 中
+3. 呼叫`ScadaDao.checkScadaRightByUserName(userName)`和`DeviceDao.checkDeviceRightByUserName(userName)`檢查 user 是否有存取 projectId 下所有 scada 和 device的權限
+4. 開啟 Transaction
+5. 如果 scada configUploaded 是 true, 則呼叫`scadaManager.addModifiedConfigRecord(scadaId, {scadaId: null})`, 通知 scadaManager 刪除 scada, 並將 scadaId 加入 scadaIds 中
+6. 如果 scada configUploaded 是 false, 則將 scadaId 加入 deleteScadas 中
 7. 呼叫`scadaManager.syncScadaConfig(scadaIds)`同步 config, 並接受同步結果 (result)
 8. 如果 result 中 scadaId 同步成功, 則加入 deleteScadas 中
 9. 呼叫`ScadaDao.deleteScada(deleteScadas, trans)`刪除 scadas 及其下所有 devices
-1. 呼叫`ProjectDao.deleteProject(projectId, trans)`刪除 project 及其下所有 scada 和 device
-7. 如果 Transaction 失敗, 則rollback並回傳錯誤, 如果成功則整理 output
+10. 呼叫`ProjectDao.deleteProject(projectId, trans)`刪除 project 及其下所有 scada 和 device
+11. 如果 Transaction 失敗, 則rollback並回傳錯誤, 如果成功則整理 output
     - output 為每個 scada 的 config [同步狀況](otherModel.md#model_SyncRes)
     - 若 project 下沒有 scada 則回傳空 Array
     - 若 scada 不需要同步, 則 isSuccess = true
@@ -142,7 +143,6 @@
 | [DELETE](#api_deleteProject) | /Projects/:projectId |  Edit_Config  |      Delete the specified project      |   [deleteProject](#function_deleteProject)   |
 
 ##### 3.1 `POST /Projects` {#api_insertProject}
-
 ###### Description: Create a new project 
 ###### Input
 | Name |               Type               | Necessary | Default |     Description     |
@@ -160,7 +160,6 @@
 |     500     | Error Object |             Internal Error             |
 
 ##### 3.2 `GET /Projects` {#api_listProjects}
-
 ###### Description: List all projects
 ###### Input
 |     Name    |   Type  | Necessary |  Default  |           Description          |
@@ -183,7 +182,6 @@
 |     500     | Error Object |               Internal Error               |
 
 ##### 3.3 `GET /Projects/:projectId` {#api_getProject}
-
 ###### Description: List the specified project information
 ###### Input
 |    Name   |  Type  | Necessary | Default |     Description     |
@@ -202,7 +200,6 @@
 |     500     | Error Object |             Internal Error             |
 
 ##### 3.4 `PUT /Projects/:projectId` {#api_updateProject}
-
 ###### Description: Update an existing project
 ###### Input
 |    Name   |  Type  | Necessary | Default |                          Description                         |
@@ -216,13 +213,12 @@
 |:-----------:|:------------:|:----------------------------------------:|
 |     200     |    Boolean   | If updated sucessfully, then return true |
 |     400     | Error Object |               Input Invalid              |
-|     401     | Error Object |  No Authorization or Token Tormat Error  |
+|     401     | Error Object |  No Authorization or Token Format Error  |
 |     403     | Error Object |             Permission Denied            |
 |     404     | Error Object |             Result Not Found             |
 |     500     | Error Object |              Internal Error              |
 
 ##### 3.5 `DELETE /Projects/:projectId` {#api_deleteProject}
-
 ###### Delete the specified project
 ###### Input
 |    Name   |  Type  | Necessary | Default |                          Description                         |
@@ -231,12 +227,11 @@
 | projectId | String |     v     |         |                          Project Id                          |
 
 ###### Output
-
 | Status Code |     Type     |                                      Description                                      |
 |:-----------:|:------------:|:-------------------------------------------------------------------------------------:|
 |     200     |     Array    | [SyncRes](otherModel.md#model_SyncRes) Object <br> Return each Scada status, which is in ProjectId |
 |     400     | Error Object |                                     Input Invalid                                     |
-|     401     | Error Object |                         No Authorization or Token Tormat Error                        |
+|     401     | Error Object |                         No Authorization or Token Format Error                        |
 |     403     | Error Object |                                   Permission Denied                                   |
 |     404     | Error Object |                                    Result Not Found                                   |
 |     500     | Error Object |                                     Internal Error                                    |
