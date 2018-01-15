@@ -9,7 +9,10 @@
 * IDE: [**Visual Studio Code**](https://code.visualstudio.com/)
 * Coding Style: [**JavaScript Semi-Standard Style**](https://github.com/Flet/semistandard)
   * VS Code Plugin: [**JavaScript Semistandard Style**](https://marketplace.visualstudio.com/items?itemName=flet.vscode-semistandard)
-* Version Control: [**GitLab**](http://advgitlab.eastasia.cloudapp.azure.com)
+* Version Control: Git
+  * [**Git for windows**](http://gitforwindows.org/)
+  * [**GitLab**](http://advgitlab.eastasia.cloudapp.azure.com/)
+  * [**TortoiseGit**](https://tortoisegit.org/)
 
 
 
