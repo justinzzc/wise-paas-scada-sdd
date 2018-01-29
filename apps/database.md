@@ -26,15 +26,12 @@
 
 * project\_list
 
-|  |  |  |  |  |  |
+| Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-|  |  |  |  |  |  |
+| proj\_id | varchar\(32\) | Y | Y | 專案識別名 | Y |
+| proj\_description | varchar\(256\) | N |  | 專案敘述 |  |
 
-\| Column Name \| Type  
- \| Not  Null \| PK \| Description \| Index \|  
-\| :--- \| :--- \| :--- \| :--- \| :--- \| :--- \|  
-\| proj\_id \| varchar\(32\) \| Y \| Y \| 專案識別名 \| Y \|  
-\| proj\_description \| varchar\(256\) \| N \|  \| 專案敘述 \|  \|
+
 
 * scada\_list
 
