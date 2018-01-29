@@ -138,21 +138,21 @@
 | ll\_priority | integer | Y |  | LL Priority |  |
 | ll\_alarm | double | Y |  | LL Alarm Limit |  |
 
-* tag\_discrete
+* alarm\_discrete
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
 | device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
 | tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
-| state\_0 | varchar\(32\) | Y |  | 狀態0 |  |
-| state\_1 | varchar\(32\) | Y |  | 狀態1 |  |
-| state\_2 | varchar\(32\) | Y |  | 狀態2 |  |
-| state\_3 | varchar\(32\) | Y |  | 狀態3 |  |
-| state\_4 | varchar\(32\) | Y |  | 狀態4 |  |
-| state\_5 | varchar\(32\) | Y |  | 狀態5 |  |
-| state\_6 | varchar\(32\) | Y |  | 狀態6 |  |
-| state\_7 | varchar\(32\) | Y |  | 狀態7 |  |
+| alarm\_priority\_0 | integer | Y |  | 警報狀態0 |  |
+| alarm\_priority\_1 | integer | Y |  | 警報狀態1 |  |
+| alarm\_priority\_2 | integer | Y |  | 警報狀態2 |  |
+| alarm\_priority\_3 | integer | Y |  | 警報狀態3 |  |
+| alarm\_priority\_4 | integer | Y |  | 警報狀態4 |  |
+| alarm\_priority\_5 | integer | Y |  | 警報狀態5 |  |
+| alarm\_priority\_6 | integer | Y |  | 警報狀態6 |  |
+| alarm\_priority\_7 | integer | Y |  | 警報狀態7 |  |
 
 * 
 
