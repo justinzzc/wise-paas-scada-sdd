@@ -1,4 +1,4 @@
-* [ ] # Database
+# Database
 
 ---
 
@@ -68,8 +68,8 @@
 | device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
 | tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
 | tag\_description | varchar\(256\) | N |  | 測點敘述 |  |
-| alarm\_status  | boolean | Y |  | 是否有警報屬性 |  |
-| tag\_type |  integer  | Y |  | 測點類型 |  |
+| alarm\_status | boolean | Y |  | 是否有警報屬性 |  |
+| tag\_type | integer | Y |  | 測點類型 |  |
 | array\_size | integer | Y |  | 陣列大小 |  |
 | data\_log | boolean | Y |  | 資料紀錄 |  |
 | read\_only | boolean | Y |  | 唯獨 |  |
