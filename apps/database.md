@@ -171,5 +171,16 @@
 | scope\_id | varchar\(32\) | Y | Y | 權限識別名 |  |
 | role\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
 
+scope\_role
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| user\_id |  integer | Y | Y | 權限識別名 | Y |
+| user\_name | varchar\(128\) | Y |  |  |  |
+| email | varchar\(256\) | N |  |  |  |
+| sso\_role | varchar\(32\) | N |  |  |  |
+| user\_description | varchar\(256\) | N |  |  |  |
+| create\_user  | integer | N |  |  |  |
+
 scada\_list
 
