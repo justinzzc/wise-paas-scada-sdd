@@ -213,7 +213,11 @@
 | param\_name | varchar\(32\) | Y | Y | 參數值 |  |
 | param\_value | varchar\(256\) | N |  |  |  |
 
-* user\_allow\_device
+* E-R Diagram
+
+1. Device Management
+
+![](/assets/deviceMangement.png)
 
 
 
