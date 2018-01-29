@@ -1,4 +1,4 @@
-# Database
+* [ ] # Database
 
 ---
 
@@ -46,6 +46,19 @@
 | heartbeat | integer | Y |  | 頻率 |  |
 | proj\_id | varchar\(32\) | N |  | 專案識別名 |  |
 | config\_uploaded | boolean | Y |  | 是否已上傳 |  |
+
+* device\_list
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
+| device\_id  | varchar\(256\) | Y | Y | 設備識別名 | Y |
+| device\_name  | varchar\(128\) | Y |  | 設備名稱 |  |
+| comport\_nbr | integer | N |  | 設備通訊埠 |  |
+| device\_description  | varchar\(256\) | N |  | 設備敘述 |  |
+| device\_ip  | varchar\(32\) | N |  | 設備IP |  |
+| device\_port | integer | N |  | 設備通訊埠 |  |
+| device\_type | varchar\(32\) | Y |  | 設備類型 |  |
 
 * 
 
