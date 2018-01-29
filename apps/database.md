@@ -175,12 +175,12 @@ scope\_role
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| user\_id |  integer | Y | Y | 權限識別名 | Y |
-| user\_name | varchar\(128\) | Y |  |  |  |
-| email | varchar\(256\) | N |  |  |  |
-| sso\_role | varchar\(32\) | N |  |  |  |
-| user\_description | varchar\(256\) | N |  |  |  |
-| create\_user  | integer | N |  |  |  |
+| user\_id | integer | Y | Y | 使用者ID\(自動編號\) | Y |
+| user\_name | varchar\(128\) | Y |  | 使用者名稱 |  |
+| email | varchar\(256\) | N |  | 使用者E-mail |  |
+| sso\_role | varchar\(32\) | N |  | SSO角色 |  |
+| user\_description | varchar\(256\) | N |  | 使用者敘述 |  |
+| create\_user | integer | N |  | 建立人員 |  |
 
 scada\_list
 
