@@ -1,3 +1,10 @@
+
+---
+
+---
+
+---
+
 # Database
 
 ---
@@ -150,7 +157,19 @@
 | role\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
 | role\_description | varchar\(256\) | N |  | 角色敘述 |  |
 
+* scope
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scope\_id | varchar\(32\) | Y | Y | 權限識別名 |  |
+| scope\_description | varchar\(256\) | N |  | 權限敘述 |  |
+
+* scope\_role
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scope\_id | varchar\(32\) | Y | Y | 權限識別名 |  |
+| role\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
+
 scada\_list
-
-
 
