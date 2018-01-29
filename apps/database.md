@@ -35,26 +35,18 @@
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| scada\_id | varchar\(36\) | Y | Y | 專案識別名 | Y |
-| scada\_name | varchar\(128\) | Y |  | 專案敘述 |  |
-| scada\_description | varchar\(256\) | N |  |  |  |
-| primary\_scada\_ip | varchar\(32\) | N |  |  |  |
-| primary\_scada\_port | integer | N |  |  |  |
-| backup\_scada\_ip | varchar\(32\) | N |  |  |  |
-| backup\_scada\_port | integer | N |  |  |  |
-| scada\_type | integer | Y |  |  |  |
-| heartbeat | integer | Y |  |  |  |
-| proj\_id | varchar\(32\) | N |  |  |  |
-| config\_uploaded | boolean | Y |  |  |  |
+| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
+| scada\_name | varchar\(128\) | Y |  | 節點名稱 |  |
+| scada\_description | varchar\(256\) | N |  | 節點敘述 |  |
+| primary\_scada\_ip | varchar\(32\) | N |  | 主要節點IP |  |
+| primary\_scada\_port | integer | N |  | 主要節點通訊埠 |  |
+| backup\_scada\_ip | varchar\(32\) | N |  | 次要節點IP |  |
+| backup\_scada\_port | integer | N |  | 次要節點通訊埠 |  |
+| scada\_type | integer | Y |  | 節點類型 |  |
+| heartbeat | integer | Y |  | 頻率 |  |
+| proj\_id | varchar\(32\) | N |  | 專案識別名 |  |
+| config\_uploaded | boolean | Y |  | 是否已上傳 |  |
 
-  
-
-
-* project\_list
-  | Column Name | Type | Not Null | PK | Description | Index |
-  | :--- | :--- | :--- | :--- | :--- | :--- |
-  | proj\_id | varchar\(32\) | Y | Y | 專案識別名 | Y |
-  | proj\_description | varchar\(256\) | N |  | 專案敘述 |  |
-
+* 
 
 
