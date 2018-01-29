@@ -226,6 +226,18 @@
 
 \(2\) Account Setting
 
+一個專案底下可以有多個節點\(Project: SCADA=1:m\)
+
+一個專案底下可以有多個設備\(Project: Device=1:m\)
+
+一個帳戶底下可以有多個專案\(User: Project=1:m\)
+
+一個帳戶底下可以有多個設備允許觀看的權限\(User: Allow\_Device=1:m\)
+
+一個帳戶可以多個權限組合不可重複\(User: Scope=1:m\)
+
+一個帳戶與權限組合不可重複
+
 ![](/assets/accseeting.png)
 
 \(3\) Role Setting
