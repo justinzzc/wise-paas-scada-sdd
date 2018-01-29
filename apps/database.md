@@ -198,7 +198,22 @@
 | scada\_id | varchar\(36\) | N | Y | 使用者E-mail | Y |
 | device\_id | varchar\(256\) | N | Y | SSO角色 | Y |
 
-* user\_scope
+* sys\_parameters
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| param\_name  | varchar\(32\) | Y | Y | 參數名稱 | Y |
+| param\_value | varchar\(256\) | Y | Y | 參數值 |  |
+
+* scada\_parameters
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scada\_id  | varchar\(36\) | Y | Y | 參數名稱 | Y |
+| param\_name  | varchar\(32\) | Y | Y | 參數值 |  |
+| param\_value | varchar\(256\) | N |  |  |  |
+
+* user\_allow\_device
 
 
 
