@@ -202,15 +202,15 @@
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| param\_name  | varchar\(32\) | Y | Y | 參數名稱 | Y |
+| param\_name | varchar\(32\) | Y | Y | 參數名稱 | Y |
 | param\_value | varchar\(256\) | Y | Y | 參數值 |  |
 
 * scada\_parameters
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| scada\_id  | varchar\(36\) | Y | Y | 參數名稱 | Y |
-| param\_name  | varchar\(32\) | Y | Y | 參數值 |  |
+| scada\_id | varchar\(36\) | Y | Y | 參數名稱 | Y |
+| param\_name | varchar\(32\) | Y | Y | 參數值 |  |
 | param\_value | varchar\(256\) | N |  |  |  |
 
 * user\_allow\_device
