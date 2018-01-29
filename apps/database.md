@@ -215,9 +215,11 @@
 
 * E-R Diagram
 
-1. Device Management
+\(1\) Device Management
 
 ![](/assets/deviceMangement.png)
 
+\(2\) Account Setting
 
+\(3\) Role Setting
 
