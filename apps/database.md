@@ -218,6 +218,10 @@
 
 一個設備底下可以有多個測點\(Device: Tag=1:m\)
 
+一個測點底下必須有一個測點類型細項\(Tag: Analog/Discrete/Text=1:1\)
+
+一個"警報類比"/"警報離散"測點底下有一個測點警報細項\(Tag: Analog/Discrete/Text=1:1\)
+
 ![](/assets/deviceMangement.png)
 
 \(2\) Account Setting
