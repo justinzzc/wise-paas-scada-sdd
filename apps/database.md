@@ -143,6 +143,14 @@
 | alarm\_priority\_6 | integer | Y |  | 警報狀態6 |  |
 | alarm\_priority\_7 | integer | Y |  | 警報狀態7 |  |
 
-* 
+* role
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| role\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
+| role\_description | varchar\(256\) | N |  | 角色敘述 |  |
+
+scada\_list
+
 
 
