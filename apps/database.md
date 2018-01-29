@@ -24,6 +24,29 @@
 | 16 | sys\_parameters | 系統參數 |
 | 17 | scada\_parameters | 節點參數 |
 
+* project\_list
+
+| Column Name | Type | Not  Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| proj\_id | varchar\(32\) | Y | Y | 專案識別名 | Y |
+| proj\_description | varchar\(256\) | N |  | 專案敘述 |  |
+
+* scada\_list
+
+| Column Name | Type | Not  Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scada\_id | varchar\(36\) | Y | Y | 專案識別名 | Y |
+| scada\_name | varchar\(128\) | Y |  |  |  |
+| scada\_description | varchar\(256\) | N |  |  |  |
+| primary\_scada\_ip  | varchar\(32\) | N |  |  |  |
+| primary\_scada\_port  |  integer  | N |  |  |  |
+| backup\_scada\_ip | varchar\(32\) | N |  |  |  |
+| backup\_scada\_port |  integer  | N |  |  |  |
+| scada\_type  |  integer  | N |  |  |  |
+| heartbeat  |  integer  | N |  |  |  |
+| proj\_id | varchar\(32\) | N |  |  |  |
+| config\_uploaded | boolean | N |  |  |  |
+
 * 
 
 
