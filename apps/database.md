@@ -182,14 +182,23 @@
 | user\_description | varchar\(256\) | N |  | 使用者敘述 |  |
 | create\_user | integer | N |  | 建立人員 |  |
 
-user\_scope
+* user\_scope
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | user\_id | integer | Y | Y | 權限識別名 | Y |
 | scope\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
 
-* scope\_role
+* user\_allow\_device
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| user\_id | integer | Y | Y | 使用者ID\(自動編號\) | Y |
+| proj\_id | varchar\(32\) | Y | Y | 使用者名稱 | Y |
+| scada\_id | varchar\(36\) | N | Y | 使用者E-mail | Y |
+| device\_id | varchar\(256\) | N | Y | SSO角色 | Y |
+
+* user\_scope
 
 
 
