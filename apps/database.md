@@ -208,7 +208,15 @@
 
 * E-R Diagram
 
-\(1\) Device Management
+\(1\) Device Management:
+
+設備管理主要分為四層:專案層-&gt;節點層-&gt;設備層-&gt;測點層
+
+一個專案底下可以有多個節點\(Project: SCADA=1:m\)
+
+一個節點底下可以有多個設備\(SCADA: Device=1:m\)
+
+一個設備底下可以有多個測點\(Device: Tag=1:m\)
 
 ![](/assets/deviceMangement.png)
 
