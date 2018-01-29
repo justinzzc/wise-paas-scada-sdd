@@ -171,7 +171,7 @@
 | scope\_id | varchar\(32\) | Y | Y | 權限識別名 |  |
 | role\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
 
-scope\_role
+* scope\_role
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -182,5 +182,14 @@ scope\_role
 | user\_description | varchar\(256\) | N |  | 使用者敘述 |  |
 | create\_user | integer | N |  | 建立人員 |  |
 
-scada\_list
+user\_scope
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| user\_id | integer | Y | Y | 權限識別名 | Y |
+| scope\_id | varchar\(32\) | Y | Y | 角色識別名 |  |
+
+* scope\_role
+
+
 
