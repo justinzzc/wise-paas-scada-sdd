@@ -74,6 +74,20 @@
 | data\_log | boolean | Y |  | 資料紀錄 |  |
 | read\_only | boolean | Y |  | 唯獨 |  |
 
-* 
+* tag\_analog
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
+| device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
+| tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
+| eng\_unit  | varchar\(256\) | Y |  | 工程單位 |  |
+| span\_high | double | Y |  | 最高量程 |  |
+| span\_low | double | Y |  | 最低量程 |  |
+| int\_dsp\_fmt | integer | Y |  | 整數位數 |  |
+| fra\_dsp\_fmt  | integer | Y |  | 小數點位數 |  |
+
+
+
 
 
