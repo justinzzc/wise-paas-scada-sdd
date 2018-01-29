@@ -221,5 +221,7 @@
 
 \(2\) Account Setting
 
+![](/assets/accseeting.png)
+
 \(3\) Role Setting
 
