@@ -116,6 +116,38 @@
 | device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
 | tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
 
+* alarm\_analog
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
+| device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
+| tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
+| hh\_priority | integer | Y |  | 工程單位 |  |
+| hh\_alarm  | double | Y |  | 最高量程 |  |
+| hi\_priority | integer | Y |  | 最低量程 |  |
+| hi\_alarm  | double | Y |  | 整數位數 |  |
+| lo\_priority  | integer | Y |  | 小數點位數 |  |
+| lo\_alarm  | double | Y |  |  |  |
+| ll\_priority | integer | Y |  |  |  |
+| ll\_alarm  | double | Y |  |  |  |
+
+* tag\_discrete
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
+| device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
+| tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
+| state\_0 | varchar\(32\) | Y |  | 狀態0 |  |
+| state\_1 | varchar\(32\) | Y |  | 狀態1 |  |
+| state\_2 | varchar\(32\) | Y |  | 狀態2 |  |
+| state\_3 | varchar\(32\) | Y |  | 狀態3 |  |
+| state\_4 | varchar\(32\) | Y |  | 狀態4 |  |
+| state\_5 | varchar\(32\) | Y |  | 狀態5 |  |
+| state\_6 | varchar\(32\) | Y |  | 狀態6 |  |
+| state\_7 | varchar\(32\) | Y |  | 狀態7 |  |
+
 * 
 
 
