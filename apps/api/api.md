@@ -147,6 +147,15 @@
 * 判斷loopback物件中是否有包含key name
 * return: boolean
 
+##### 3.13.1.1 hasSpecial
+
+* 判斷字串裡是否包含特殊字元
+* return: boolean
+
+##### 3.13.1.1 getUserNameByToken \(token\)
+
+* 將SSO Token透過jwt.decode取得userName，若是測試且繞過SSO驗證則直接使用const.js裡定義的email
+
 ### 3.14 SyncRes
 
 #### 3.14.1 Models
