@@ -83,17 +83,17 @@
 
 #### 3.13.1 Functions
 
-##### 3.13.1.1 isValueExist
+##### 3.13.1.1 isValueExist \(val\)
 
 * 判斷輸入值是否為`undefined`, `null`, `''` ，若是則回傳false。
 * return: boolean
 
-##### 3.13.1.1 disableAllMethodsBut
+##### 3.13.1.1 disableAllMethodsBut \(model, exposeMethods\)
 
 * \[NEED REVIEW\] 將loopback model提供的預設remote method全部關閉，例如deleteById, updateAttributes等等，只允許自訂的remoteMethod。
 * 詳情請參考[https://github.com/strongloop/loopback/issues/651](https://github.com/strongloop/loopback/issues/651 "Disable all remote methods and enable only selected ones \(white-list\) \#651")
 
-##### 3.13.1.1 isObject
+##### 3.13.1.1 isObject \(obj\)
 
 * `return (obj && obj.constructor && obj.constructor === Object);`
 
@@ -107,12 +107,12 @@
 * 檢查IPV4的格式是否正確。
 * return: boolean
 
-##### 3.13.1.1 isEmpty
+##### 3.13.1.1 isEmpty \(obj\)
 
 * 檢查物件是否為空，利用null/length/typeof/hasOwnProperty來判斷。
 * return: boolean
 
-##### 3.13.1.1 isEmptylbObj
+##### 3.13.1.1 isEmptylbObj \(lbObj\)
 
 * 判斷傳入的loopback物件是否為空
 * return: boolean
@@ -125,14 +125,14 @@
   * 是不是跟hasValue重複?
   * 有需要加上hasOwnProperty嗎?
 
-##### 3.13.1.1 isInt
+##### 3.13.1.1 isInt \(n\)
 
 * 判斷是否為Int
 * return: boolean
 
 ##### 3.13.1.1 formatRegexpFilter {#function_formatRegexpFilter}
 
-##### 3.13.1.1 isOrder
+##### 3.13.1.1 isOrder \(str\)
 
 * 判斷字串中是否包含ASC或DESC
 
@@ -147,7 +147,7 @@
 * 判斷loopback物件中是否有包含key name
 * return: boolean
 
-##### 3.13.1.1 hasSpecial
+##### 3.13.1.1 hasSpecial \(str\)
 
 * 判斷字串裡是否包含特殊字元
 * return: boolean
