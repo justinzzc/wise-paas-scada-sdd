@@ -8,3 +8,9 @@ Q:  DeviceShadow透過connQueue觸發時，如果流程走到deviceShadow.turnOn
 
 
 
+Q: 請說明Ground Device / RabbitMQ / MQTT / AMQP / Dataworker之間的關係
+
+* Ans: 地面端設備用MQTT傳送data/config/conn三種msg到RabbitMQ，如果msg是data或config類型，則會將msg轉存到AMQP Queue裡，此時Dataworker裡的dataQueue和ConfigQueue會去抓取該Queue裡的msg，而connQueue則是直接接收MQTT msg，因為多節點的dataworker環境下，如果連線狀態用queue機制，會造成誤判的情況。
+
+
+
