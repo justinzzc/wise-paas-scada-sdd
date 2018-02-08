@@ -7,6 +7,7 @@
 * [APPs](apps.md)
   * [DataWorker](apps/dataworker.md)
     * [Overview](apps/dataworker/overview.md)
+    * [FAQ](apps/dataworker/faq.md)
   * [API](apps/api/api.md)
     * [Overview](apps/api/api.md)
     * [Directory Tree](apps/api/directoryTree.md)
@@ -30,6 +31,4 @@
     * [Device Management](apps/portal/deviceManagement.md)
   * [ETL](apps/etl.md)
   * [Database](apps/database.md)
-
-
 
