@@ -7,8 +7,8 @@
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
-| ref\_scada\_id | varchar\(36\) | Y | Y | 參考測點的scada\_id | Y |
-| ref\_device\_id | varchar\(256\) | Y | Y | 參考測點的device\_id | Y |
+| ref\_scada\_id | varchar\(36\) | Y | Y | 參考測點的節點識別碼 | Y |
+| ref\_device\_id | varchar\(256\) | Y | Y | 參考測點的設備識別名 | Y |
 | ref\_tag\_name | varchar\(128\) | Y | Y | 參考測點名稱 | Y |
 
 * event\_log\_list
@@ -17,8 +17,8 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
 | event\_description | varchar\(256\) | N |  | 事件描述 |  |
-| scada\_id | varchar\(36\) | Y |  | 事件測點的scada\_id |  |
-| device\_id | varchar\(256\) | Y |  | 事件測點的device\_id |  |
+| scada\_id | varchar\(36\) | Y |  | 事件測點的節點識別碼 |  |
+| device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |
 | event\_type | varchar\(128\) | Y |  | 事件類型 | Y |
 | event\_ref\_value | double | Y |  | 參考值 |  |
