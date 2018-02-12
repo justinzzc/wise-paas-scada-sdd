@@ -11,8 +11,6 @@
 | ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |
 | ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |
 
-
-
 * event\_log\_record \(紀錄測點\)
 
 | Column Name | Type | Not Null | PK | Description | Index |
@@ -65,6 +63,8 @@
 
 ### Question
 
+##### archived Question
+
 * 選擇參考測點時，是限定同一scada裡的tag嗎
   * yes
 * 事件類型的種類有幾種?應該是只有兩種? \(&gt;=和&lt;=\)
@@ -73,17 +73,19 @@
   * 遲滯範圍
 * 有需要做到編輯event log的參考測點嗎?
   * 要，新增跟刪除
-* 要如何增加參考測點 \(UI\)?
-  * 待討論
-* 事件之後紀錄之取樣數量&持續記錄，是可以指定取樣數量且同時選擇持續記錄嗎?
+* 事  件之後紀錄之取樣數量&持續記錄，是可以指定取樣數量且同時選擇持續記錄嗎?
   * 不行，只能二選一
   * 如果取樣數量設3
     * 連續觸發event的話，會取樣3個區間，直到重新觸發event後才會再取樣3次
   * 選擇持續記錄
     * 只要持續觸發event，就依照取樣間隔持續log
-* 事件測點參考測點和記錄測點
-  * 事件測點:紀錄測點 = 1:m
-  * 事件測點:參考測點 = m:1
+
+##### in progress
+
+* 要如何增加參考測點 \(UI\)
+  * 待討論
+
+* 我想說 event\_log\_list 的primary key 你覺得 加上scadaId如何?  不然都不能取重複名稱XD
 
 ### Note
 
