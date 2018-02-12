@@ -40,8 +40,6 @@
 | unit\_id |  |  |  |  |  |
 | unit\_description |  |  |  |  |  |
 
-
-
 ### API
 
 * Set
@@ -55,7 +53,7 @@
 
 ### Question
 
-* event log是限定同一scada裡的所有tag嗎
+* 選擇參考測點時，是限定同一scada裡的tag嗎
 * 事件類型的種類有幾種?應該是只有兩種? \(&gt;=和&lt;=\)
 * 和益開會時好像有在設定畫面裡拿掉幾個欄位? ex. 遲滯範圍
 * 有需要做到編輯event log的參考測點嗎?
