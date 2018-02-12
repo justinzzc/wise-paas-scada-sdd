@@ -20,7 +20,7 @@
 | scada\_id | varchar\(36\) | Y |  | 事件測點的scada\_id |  |
 | device\_id | varchar\(256\) | Y |  | 事件測點的device\_id |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |
-| event\_type | varchar\(128\) | Y |  | 事件類型 |  |
+| event\_type | varchar\(128\) | Y |  | 事件類型 | Y |
 | event\_ref\_value | double | Y |  | 參考值 |  |
 | event\_sample\_interval | integer | Y |  | 取樣間隔 |  |
 | event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |
@@ -31,15 +31,15 @@
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| type\_id | varchar |  |  |  |  |
-| type\_description | varchar |  |  |  |  |
+| event\_type | varchar\(128\) | Y | Y | 事件類型 | Y |
+| type\_description | varchar\(256\) | Y |  | 事件類型描述 \(顯示於UI\) |  |
 
 * event\_unit\_option
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| unit\_id |  |  |  |  |  |
-| unit\_description |  |  |  |  |  |
+| event\_sample\_unit | varchar\(36\) | Y | Y | 取樣間隔單位 | Y |
+| unit\_description | varchar\(36\) | Y |  | 取樣間隔單位描述\(顯示於UI\) |  |
 
 ### API
 
