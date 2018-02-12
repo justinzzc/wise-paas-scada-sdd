@@ -49,7 +49,7 @@
   * deleteRefTag
 * Get
   * getEvents
-  * getRefTagCountOfEvent
+  * \_getRefTagCountOfEvent
   * getEventbyScada
 
 ### Question
