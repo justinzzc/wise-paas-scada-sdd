@@ -31,4 +31,6 @@
     * [Device Management](apps/portal/deviceManagement.md)
   * [ETL](apps/etl.md)
   * [Database](apps/database.md)
+* [未分類](wei-fen-lei.md)
+  * [Event log開發文件](wei-fen-lei/test.md)
 
