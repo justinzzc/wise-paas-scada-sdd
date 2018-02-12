@@ -23,7 +23,7 @@
 | event\_type | varchar\(128\) | Y |  | 事件類型 | Y |
 | event\_ref\_value | double | Y |  | 參考值 |  |
 | event\_sample\_interval | integer | Y |  | 取樣間隔 |  |
-| event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |
+| event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 | Y |
 | event\_sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |
 | event\_sample\_keep\_log | boolean | Y |  | 持續記錄 |  |
 
