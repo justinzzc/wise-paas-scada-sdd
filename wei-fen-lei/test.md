@@ -6,26 +6,26 @@
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_name | varchar |  |  |  |  |
-| scada\_id | varchar |  |  |  |  |
-| device\_id |  |  |  |  |  |
-| tag\_name |  |  |  |  |  |
+| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
+| ref\_scada\_id | varchar\(36\) | Y | Y | 參考測點的scada\_id | Y |
+| ref\_device\_id | varchar\(256\) | Y | Y | 參考測點的device\_id | Y |
+| ref\_tag\_name | varchar\(128\) | Y | Y | 參考測點名稱 | Y |
 
 * event\_log\_list
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_name |  |  |  |  |  |
-| event\_description |  |  |  |  |  |
-| scada\_id |  |  |  |  |  |
-| device\_id |  |  |  |  |  |
-| tag\_name |  |  |  |  |  |
-| event\_type |  |  |  |  |  |
-| event\_ref\_value |  |  |  |  |  |
-| event\_sample\_interval |  |  |  |  |  |
-| event\_sample\_unit |  |  |  |  |  |
-| event\_sample\_amount |  |  |  |  |  |
-| event\_sample\_keep\_log |  |  |  |  |  |
+| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
+| event\_description | varchar\(256\) | N |  | 事件描述 |  |
+| scada\_id | varchar\(36\) | Y |  | 事件測點的scada\_id |  |
+| device\_id | varchar\(256\) | Y |  | 事件測點的device\_id |  |
+| tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |
+| event\_type | varchar\(128\) | Y |  | 事件類型 |  |
+| event\_ref\_value | double | Y |  | 參考值 |  |
+| event\_sample\_interval | integer | Y |  | 取樣間隔 |  |
+| event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |
+| event\_sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |
+| event\_sample\_keep\_log | boolean | Y |  | 持續記錄 |  |
 
 * event\_type\_option
 
