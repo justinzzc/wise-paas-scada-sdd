@@ -2,14 +2,25 @@
 
 ### DB Schema
 
-* event\_log\_ref
+* event\_log\_ref \(參考測點\)
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
-| ref\_scada\_id | varchar\(36\) | Y | Y | 參考測點的節點識別碼 | Y |
-| ref\_device\_id | varchar\(256\) | Y | Y | 參考測點的設備識別名 | Y |
-| ref\_tag\_name | varchar\(128\) | Y | Y | 參考測點名稱 | Y |
+| ref\_scada\_id | varchar\(36\) | Y |  | 參考測點的節點識別碼 |  |
+| ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |
+| ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |
+
+
+
+* event\_log\_record \(紀錄測點\)
+
+| Column Name | Type | Not Null | PK | Description | Index |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
+| record\_scada\_id | varchar\(36\) | Y | Y | 紀錄測點的節點識別碼 | Y |
+| record\_device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |
+| record\_tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |
 
 * event\_log\_list
 
@@ -70,6 +81,9 @@
     * 連續觸發event的話，會取樣3個區間，直到重新觸發event後才會再取樣3次
   * 選擇持續記錄
     * 只要持續觸發event，就依照取樣間隔持續log
+* 事件測點參考測點和記錄測點
+  * 事件測點:紀錄測點 = 1:m
+  * 事件測點:參考測點 = m:1
 
 ### Note
 
