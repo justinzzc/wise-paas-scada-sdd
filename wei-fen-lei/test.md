@@ -33,10 +33,15 @@
 ### [API](#event-log-api) {#event-log-api}
 
 * **create**
-  * createEventLog
-    * 建立事件紀錄
-  * addRecordTag
-    * 新增紀錄測點
+  * way 1
+    * createEventLog
+      * 建立事件紀錄
+    * addRecordTagByEvent
+      * 新增紀錄測點
+  * way 2
+    * createEventLog
+      * 包含紀錄測點一起帶給這支api
+
 * **read**
   * getEventLog
     * 得到所有的事件紀錄，會附加每個event的詳細資訊
