@@ -32,14 +32,24 @@
 
 ### API
 
-* Set
-  * createEvent
-  * addRefTag
-  * deleteRefTag
-* Get
-  * getEvents
-  * \_getRefTagCountOfEvent
-  * getEventbyScada
+* create
+  * createEventLog
+    * 建立事件紀錄
+  * addRecordTag
+    * 新增紀錄測點
+* read
+  * getEventLog
+    * 得到所有的事件紀錄，會附加每個event的詳細資訊
+  * getRecordTagByEvent
+    * 得到事件紀錄下的紀錄測點
+* update
+  * updateEventLog
+    * 更新事件紀錄的設定細節
+* delete
+  * deleteEventLogByName
+    * 據事件紀錄名稱來刪除事件
+  * deleteRecordTagByEvent
+    * 刪除某事件底下的所有紀錄測點
 
 ### Question
 
