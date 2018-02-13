@@ -103,6 +103,8 @@
 ### TODO
 
 * scada-dbmanager
+* api interface
+* flyway
 
 ### 
 
