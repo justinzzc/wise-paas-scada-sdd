@@ -30,7 +30,7 @@
 | event\_sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |
 | event\_sample\_keep\_log | boolean | Y |  | 持續記錄 |  |
 
-### API
+### API {#event-log-api}
 
 * **create**
   * createEventLog
@@ -101,8 +101,11 @@
   * 但這兩個是二選一的關係，所以用程式去控制
 
 * 像是event\_type/event\_sample\_unit這種選項類型的欄位，想要定義在server side，前端再用api撈
+
   * 避免前後端都需要維護同一組設定
   * 避免存再DB，造成效能降低與資料表變多
+
+* 新增事件紀錄時，是要所有資訊都放再同一表單一同用一支api來傳，還是先建立事件紀錄，再新增紀錄測點呢?
 
 ### Note
 
