@@ -20,13 +20,13 @@
 | scada\_id | varchar\(36\) | Y |  | 事件測點的節點識別碼 |  |
 | device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |
-| event\_type | varchar\(128\) | Y |  | 事件類型 | Y |
+| event\_type | varchar\(128\) | Y |  | 事件類型 |  |
 | event\_ref\_value | double | Y |  | 參考值 |  |
 | ref\_scada\_id | varchar\(36\) | Y |  | 參考測點的節點識別碼 |  |
 | ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |
 | ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |
 | event\_sample\_interval | integer | Y |  | 取樣間隔 |  |
-| event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 | Y |
+| event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |
 | event\_sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |
 | event\_sample\_keep\_log | boolean | Y |  | 持續記錄 |  |
 
