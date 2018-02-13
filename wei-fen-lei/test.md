@@ -32,20 +32,22 @@
 
 ### API
 
-* create
+* **create**
   * createEventLog
     * 建立事件紀錄
   * addRecordTag
     * 新增紀錄測點
-* read
+* **read**
   * getEventLog
     * 得到所有的事件紀錄，會附加每個event的詳細資訊
   * getRecordTagByEvent
     * 得到事件紀錄下的紀錄測點
-* update
+  * getLogByEvent
+    * 對應投影片裡的查詢表單設計的api
+* **update**
   * updateEventLog
     * 更新事件紀錄的設定細節
-* delete
+* **delete**
   * deleteEventLogByName
     * 據事件紀錄名稱來刪除事件
   * deleteRecordTagByEvent
