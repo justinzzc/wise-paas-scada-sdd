@@ -100,6 +100,10 @@
 
   * 但這兩個是二選一的關係，所以用程式去控制
 
+* 像是event\_type/event\_sample\_unit這種選項類型的欄位，想要定義在server side，前端再用api撈
+  * 避免前後端都需要維護同一組設定
+  * 避免存再DB，造成效能降低與資料表變多
+
 ### Note
 
 * Portal
