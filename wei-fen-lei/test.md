@@ -30,7 +30,7 @@
 | event\_sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |
 | event\_sample\_keep\_log | boolean | Y |  | 持續記錄 |  |
 
-### API {#event-log-api}
+### [API](#event-log-api) {#event-log-api}
 
 * **create**
   * createEventLog
