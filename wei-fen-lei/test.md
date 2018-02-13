@@ -100,5 +100,11 @@
 * 如何利用上述schema將判斷是要用參考值或是參考測點?
   * 用event\_type來做
 
+### TODO
+
+* scada-dbmanager
+
+### 
+
 
 
