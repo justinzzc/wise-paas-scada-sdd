@@ -78,6 +78,20 @@
   * 選擇持續記錄
     * 只要持續觸發event，就依照取樣間隔持續log
 
+* 事件類型的種類有幾種?
+
+  * * 2類共4種
+
+    * 類型
+
+      * 事件測點跟參考測點相比
+
+      * 事件測點跟參考值相比
+
+* event\_sample\_amount和event\_sample\_keep\_log都設not null
+
+  * * 但這兩個是二選一的關係，所以用程式去控制
+
 ##### in progress
 
 * 要如何增加參考測點 \(UI\)
@@ -85,20 +99,6 @@
   * 待討論
 
 * 我想說 event\_log\_list 的primary key 你覺得 加上scadaId如何?不然都不能取重複名稱XD
-
-* 事件類型的種類有幾種?
-
-  * 2類共4種
-
-  * 類型
-
-    * 事件測點跟參考測點相比
-
-    * 事件測點跟參考值相比
-
-* event\_sample\_amount和event\_sample\_keep\_log都設not null
-
-  * 但這兩個是二選一的關係，所以用程式去控制
 
 * 像是event\_type/event\_sample\_unit這種選項類型的欄位，想要定義在server side，前端再用api撈
 
@@ -109,13 +109,6 @@
 
 ### Note
 
-* Portal
-  * 設定
-    * API
-    * UI
-  * 查詢
-    * API
-    * UI
 * 如何利用上述schema將判斷是要用參考值或是參考測點?
   * 用event\_type來做
 
