@@ -2,8 +2,6 @@
 
 ### DB Schema
 
-討論: 要兩張表\(如下\)，還是再分成4張表，事件測點/紀錄測點/參考測點/參考值
-
 * event\_log\_record \(紀錄測點\)
 
 | Column Name | Type | Not Null | PK | Description | Index |
