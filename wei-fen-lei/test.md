@@ -2,15 +2,6 @@
 
 ### DB Schema
 
-* event\_log\_ref \(參考測點\)
-
-| Column Name | Type | Not Null | PK | Description | Index |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
-| ref\_scada\_id | varchar\(36\) | Y |  | 參考測點的節點識別碼 |  |
-| ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |
-| ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |
-
 * event\_log\_record \(紀錄測點\)
 
 | Column Name | Type | Not Null | PK | Description | Index |
@@ -20,7 +11,7 @@
 | record\_device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |
 | record\_tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |
 
-* event\_log\_list
+* event\_log\_list \(事件測點和參考測點\)
 
 | Column Name | Type | Not Null | PK | Description | Index |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -31,24 +22,13 @@
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |
 | event\_type | varchar\(128\) | Y |  | 事件類型 | Y |
 | event\_ref\_value | double | Y |  | 參考值 |  |
+| ref\_scada\_id | varchar\(36\) | Y |  | 參考測點的節點識別碼 |  |
+| ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |
+| ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |
 | event\_sample\_interval | integer | Y |  | 取樣間隔 |  |
 | event\_sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 | Y |
 | event\_sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |
 | event\_sample\_keep\_log | boolean | Y |  | 持續記錄 |  |
-
-* event\_type\_option
-
-| Column Name | Type | Not Null | PK | Description | Index |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_type | varchar\(128\) | Y | Y | 事件類型 | Y |
-| type\_description | varchar\(256\) | Y |  | 事件類型描述 \(顯示於UI\) |  |
-
-* event\_unit\_option
-
-| Column Name | Type | Not Null | PK | Description | Index |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_sample\_unit | varchar\(36\) | Y | Y | 取樣間隔單位 | Y |
-| unit\_description | varchar\(36\) | Y |  | 取樣間隔單位描述\(顯示於UI\) |  |
 
 ### API
 
@@ -77,8 +57,9 @@
 
   * 要，新增跟刪除
 
-* 事
+* 事  
   件之後紀錄之取樣數量&持續記錄，是可以指定取樣數量且同時選擇持續記錄嗎?
+
   * 不行，只能二選一
   * 如果取樣數量設3
     * 連續觸發event的話，會取樣3個區間，直到重新觸發event後才會再取樣3次
