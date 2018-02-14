@@ -4,13 +4,13 @@
 
 * event\_log\_record \(紀錄測點\)
 
-| Column Name | Type | Not Null | PK | Description | Index |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |
-| scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 | Y |
-| record\_scada\_id | varchar\(36\) | Y | Y | 紀錄測點的節點識別碼 | Y |
-| record\_device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |
-| record\_tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |
+| Column Name | Type | Not Null | PK | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
+| scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 | Y |  |
+| record\_scada\_id | varchar\(36\) | Y | Y | 紀錄測點的節點識別碼 | Y |  |
+| record\_device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |  |
+| record\_tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
 
 * event\_log\_list \(事件測點和參考測點\)
 
@@ -52,6 +52,7 @@
     * 更新事件紀錄的設定細節
 
 * **delete**
+
   * deleteEventLogByName
     * 據事件紀錄名稱來刪除事件
   * deleteRecordTagByEvent
