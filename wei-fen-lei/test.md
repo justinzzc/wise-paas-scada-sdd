@@ -39,15 +39,12 @@
     * 包含紀錄測點一起帶給這支api
     * 紀錄測點為array, 可以為空
       * 空的話就只記錄本身\(事件測點\)的值
+  * addRecordTag
 
 * **read**
 
   * getEventLog
     * 得到所有的事件紀錄，會附加每個event的詳細資訊
-  * getRecordTagByEvent
-    * 得到事件紀錄下的紀錄測點
-  * getLogByEvent
-    * 對應投影片裡的查詢表單設計的api
 
 * **update**
 
@@ -56,9 +53,9 @@
 
 * **delete**
 
-  * deleteEventLogByName
+  * deleteEventLo
     * 據事件紀錄名稱來刪除事件
-  * deleteRecordTagByEvent
+  * deleteRecordTag
     * 刪除某事件底下的所有紀錄測點
 
 ### Question
