@@ -3,6 +3,7 @@
 ### DB Schema
 
 * event\_log\_record \(紀錄測點\)
+  * 5\#
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -13,21 +14,22 @@
 | record\_tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
 
 * event\_log\_list \(事件測點和參考測點\)
+  * 12\#
 
-| \# | Column Name | Type | Not Null | PK | Description | Index | Notes |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
-| 2 | scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 | Y |  |
-| 3 | event\_description | varchar\(256\) | N |  | 事件描述 |  |  |
-| 4 | device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
-| 5 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
-| 6 | event\_type | integer | Y |  | 事件類型 |  | 值:{1,2,3,4} |
-| 7 | ref\_value | double | Y |  | 參考值 |  |  |
-| 8 | ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |  |
-| 9 | ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |  |
-| 10 | sample\_interval | integer | Y |  | 取樣間隔 |  |  |
-| 11 | sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |  |
-| 12 | sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
+| Column Name | Type | Not Null | PK | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
+| scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 | Y |  |
+| event\_description | varchar\(256\) | N |  | 事件描述 |  |  |
+| device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
+| tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
+| event\_type | integer | Y |  | 事件類型 |  | 值:{1,2,3,4} |
+| ref\_value | double | Y |  | 參考值 |  |  |
+| ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |  |
+| ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |  |
+| sample\_interval | integer | Y |  | 取樣間隔 |  |  |
+| sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |  |
+| sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
 
 ### [API](#event-log-api) {#event-log-api}
 
