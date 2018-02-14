@@ -27,8 +27,7 @@
 | ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |  |
 | sample\_interval | integer | Y |  | 取樣間隔 |  |  |
 | sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |  |
-| sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  |  |
-| sample\_keep\_log | boolean | Y |  | 持續記錄 |  |  |
+| sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
 
 ### [API](#event-log-api) {#event-log-api}
 
@@ -48,8 +47,10 @@
     * 對應投影片裡的查詢表單設計的api
 
 * **update**
+
   * updateEventLog
     * 更新事件紀錄的設定細節
+
 * **delete**
   * deleteEventLogByName
     * 據事件紀錄名稱來刪除事件
@@ -98,13 +99,12 @@
 
   * ok, 把eventname和scada\_id都設pk
 
-* 新  增事件紀錄時，是要所有資訊都放再同一表單一同用一支api來傳，還是先建立事件紀錄，再新增紀錄測點呢?
+* 新  
+  增事件紀錄時，是要所有資訊都放再同一表單一同用一支api來傳，還是先建立事件紀錄，再新增紀錄測點呢?
 
   * 同一支api一起建就好
 
 ##### in progress
-
-
 
 ### Note
 
