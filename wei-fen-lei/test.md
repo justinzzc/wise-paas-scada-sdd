@@ -3,7 +3,7 @@
 ### DB Schema
 
 * event\_log\_record \(紀錄測點\)
-  * 5\#
+  * 4\#
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
