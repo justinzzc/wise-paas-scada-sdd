@@ -22,10 +22,10 @@
 | event\_description | varchar\(256\) | N |  | 事件描述 |  |  |
 | device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
-| event\_type | integer | Y |  | 事件類型 |  | 值:{1,2,3,4} |
-| ref\_value | double | Y |  | 參考值 |  |  |
-| ref\_device\_id | varchar\(256\) | Y |  | 參考測點的設備識別名 |  |  |
-| ref\_tag\_name | varchar\(128\) | Y |  | 參考測點名稱 |  |  |
+| event\_type | integer | Y |  | 事件類型 |  | 值:{1:&gt;=,2:&lt;=,3:“&gt;= tag value,4:“&lt;= tag value} |
+| ref\_value | double | N |  | 參考值 |  |  |
+| ref\_device\_id | varchar\(256\) | N |  | 參考測點的設備識別名 |  |  |
+| ref\_tag\_name | varchar\(128\) | N |  | 參考測點名稱 |  |  |
 | sample\_interval | integer | Y |  | 取樣間隔 |  |  |
 | sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |  |
 | sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
