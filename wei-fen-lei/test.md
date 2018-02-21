@@ -117,6 +117,9 @@
 * scada-dbmanager
 * api interface
 * flyway
+* event log存取權限
+  * get\_value
+  * 編輯先pending \(待討論\)
 
 ### 
 
