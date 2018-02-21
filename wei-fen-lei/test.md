@@ -43,7 +43,7 @@
 
 * **read**
 
-  * getEventLog
+  * \[GET\] /eventLogs/info - Eventlog.listAllEventLogInfo
     * 得到所有的事件紀錄，會附加每個event的詳細資訊
 
 * **update**
