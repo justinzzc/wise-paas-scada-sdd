@@ -122,12 +122,10 @@
   * 刪除
     * portal API刪除事件
       * mongo要根據scadaid和event\_name刪除相關資料
-        * 不然之後若有同scada_id+event_name的資料會撈出舊資料
+        * 不然之後若有同scada\_id+event\_name的資料會撈出舊資料
     * portal API刪除紀錄測點
       * mongo要根據scadaid/event\_name/device\_id/tag\_name刪除相關資料
         * 同上，不刪除相關資料會抓到舊資料
-* 前端怎麼處理紀錄測點改變的情況
-  * ex. time1時是10個紀錄測點，但time2時變成2個季錄測點
 
 ### TODO
 
