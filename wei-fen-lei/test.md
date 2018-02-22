@@ -19,7 +19,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
 | scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 | Y |  |
-| event\_description | varchar\(256\) | N |  | 事件描述 |  |  |
+| description | varchar\(256\) | N |  | 事件描述 |  |  |
 | device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
 | event\_type | integer | Y |  | 事件類型 |  | 值:{1:&gt;=,2:&lt;=,3:“&gt;= tag value,4:“&lt;= tag value} |
