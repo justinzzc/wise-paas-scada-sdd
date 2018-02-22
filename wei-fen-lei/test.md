@@ -123,6 +123,7 @@
 * event log存取權限
   * get\_value
   * 編輯先pending \(待討論\)
+* EventLogData就放在EventLog裡就好，url多個/data就好
 
 ### 
 
