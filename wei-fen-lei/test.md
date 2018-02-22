@@ -114,6 +114,20 @@
 * 如何利用上述schema將判斷是要用參考值或是參考測點?
   * 用event\_type來做
 * event\_type的值限定1/2/3/4
+* mongo\(data\)和postgres\(config\)的互動情境
+  * 修改
+    * 透過portal API修改事件名稱
+      * mongo要根據scadaid和event\_name更新data的事件名稱
+        * 不然改完名後的舊資料會撈不到
+  * 刪除
+    * portal API刪除事件
+      * mongo要根據scadaid和event\_name刪除相關資料
+        * 不然之後若有同scada_id+event_name的資料會撈出舊資料
+    * portal API刪除紀錄測點
+      * mongo要根據scadaid/event\_name/device\_id/tag\_name刪除相關資料
+        * 同上，不刪除相關資料會抓到舊資料
+* 前端怎麼處理紀錄測點改變的情況
+  * ex. time1時是10個紀錄測點，但time2時變成2個季錄測點
 
 ### TODO
 
