@@ -27,7 +27,7 @@
 | ref\_device\_id | varchar\(256\) | N |  | 參考測點的設備識別名 |  |  |
 | ref\_tag\_name | varchar\(128\) | N |  | 參考測點名稱 |  |  |
 | sample\_interval | integer | Y |  | 取樣間隔 |  |  |
-| sample\_unit | varchar\(36\) | Y |  | 取樣間隔單位 |  |  |
+| sample\_unit | integer | Y |  | 取樣間隔單位 |  | value: {1:秒, 2:分, 3:小時} |
 | sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
 
 ### [API](#event-log-api) {#event-log-api}
