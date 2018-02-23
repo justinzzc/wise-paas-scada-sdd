@@ -9,8 +9,8 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
 | scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 \(同紀錄測點\) | Y |  |
-| record\_device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |  |
-| record\_tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
+| device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |  |
+| tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
 
 * event\_log\_list \(事件測點和參考測點\)
   * 12\#
