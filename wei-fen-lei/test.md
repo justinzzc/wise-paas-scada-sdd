@@ -62,11 +62,12 @@
 
 ### Note
 
-* mongo\(data\)和postgres\(config\)的互動情境
+* 刪除或修改的的連動情境
   * 修改
-    * 透過portal API修改事件名稱
+    * 修改事件名稱\(event\_name\)
       * mongo要根據scadaid和event\_name更新data的事件名稱
         * 不然改完名後的舊資料會撈不到
+      * 修改事件測點的eventname要一併把所屬的紀錄測點的event\_name更新
   * 刪除
     * portal API刪除事件
       * mongo要根據scadaid和event\_name刪除相關資料
