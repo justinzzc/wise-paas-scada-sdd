@@ -75,6 +75,7 @@
     * portal API刪除紀錄測點
       * mongo要根據scadaid/event\_name/device\_id/tag\_name刪除相關資料
         * 同上，不刪除相關資料會抓到舊資料
+      * 可是現在開給Eryn的update api是刪掉所屬的記錄測點再新增一次
 
 ### TODO
 
