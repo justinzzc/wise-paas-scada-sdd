@@ -33,4 +33,5 @@
   * [Database](apps/database.md)
 * [未分類](wei-fen-lei.md)
   * [Event log開發文件](wei-fen-lei/test.md)
+  * [Event log - FAQ](wei-fen-lei/event-log-faq.md)
 

@@ -60,60 +60,8 @@
   * deleteRecordTag
     * 刪除某事件底下的所有紀錄測點
 
-### Question
-
-##### archived Question
-
-* 選擇參考測點時，是限定同一scada裡的tag嗎
-
-  * yes
-
-* 和益開會時好像有在設定畫面裡拿掉幾個欄位?
-
-  * 遲滯範圍
-
-* 有需要做到編輯event log的參考測點嗎?
-
-  * 要，新增跟刪除
-
-* 事件之後紀錄之取樣數量&持續記錄，是可以指定取樣數量且同時選擇持續記錄嗎?
-
-  * 不行，只能二選一
-  * 如果取樣數量設3
-    * 連續觸發event的話，會取樣3個區間，直到重新觸發event後才會再取樣3次
-  * 選擇持續記錄
-    * 只要持續觸發event，就依照取樣間隔持續log
-
-* 事件類型的種類有幾種?
-
-  * 2類共4種
-
-    * 類型
-
-      * 事件測點跟參考測點相比
-
-      * 事件測點跟參考值相比
-
-* event\_sample\_amount和event\_sample\_keep\_log都設not null
-
-  * 但這兩個是二選一的關係，所以用程式去控制
-
-* 我想說 event\_log\_list 的primary key 你覺得 加上scadaId如何?不然都不能取重複名稱XD
-
-  * ok, 把eventname和scada\_id都設pk
-
-* 新  
-  增事件紀錄時，是要所有資訊都放再同一表單一同用一支api來傳，還是先建立事件紀錄，再新增紀錄測點呢?
-
-  * 同一支api一起建就好
-
-##### in progress
-
 ### Note
 
-* 如何利用上述schema將判斷是要用參考值或是參考測點?
-  * 用event\_type來做
-* event\_type的值限定1/2/3/4
 * mongo\(data\)和postgres\(config\)的互動情境
   * 修改
     * 透過portal API修改事件名稱
@@ -130,14 +78,10 @@
 ### TODO
 
 * scada-dbmanager
-* api interface
 * flyway
 * event log存取權限
   * get\_value
   * 編輯先pending \(待討論\)
-* EventLogData就放在EventLog裡就好，url多個/data就好
-
-### 
 
 
 
