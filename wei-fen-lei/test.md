@@ -84,6 +84,7 @@
 * event log存取權限
   * get\_value
   * 編輯先pending \(待討論\)
+* 確認event\_type與參考值/參考測點的關聯是否正確
 
 
 
