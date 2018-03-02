@@ -34,35 +34,33 @@
 
 * **create**
 
-  * \[POST\] /eventLogs - Eventlog.createEventLog
+  * \[POST\] /EventLogs
     * 包含紀錄測點一起帶給這支api
     * 紀錄測點為array, 可以為空
       * 空的話就只記錄本身\(事件測點\)的值
-  * addRecordTag
 
 * **read**
 
-  * \[GET\] /eventLogs/info - Eventlog.listAllEventLogInfo
-    * 得到所有的事件紀錄，會附加每個event的詳細資訊
+  * \[GET\] /EventLogs/list
+    * 取得列表，只回傳eventName/scadaId/description
+  * \[GET\] /EventLogs/info/{scadaId}/{eventName}
+    * 取得單一事件細節，包含記錄測點
 
 * **update**
 
-  * updateEventLog
-    * 更新事件紀錄的設定細節
-  * event name可以修改
-  * 事件測點不要修改 \(目前\)
-    * 應該說除了事件測點不能改之外，其他都可以改
+  * \[PUT\] /EventLogs/{scadaId}/{eventName}
+    * 更新特定事件，包含記錄測點
+    * 事件測點不能修改，所以不用傳scadaId/deviceId/tagName
 
 * **delete**
 
-  * deleteEventLo
-    * 據事件紀錄名稱來刪除事件
-  * deleteRecordTag
-    * 刪除某事件底下的所有紀錄測點
+  * \[DELETE\] /EventLogs/{scadaId}/{eventName}
+    * 刪除事件測點及其記錄測點
 
 ### Note
 
 * **刪除或修改的的連動情境**
+
   * 修改
     * 修改事件名稱\(event\_name\)
       * mongo要根據scadaid和event\_name更新data的事件名稱
@@ -78,6 +76,7 @@
       * 可是現在開給Eryn的update api是刪掉所屬的記錄測點再新增一次
 
 * **eventLogRecord \(Array\)在insert/update的差別**
+
   * Insert
     * null/empty arr在insert的話都是相同結果
   * Update
