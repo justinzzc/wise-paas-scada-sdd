@@ -62,7 +62,7 @@
 
 ### Note
 
-* 刪除或修改的的連動情境
+* **刪除或修改的的連動情境**
   * 修改
     * 修改事件名稱\(event\_name\)
       * mongo要根據scadaid和event\_name更新data的事件名稱
@@ -76,6 +76,20 @@
       * mongo要根據scadaid/event\_name/device\_id/tag\_name刪除相關資料
         * 同上，不刪除相關資料會抓到舊資料
       * 可是現在開給Eryn的update api是刪掉所屬的記錄測點再新增一次
+
+* **eventLogRecord \(Array\)在insert/update的差別**
+  * Insert
+    * null/empty arr在insert的話都是相同結果
+  * Update
+    * empty arr "\[\]"
+      * 會把原本的records\(如果有\)都刪掉
+    * null arr
+      * 有eventName，則要去update record的eventName
+      * 沒有eventName，則records不做任何變動
+
+---
+
+## 
 
 ### TODO
 
