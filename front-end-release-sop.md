@@ -23,11 +23,9 @@
 8. 在master branch把develop branch merge回來
 9. 發信給team members, 格式參考stacy，不要直接複製vs code。
 10. 和益連同dataworker準備好給QA後，再去更新redmine相關issue
-11. REBASE?
+11. release完後記得把其他unrelease的branch做rebase
 
 ### 建議
 
 再做上述動作前，可以clone一個新的project，避免非release的程式包含在裡面
-
-
 
