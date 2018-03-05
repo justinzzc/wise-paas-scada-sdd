@@ -1,0 +1,29 @@
+# Front-End Release SOP
+
+---
+
+1. 用develop branch的code在PCF做測試
+   1. npm build \(for Vue\)
+   2. setup.bat
+   3. push to PCF
+   4. test on PCF
+2. 整理CHANGELOG
+3. 整理package.json
+   1. 要確認dbmanager和wise-paas-scada版號正確
+4. npm run generate \(gen API DOC\)
+   1. 在會更新Front-End的index.yml
+5. 把新產生的index.yml複製到Document，蓋過去，並push上去
+   1. [http://advgitlab.eastasia.cloudapp.azure.com/WISE-PaaS-Documentation](http://advgitlab.eastasia.cloudapp.azure.com/WISE-PaaS-Documentation)
+6. commit to develop branch，要確保以下4個動作在同一commit
+   1. CHANGELOG
+   2. package.json
+   3. swagger doc \(index.yml\)
+   4. 加tag
+7. push to develop branch
+8. 在master branch把develop branch merge回來
+9. 發信給team members, 格式參考stacy，不要直接複製vs code。
+10. 和益連同dataworker準備好給QA後，再去更新redmine相關issue
+11. REBASE?
+
+
+

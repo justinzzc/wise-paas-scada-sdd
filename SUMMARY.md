@@ -4,6 +4,7 @@
   * [Development Environment](development-environment.md)
   * [Architecture](architecture.md)
   * [Cloud Foundry](cloud-foundry.md)
+  * [Front-End Release SOP](front-end-release-sop.md)
 * [APPs](apps.md)
   * [DataWorker](apps/dataworker.md)
     * [Overview](apps/dataworker/overview.md)
