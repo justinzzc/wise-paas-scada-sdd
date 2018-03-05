@@ -25,5 +25,9 @@
 10. 和益連同dataworker準備好給QA後，再去更新redmine相關issue
 11. REBASE?
 
+### 建議
+
+再做上述動作前，可以clone一個新的project，避免非release的程式包含在裡面
+
 
 
