@@ -22,7 +22,7 @@
 | description | varchar\(256\) | N |  | 事件描述 |  |  |
 | device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
-| event\_type | integer | Y |  | 事件類型 |  | 值:{1:&gt;=,2:&lt;=,3:“&gt;= tag value,4:“&lt;= tag value} |
+| event\_type | integer | Y |  | 事件類型 |  | {1:&gt;=參考值, 2:&lt;=參考值, 3:==參考值, 4:&gt;=參考測點, 5:&lt;=參考測點, 6:==參考測點, 7:依取樣間隔紀錄} |
 | ref\_value | double | N |  | 參考值 |  |  |
 | ref\_device\_id | varchar\(256\) | N |  | 參考測點的設備識別名 |  |  |
 | ref\_tag\_name | varchar\(128\) | N |  | 參考測點名稱 |  |  |
