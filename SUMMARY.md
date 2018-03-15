@@ -35,5 +35,5 @@
 * [未分類](wei-fen-lei.md)
   * [Event log開發文件](wei-fen-lei/test.md)
   * [Event log - FAQ](wei-fen-lei/event-log-faq.md)
-  * wise-paas-scada-dbmigrate
+  * [wise-paas-scada-dbmigrate](wei-fen-lei/wise-paas-scada-dbmigrate.md)
 
