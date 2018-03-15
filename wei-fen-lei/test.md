@@ -87,6 +87,7 @@
       * 沒有eventName，則records不做任何變動
 
 * **request validation**
+
   * 形態要對/數量不能少/數量不能多
   * 驗證相關測點或事件是否真的存在
 
