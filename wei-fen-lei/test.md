@@ -91,6 +91,20 @@
   * 形態要對/數量不能少/數量不能多
   * 驗證相關測點或事件是否真的存在
 
+* **user permission**
+
+  * user\_allow\_device
+    * event log也要檢查user\_allow\_device，不然會造成「user對於沒權限的tag\(基於user\_allow\_device的device\_id\)，在event log可以看的到」的情況
+    * srpUsr只能選擇有權限的Tag作為事件測點/參考測點/記錄測點
+    * list API要檢查到device，如果只檢查scada，會列出該user沒權限的device
+  * validScope - EditConfig
+    * Eventlog.createEventLog
+    * Eventlog.updateEventLog
+    * Eventlog.deleteEventLog
+  * validToken
+    * Eventlog.listEventLogInfoByScadaIdAndEventName
+    * Eventlog.listAllEventLogBasic
+
 ---
 
 ## 
