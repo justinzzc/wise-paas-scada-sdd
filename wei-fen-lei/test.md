@@ -3,7 +3,7 @@
 ### DB Schema
 
 * event\_log\_record \(紀錄測點\)
-  * 4\#
+  * 3\#
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -12,7 +12,7 @@
 | tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
 
 * event\_log\_list \(事件測點和參考測點\)
-  * 12\#
+  * 13\#
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
