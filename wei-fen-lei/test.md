@@ -7,8 +7,7 @@
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
-| scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 \(同紀錄測點\) | Y |  |
+| event\_id | integer | Y | Y |  | Y |  |
 | device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |  |
 | tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
 
@@ -17,8 +16,9 @@
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| event\_name | varchar\(128\) | Y | Y | 事件紀錄名稱 | Y |  |
-| scada\_id | varchar\(36\) | Y | Y | 事件測點的節點識別碼 | Y |  |
+| event\_id | integer | Y | Y |  | Y | AUTO\_INCREMENT |
+| event\_name | varchar\(128\) | Y |  | 事件紀錄名稱 |  |  |
+| scada\_id | varchar\(36\) | Y |  | 事件測點的節點識別碼 |  |  |
 | description | varchar\(256\) | N |  | 事件描述 |  |  |
 | device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
 | tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
