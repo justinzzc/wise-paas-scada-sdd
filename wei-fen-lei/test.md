@@ -37,43 +37,41 @@
   * \[POST\] /EventLogs
     * 包含紀錄測點一起帶給這支api
     * 紀錄測點為array, 可以為空
-      * 空的話就只記錄本身\(事件測點\)的值
+      * 空的話就只存本身\(事件測點\)的設定
 
 * **read**
 
   * \[GET\] /EventLogs/list
     * 取得列表，只回傳eventName/scadaId/description
-  * \[GET\] /EventLogs/info/{scadaId}/{eventName}
+  * \[GET\] /EventLogs/info/}
     * 取得單一事件細節，包含記錄測點
 
 * **update**
 
-  * \[PUT\] /EventLogs/{scadaId}/{eventName}
+  * \[PUT\] /EventLogs/{eventId}
     * 更新特定事件，包含記錄測點
     * 事件測點不能修改，所以不用傳scadaId/deviceId/tagName
 
 * **delete**
 
-  * \[DELETE\] /EventLogs/{scadaId}/{eventName}
+  * \[DELETE\] /EventLogs/{eventId}
     * 刪除事件測點及其記錄測點
 
 ### Note
 
 * **刪除或修改的的連動情境**
 
-  * 修改
+  * \[PUT\] /EventLogs/{eventId}
     * 修改事件名稱\(event\_name\)
-      * mongo要根據scadaid和event\_name更新data的事件名稱
+      * mongo要根據eventId更新data的事件名稱
         * 不然改完名後的舊資料會撈不到
       * 修改事件測點的eventname要一併把所屬的紀錄測點的event\_name更新
-  * 刪除
+  * \[DELETE\] /EventLogs/{eventId}
     * portal API刪除事件
-      * mongo要根據scadaid和event\_name刪除相關資料
-        * 不然之後若有同scada\_id+event\_name的資料會撈出舊資料
+      * mongo要根據eventId刪除相關資料
     * portal API刪除紀錄測點
-      * mongo要根據scadaid/event\_name/device\_id/tag\_name刪除相關資料
+      * mongo要根據eventId/device\_id/tag\_name刪除相關資料
         * 同上，不刪除相關資料會抓到舊資料
-      * 可是現在開給Eryn的update api是刪掉所屬的記錄測點再新增一次
 
 * **eventLogRecord \(Array\)在insert/update的差別**
 
