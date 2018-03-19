@@ -65,7 +65,7 @@
     * 修改事件名稱\(event\_name\)
       * mongo要根據eventId更新data的事件名稱
         * 不然改完名後的舊資料會撈不到
-      * 修改事件測點的eventname要一併把所屬的紀錄測點的event\_name更新
+      * 不用再去更新event\_name，因為stacy那邊會刪除再新增
   * \[DELETE\] /EventLogs/{eventId}
     * portal API刪除事件
       * mongo要根據eventId刪除相關資料
