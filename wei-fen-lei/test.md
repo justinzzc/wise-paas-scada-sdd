@@ -43,7 +43,7 @@
 
   * \[GET\] /EventLogs/list
     * 取得列表，只回傳eventName/scadaId/description
-  * \[GET\] /EventLogs/info/}
+  * \[GET\] /EventLogs/info/{eventId}
     * 取得單一事件細節，包含記錄測點
 
 * **update**
