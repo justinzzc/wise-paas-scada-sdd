@@ -51,6 +51,7 @@
   * \[PUT\] /EventLogs/{eventId}
     * 更新特定事件，包含記錄測點
     * 事件測點不能修改，所以不用傳scadaId/deviceId/tagName
+    * 回傳值要改成obj 包含event\_id，stacy那邊需要
 
 * **delete**
 
