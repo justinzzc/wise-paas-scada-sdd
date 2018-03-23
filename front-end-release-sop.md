@@ -10,7 +10,7 @@
 4. 用develop branch的code在PCF做測試
    1. 重新npm install，因為會連node\_module一起上PCF，或學Stacy再複製一份
    2. npm build \(for Vue\)
-   3. gen\_mm.bat
+   3. gen\_mam.bat
    4. setup.bat
    5. push to PCF
    6. test on PCF
