@@ -10,9 +10,10 @@
 4. 用develop branch的code在PCF做測試
    1. 重新npm install，因為會連node\_module一起上PCF，或學Stacy再複製一份
    2. npm build \(for Vue\)
-   3. setup.bat
-   4. push to PCF
-   5. test on PCF
+   3. gen\_mm.bat
+   4. setup.bat
+   5. push to PCF
+   6. test on PCF
 5. 把新產生的index.yml複製到Document，蓋過去，並push上去
    1. [http://advgitlab.eastasia.cloudapp.azure.com/WISE-PaaS-Documentation](http://advgitlab.eastasia.cloudapp.azure.com/WISE-PaaS-Documentation)
 6. commit to develop branch，要確保以下4個動作在同一commit
