@@ -82,20 +82,18 @@
     * empty arr "\[\]"
       * 會把原本的records\(如果有\)都刪掉
     * null arr
-      * 有eventName，則要去update record的eventName
-      * 沒有eventName，則records不做任何變動
+      * 不對紀錄測點做任何變動
 
 * **request validation**
 
-  * 形態要對/數量不能少/數量不能多
+  * type要對/數量不能少/數量不能多
   * 驗證相關測點或事件是否真的存在
+  * 測點間的關係驗證，例如離散點的參考點就要是離散點之類的
 
 * **user permission**
 
   * user\_allow\_device
-    * event log也要檢查user\_allow\_device，不然會造成「user對於沒權限的tag\(基於user\_allow\_device的device\_id\)，在event log可以看的到」的情況
-    * srpUsr只能選擇有權限的Tag作為事件測點/參考測點/記錄測點
-    * list API要檢查到device，如果只檢查scada，會列出該user沒權限的device
+    * 只要檢查到scada\_id的層級就好
   * validScope - EditConfig
     * Eventlog.createEventLog
     * Eventlog.updateEventLog
@@ -103,19 +101,14 @@
   * validToken
     * Eventlog.listEventLogInfoByScadaIdAndEventName
     * Eventlog.listAllEventLogBasic
+  * validScope - GetValue
+    * Eventlog.getEventLogData
 
 ---
 
-## 
-
 ### TODO
 
-* scada-dbmanager
-* flyway
-* event log存取權限
-  * get\_value
-  * 編輯先pending \(待討論\)
-* 確認event\_type與參考值/參考測點的關聯是否正確
+
 
 
 
