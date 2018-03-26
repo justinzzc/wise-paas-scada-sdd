@@ -42,9 +42,11 @@
 * **read**
 
   * \[GET\] /EventLogs/list
-    * 取得列表，只回傳eventName/scadaId/description
+    * 取得列表，只回傳eventId/eventName/scadaId/description
   * \[GET\] /EventLogs/info/{eventId}
     * 取得單一事件細節，包含記錄測點
+  * \[POST\] /EventLogs/data
+    * 取得紀錄點的值
 
 * **update**
 
@@ -107,8 +109,6 @@
 ---
 
 ### TODO
-
-
 
 
 
