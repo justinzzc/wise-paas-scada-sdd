@@ -29,6 +29,7 @@
 | sample\_interval | integer | Y |  | 取樣間隔 |  |  |
 | sample\_unit | integer | Y |  | 取樣間隔單位 |  | value: {1:秒, 2:分, 3:小時} |
 | sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
+| instance\_launched | boolean | Y |  | 是否透過eventManager啟動event instance |  | default:false |
 
 ### [API](#event-log-api) {#event-log-api}
 
