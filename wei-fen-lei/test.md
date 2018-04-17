@@ -106,7 +106,8 @@
   * validScope - GetValue
     * Eventlog.getEventLogData
 
-* 把instance的啟動刪除跟新增設定的流程分開
+* **把instance的啟動刪除跟新增設定的流程分開**
+
   * 要在event加一個欄位: instance\_launched
     * set true
       * 開啟或重啟
