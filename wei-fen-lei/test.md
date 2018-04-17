@@ -106,7 +106,7 @@
   * validScope - GetValue
     * Eventlog.getEventLogData
 
-* [**把eventManager跟config setting分開**] {#event-log-api}
+* [把eventManager跟config setting分開](#event-log-test) {#event-log-test}
 
   * 我會在event\_log\_list加一欄位:instance\_launched \(boolean, default: false\)
     * set true: 開啟或重啟
