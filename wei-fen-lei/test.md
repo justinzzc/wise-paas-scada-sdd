@@ -106,19 +106,15 @@
   * validScope - GetValue
     * Eventlog.getEventLogData
 
-* **把instance的啟動刪除跟新增設定的流程分開**
+* **把ieventManager跟config setting分開**
 
-  * 要在event加一個欄位: instance\_launched
-    * set true
-      * 開啟或重啟
-    * set false
-      * 關閉
+  * 我會在event\_log\_list加一欄位:instance\_launched \(boolean, default: false\)
+    * set true: 開啟或重啟
+    * set false: 關閉
   * portal新增API
-    * launchEvent
-      * eventManager.insertEvent
-    * closeEvent
-      * eventManager.deleteEvent\(eventId\)
-    * cleanData
+    * POST /EventLogs/syncInstance
+      * type: launch/close
+    * DELETE /EvnetLogs/deleteData/{eventId}
 
 ---
 
