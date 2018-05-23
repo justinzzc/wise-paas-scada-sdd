@@ -15,5 +15,15 @@
   * 看一下在PCF的APP有哪些沒在用了，刪掉，不然資源不夠
   * setup.bat  
 
+* Tips
+  * 為了節省時間，node\_modules可以不用從local傳上去
+    * 在.cfignore做設定
+    * ex. /node\_modules
+    * ```
+      /node_modules/*
+      !/node_modules/wise-paas-scada-utility/
+      !/node_modules/wise-paas-scada-dbmanager/
+      ```
+
 
 
