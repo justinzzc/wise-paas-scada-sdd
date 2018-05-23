@@ -16,6 +16,7 @@
   * setup.bat  
 
 * Tips
+
   * 為了節省時間，node\_modules可以不用從local傳上去
     * 在.cfignore做設定
     * ex. /node\_modules
