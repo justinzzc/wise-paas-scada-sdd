@@ -7,7 +7,7 @@
   * above
     * 只存upper
   * below
-    *  只存lower
+    * 只存lower
   * in range
     * 兩個都要存
   * equal
@@ -20,7 +20,8 @@
 * current alarm list跟alarm log幾乎依樣
   * 多了value
   * 多了發ack的按鈕跟icon
-
+* 首頁的alarm數量 也要做一個api讓前端抓數量
+* 
 ### FAQ
 
 * 什麼是alarm code?
@@ -34,6 +35,7 @@
 * 舊的那一套alarm 機制是不是就棄用了, 像是離散有8個priority....類比有hh/ll等等的
   * 改成很單純的六種condition配合user自己設定的upper and lower limit
 * 文字點是否要做?開會時是講不用 可是eventlog後來變成有
+* check right到device
 
 
 
