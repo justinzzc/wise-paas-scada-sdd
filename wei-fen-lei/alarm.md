@@ -21,21 +21,41 @@
   * 多了value
   * 多了發ack的按鈕跟icon
 * 首頁的alarm數量 也要做一個api讓前端抓數量
-* 
-### FAQ
-
+* check right到device
+* 在UI和API去擋code+message不可重複
+* ### FAQ
 * 什麼是alarm code?
+
+  * 因為有些設備是有自訂的alarm code 想說讓她有個相互對應
+
 * alarm code有什麼規則嗎?
+
+  * string/not null/length:16
+
+* alarm code跟alarm message有關聯嗎
+
+  * 一個code對應一個messag
+
 * alarm message的長度限制?
-* new alarm的tags, 是指要套用這個condition rule的tag有哪些嗎?
-* notification是我們定義好嗎?user不可以從portl自己設定對嗎
-* nitifucation要從哪裡處trigger, worker/portal?
-* 要做update嗎?如果要 能改跟不能改的有那些
+  * string/256
+* notification是我們定義好嗎?
+  * 先不做notification
+
+* 要做update嗎?
+  * 如果要做，需要討論下那些欄位能改或不能改
+  * ex. 
 * current alarm list裡，只秀tag就好了嗎?這樣會不會分不清是哪個scada/device?
 * 舊的那一套alarm 機制是不是就棄用了, 像是離散有8個priority....類比有hh/ll等等的
   * 改成很單純的六種condition配合user自己設定的upper and lower limit
-* 文字點是否要做?開會時是講不用 可是eventlog後來變成有
-* check right到device
+* 文字點是否要做?
+  * 不用
+
+* id code message 三個欄位設為pk的話
+  * id會變成可以重複
+  * 還是我schema的pk只設id
+  * code/message不能重複我從API檔?
+* 預留TEXT
+* alarm ack的那個頁面 有要做filter嗎?
 
 
 
