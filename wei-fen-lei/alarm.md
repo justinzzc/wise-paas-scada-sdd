@@ -1,4 +1,4 @@
-# Alarm
+# Alarm 開發文件
 
 ### DB Schema \(config\) {#db-schema}
 
@@ -6,7 +6,7 @@
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| alarm\_id | integer | Y |  |  | Y | \* auto\_increment \* UNIQUE |
+| alarm\_id | integer | Y |  | 不加入PK, 而是用UNIQUE, 因為設PK會造成code+message重覆 | Y | \* auto\_increment \* UNIQUE |
 | code | varchar\(16\) | Y | Y |  |  |  |
 | message | varchar\(256\) | Y | Y |  |  |  |
 | condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
@@ -26,7 +26,6 @@
 ### SPEC
 
 * condition
-  * table固定有兩個欄位, condition_lower/condition\_upper_
   * above
     * 只存upper
   * below
@@ -37,61 +36,42 @@
     * upper/lower都存一樣的
   * out range
     * 兩個都要存
-* alarm log那一頁
-  * 那些欄位可以直接從stacy那邊給我，那些是要我這裡用dao join出來
-  * time跟ack time一定是stacy那邊給我
-* current alarm list跟alarm log幾乎依樣
-  * 多了value
-  * 多了發ack的按鈕跟icon
-* 首頁的alarm數量 也要做一個api讓前端抓數量
-* check right到device
-* 在UI和API去擋code+message不可重複
-* 權限如何做?
-  * 只要該alarm裡的tags包含沒有權限的tag 就把它拿掉沒權限的tag就好
-* ### FAQ
-* 什麼是alarm code?
+* "Current Alarm List" 和 首頁的"alarm count"透過stacy給的同一個function拿到
 
+* 在UI和API去擋code+message不可重複
+  * 但UI沒辦法做，只能從api做
+* 權限如何做?
+  * check right到device
+  * alarm setting頁面裡，拿掉沒權限的tag就好
+  * log/status都是從stacy那邊拿東西回來後在過濾權限
+
+### FAQ \(archived\)
+
+* 什麼是alarm code?
   * 因為有些設備是有自訂的alarm code 想說讓她有個相互對應
 
-* alarm code有什麼規則嗎?
+* notification相關問題
 
-  * string/not null/length:16
+  * 先不做通知, db schema不預留
 
-* alarm code跟alarm message有關聯嗎
+* 文字點是否要做?
 
-  * 一個code對應一個messag
+  * 不用
 
-* alarm message的長度限制?
-
-  * string/256
-
-* notification是我們定義好嗎?
-
-  * 先不做notification
+### FAQ \(on Progress\)
 
 * 要做update嗎?
 
-  * 如果要做，需要討論下那些欄位能改或不能改
-  * ex. 
+  * 如果要做，需要討論下那些欄位能改或不能改. 
 
 * current alarm list裡，只秀tag就好了嗎?這樣會不會分不清是哪個scada/device?
 
 * 舊的那一套alarm 機制是不是就棄用了, 像是離散有8個priority....類比有hh/ll等等的
 
   * 改成很單純的六種condition配合user自己設定的upper and lower limit
-  * 那之後有需要把舊的schema刪掉嗎
+  * 之後有需要把舊的schema刪掉嗎
 
-* 文字點是否要做?
-
-  * 不用
-
-* id code message 三個欄位設為pk的話
-
-  * id會變成可以重複
-  * 還是我schema的pk只設id
-  * code/message不能重複我從API檔?
-
-* 預留TEXT
+* 是否要預留TEXT比較欄位?
 
 * alarm ack的那個頁面 有要做filter嗎?
 
