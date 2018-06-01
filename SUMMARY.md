@@ -34,6 +34,7 @@
   * [Database](apps/database.md)
 * [未分類](wei-fen-lei.md)
   * [Event log開發文件](wei-fen-lei/test.md)
+  * [Alarm](wei-fen-lei/alarm.md)
   * [Event log - FAQ](wei-fen-lei/event-log-faq.md)
   * [wise-paas-scada-dbmigrate](wei-fen-lei/wise-paas-scada-dbmigrate.md)
   * [Make CF node.js buildpack](wei-fen-lei/make-cf-nodejs-buildpack.md)
