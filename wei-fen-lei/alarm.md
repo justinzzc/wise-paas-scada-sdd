@@ -1,5 +1,28 @@
 # Alarm
 
+### DB Schema \(config\) {#db-schema}
+
+* alarm\_list
+
+| Column Name | Type | Not Null | PK | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| alarm\_id | integer | Y |  |  | Y | \* auto\_increment \* UNIQUE |
+| code | varchar\(16\) | Y | Y |  |  |  |
+| message | varchar\(256\) | Y | Y |  |  |  |
+| condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
+| lower\_limit | double |  |  |  |  |  |
+| upper\_limit | double |  |  |  |  |  |
+| compare\_text | varchar\(256\) |  |  | ??使否要預留 |  |  |
+
+* alarm\_tag
+
+| Column Name | Type | Not Null | PK | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| alarm\_id | integer | Y | Y |  | Y |  |
+| scada\_id | varchar\(36\) | Y | Y |  | Y |  |
+| device\_id | varchar\(256\) | Y | Y |  | Y |  |
+| tag\_name | varchar\(128\) | Y | Y |  | Y |  |
+
 ### SPEC
 
 * condition
@@ -23,6 +46,8 @@
 * 首頁的alarm數量 也要做一個api讓前端抓數量
 * check right到device
 * 在UI和API去擋code+message不可重複
+* 權限如何做?
+  * 只要該alarm裡的tags包含沒有權限的tag 就把它拿掉沒權限的tag就好
 * ### FAQ
 * 什麼是alarm code?
 
@@ -37,24 +62,37 @@
   * 一個code對應一個messag
 
 * alarm message的長度限制?
+
   * string/256
+
 * notification是我們定義好嗎?
+
   * 先不做notification
 
 * 要做update嗎?
+
   * 如果要做，需要討論下那些欄位能改或不能改
   * ex. 
+
 * current alarm list裡，只秀tag就好了嗎?這樣會不會分不清是哪個scada/device?
+
 * 舊的那一套alarm 機制是不是就棄用了, 像是離散有8個priority....類比有hh/ll等等的
+
   * 改成很單純的六種condition配合user自己設定的upper and lower limit
+  * 那之後有需要把舊的schema刪掉嗎
+
 * 文字點是否要做?
+
   * 不用
 
 * id code message 三個欄位設為pk的話
+
   * id會變成可以重複
   * 還是我schema的pk只設id
   * code/message不能重複我從API檔?
+
 * 預留TEXT
+
 * alarm ack的那個頁面 有要做filter嗎?
 
 
