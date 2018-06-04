@@ -48,6 +48,25 @@
   * alarm setting頁面裡，拿掉沒權限的tag就好
   * log/status都是從stacy那邊拿東西回來後在過濾權限
 
+* API
+  * POST /Alarms
+  * GET /Alarms
+  * GET /Alarms/{alarm\_id}
+  * POST /Alarms/log
+  * POST /Alarms/status
+    * 也可以放在status裡
+
+### TODO
+
+* dbmigrate
+  * 開個branch
+* dbmanager
+  * dao
+    * createAlarm
+    * getAlarm
+    * updateAlarm
+    * deleteAlarm
+
 ### FAQ \(archived\)
 
 * 什麼是alarm code?
@@ -80,6 +99,8 @@
 * 需要作連動刪除?
 
   * 例如tag刪除，是否要刪除alarm config \(把alarm config裡的該tag拿掉\), 並更新worker
+
+* 新增完config要直接啟動alarm instance嗎? 還是要像eventlog一樣，讓使用者可以控制
 
 
 
