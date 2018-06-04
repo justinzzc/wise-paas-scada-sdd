@@ -27,9 +27,9 @@
 
 * **condition**
 
-  * above \(大於某個值，就觸發警報\)
+  * above \(大於等於某個值，就觸發警報\)
     * if \(x &gt;= upperLimit\) { return true }
-  * below \(小於某個值，就觸發警報\)
+  * below \(小於等於某個值，就觸發警報\)
     * if \(x &lt;= lowerLimit\) { return true }
   * equal
     * if \(x === lowerLimit && x === upperLimit\)
