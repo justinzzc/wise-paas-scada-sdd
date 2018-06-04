@@ -26,17 +26,21 @@
 ### SPEC
 
 * **condition**
+
   * above \(大於某個值，就觸發警報\)
     * if \(x &gt; upperLimit\) { return true }
   * below \(小於某個值，就觸發警報\)
     * if \(x &lt; lowerLimit\) { return true }
-  * e    qual
+  * equal
     * if \(x === lowerLimit && x === upperLimit\)
   * in range
+
     * if \(x &gt; lowerLimit && x &lt; upperLimit\) { return true }
 
   * out range
+
     * if \(x &gt; upperLimit && x &lt; lowerLimit\) { return true}
+
 * "Current Alarm List" 和 首頁的"alarm count"透過stacy給的同一個function拿到
 
 * 在UI和API去擋code+message不可重複
