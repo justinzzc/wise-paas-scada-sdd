@@ -175,7 +175,7 @@
 * Logical description:
   1. findOneAndUpdate({rawResult: true})
 
-#### _deleteAlarmStatus
+#### deleteAlarmStatus
 * Purpose: delete alarm status
 * Input:
 
