@@ -28,9 +28,9 @@
 * **condition**
 
   * above \(大於某個值，就觸發警報\)
-    * if \(x &gt; upperLimit\) { return true }
+    * if \(x &gt;= upperLimit\) { return true }
   * below \(小於某個值，就觸發警報\)
-    * if \(x &lt; lowerLimit\) { return true }
+    * if \(x &lt;= lowerLimit\) { return true }
   * equal
     * if \(x === lowerLimit && x === upperLimit\)
   * in range
