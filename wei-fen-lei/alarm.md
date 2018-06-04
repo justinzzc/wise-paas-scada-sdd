@@ -59,7 +59,8 @@
     * 如果要更新的alarm不是launch狀態ˋ，則指更新cfg, lauch狀態保留給使用者自己呼叫起來
   * POST /Alarms/log
   * POST /Alarms/status
-    * 也可以放在status裡
+    * 跟eryn討論看看前端能不能只call一次就好，降低effort
+  * * 也可以放在status裡
   * POST /Alarms/sync
 
 ### TODO
