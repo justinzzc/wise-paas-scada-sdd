@@ -12,7 +12,7 @@
 | condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
 | lower\_limit | double |  |  |  |  |  |
 | upper\_limit | double |  |  |  |  |  |
-| compare\_text | varchar\(256\) |  |  | ??使否要預留 |  |  |
+| compare\_text | varchar\(256\) |  |  | 預留給文字點 |  |  |
 
 * alarm\_tag
 
@@ -43,6 +43,7 @@
   * 但UI沒辦法做，只能從api做
 
 * 權限如何做?
+
   * check right到device
   * alarm setting頁面裡，拿掉沒權限的tag就好
   * log/status都是從stacy那邊拿東西回來後在過濾權限
