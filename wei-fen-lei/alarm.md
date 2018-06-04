@@ -6,14 +6,13 @@
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| alarm\_id | integer | Y |  | 不加入PK, 而是用UNIQUE, 因為設PK會造成code+message重覆 | Y | \* auto\_increment \* UNIQUE |
-| code | varchar\(16\) | Y | Y |  |  |  |
-| message | varchar\(256\) | Y | Y |  |  |  |
+| alarm\_id | integer | Y | Y |  | Y | \* auto\_increment \* UNIQUE |
+| code | varchar\(16\) | Y |  |  |  | code+messagge不能重覆，在程式裡檔 |
+| message | varchar\(256\) | Y |  |  |  | code+messagge不能重覆，在程式裡檔 |
 | condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
 | lower\_limit | double |  |  |  |  |  |
 | upper\_limit | double |  |  |  |  |  |
-| compare\_text | varchar\(256\) |  |  | 預留給文字點 |  |  |
-| instance\_launched |  |  |  | ????????????? not sure |  |  |
+| instance\_launched | boolean | Y |  |  |  |  |
 
 * alarm\_tag
 
@@ -88,26 +87,37 @@
 
   * 不用
 
-### FAQ \(on Progress\)
-
 * 要做update，要討論下那些欄位可以動那些不行?
 
+  * 都可以更新
+
 * current alarm list裡，只秀tag就好了嗎?這樣會不會分不清是哪個scada/device?
+
+  * 要能區別，所以API要scada/device資訊
 
 * 舊的那一套alarm 機制是不是就棄用了, 像是離散有8個priority....類比有hh/ll等等的
 
   * 改成很單純的六種condition配合user自己設定的upper and lower limit
-  * 之後有需要把舊的schema刪掉嗎
+
+  * 新版上線後，再把舊的拿掉
 
 * alarm ack的那個頁面 有要做order嗎?
+
+  * 從前端做
 
 * 有要做刪除alarm嗎?
 
 * 需要作連動刪除?
 
-  * 例如tag刪除，是否要刪除alarm config \(把alarm config裡的該tag拿掉\), 並更新worker
+  * 要連動把alarm\_tag裡的record刪掉
+
+  * 但要不要去同步stacy那邊的再說
 
 * 新增完config要直接啟動alarm instance嗎? 還是要像eventlog一樣，讓使用者可以控制
+
+  * yes
+
+### FAQ \(on Progress\)
 
 
 
