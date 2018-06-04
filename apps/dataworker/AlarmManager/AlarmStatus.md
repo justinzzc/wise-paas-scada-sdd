@@ -175,3 +175,24 @@
 * Logical description:
   1. findOneAndUpdate({rawResult: true})
 
+#### _deleteAlarmStatus
+* Purpose: delete alarm status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarm Id |
+| scadaId | String | scada Id |
+| deviceId | String | device Id |
+| tagName | String | tag Name |
+
+* Logical description:
+  1. filter = {
+    a: alarmId,
+    s: scadaId,
+    d: deviceId,
+    t: tagName
+    }
+  2. remove(filter)
+
+
