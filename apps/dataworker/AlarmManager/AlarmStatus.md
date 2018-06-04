@@ -132,6 +132,34 @@
     }
   3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
 
+#### clearAlarmStatus
+* Purpose: clear alarm status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarm Id |
+| scadaId | String | scada Id |
+| deviceId | String | device Id |
+| tagName | String | tag Name |
+| ts | Date | default: new Date() |
+* Output:
+  * if document updated or not.
+* Logical description:
+  1. filter = {
+    a: alarmId,
+    s: scadaId,
+    d: deviceId,
+    t: tagName,
+    status: true,
+    ts: ts < ts
+    }
+  2. update = {
+    acked: false,
+    status: false,
+    ackTs: null
+    }
+  3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
 
 #### _updateAlarmStatus {#func_updateAlarmStatus}
 * Purpose: update alarm status
