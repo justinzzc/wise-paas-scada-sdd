@@ -69,10 +69,10 @@
 
 | Name | Data Type | Description |
 | :---: | :---: | :---: |
-| alarmId | Number | alarmId |
-| scadaId | String | scadaId |
-| deviceId | String | deviceId |
-| tagName | String | tagName |
+| alarmId | Number | alarm Id |
+| scadaId | String | scada Id |
+| deviceId | String | device  Id |
+| tagName | String | tag Name |
 
 * Logical description:
   1. findOneAndUpdate({upsert: true, setDefaultsOnInsert: true)
@@ -87,7 +87,7 @@
 | scadaId | String | scadaId |
 | deviceId | String | deviceId |
 | tagName | String | tagName |
-| ts | Date | default new Date() |
+| ts | Date | default: new Date() |
 * Output:
   * if document updated or not.
 * Logical description:
