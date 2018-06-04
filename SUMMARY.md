@@ -8,7 +8,9 @@
 * [APPs](apps.md)
   * [DataWorker](apps/dataworker.md)
     * [Overview](apps/dataworker/overview.md)
-    * [AlarmManager](apps/dataworker/alarmmanager.md)
+    * [AlarmManager](apps/dtaworker/AlarmManager/AlarmStatus.md)
+      * [AlarmStatus](apps/dtaworker/AlarmManager/AlarmStatus.md)
+
     * [FAQ](apps/dataworker/faq.md)
   * [API](apps/api/api.md)
     * [Overview](apps/api/api.md)
@@ -39,4 +41,6 @@
   * [Event log - FAQ](wei-fen-lei/event-log-faq.md)
   * [wise-paas-scada-dbmigrate](wei-fen-lei/wise-paas-scada-dbmigrate.md)
   * [Make CF node.js buildpack](wei-fen-lei/make-cf-nodejs-buildpack.md)
+
+
 
