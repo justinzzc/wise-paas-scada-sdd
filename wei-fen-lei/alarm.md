@@ -12,7 +12,7 @@
 | condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
 | lower\_limit | double |  |  |  |  |  |
 | upper\_limit | double |  |  |  |  |  |
-| instance\_launched | boolean | Y |  |  |  |  |
+| instance\_launched | boolean | Y |  |  |  | default: false |
 
 * alarm\_tag
 
