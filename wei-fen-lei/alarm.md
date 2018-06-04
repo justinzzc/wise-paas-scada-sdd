@@ -13,6 +13,7 @@
 | lower\_limit | double |  |  |  |  |  |
 | upper\_limit | double |  |  |  |  |  |
 | compare\_text | varchar\(256\) |  |  | 預留給文字點 |  |  |
+| instance\_launched |  |  |  | ????????????? not sure |  |  |
 
 * alarm\_tag
 
@@ -49,12 +50,17 @@
   * log/status都是從stacy那邊拿東西回來後在過濾權限
 
 * API
+
   * POST /Alarms
   * GET /Alarms
   * GET /Alarms/{alarm\_id}
+  * PUT /Alarms/{alarm\_id}
+    * 如果要更新的alarm已經是launche，則call stacy做的upate
+    * 如果要更新的alarm不是launch狀態ˋ，則指更新cfg, lauch狀態保留給使用者自己呼叫起來
   * POST /Alarms/log
   * POST /Alarms/status
     * 也可以放在status裡
+  * POST /Alarms/sync
 
 ### TODO
 
