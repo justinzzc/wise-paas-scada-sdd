@@ -8,7 +8,7 @@
 * [APPs](apps.md)
   * [DataWorker](apps/dataworker.md)
     * [Overview](apps/dataworker/overview.md)
-    * [AlarmManager](apps/daataworker/AlarmManager/AlarmStatus.md)
+    * [AlarmManager](apps/dataworker/AlarmManager/AlarmStatus.md)
       * [AlarmStatus](apps/dataworker/AlarmManager/AlarmStatus.md)
     * [FAQ](apps/dataworker/faq.md)
   * [API](apps/api/api.md)
