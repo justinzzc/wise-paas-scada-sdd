@@ -71,7 +71,7 @@
 | :---: | :---: | :---: |
 | alarmId | Number | alarm Id |
 | scadaId | String | scada Id |
-| deviceId | String | device  Id |
+| deviceId | String | device Id |
 | tagName | String | tag Name |
 
 * Logical description:
@@ -83,10 +83,10 @@
 
 | Name | Data Type | Description |
 | :---: | :---: | :---: |
-| alarmId | Number | alarmId |
-| scadaId | String | scadaId |
-| deviceId | String | deviceId |
-| tagName | String | tagName |
+| alarmId | Number | alarm Id |
+| scadaId | String | scada Id |
+| deviceId | String | device Id |
+| tagName | String | tag Name |
 | ts | Date | default: new Date() |
 * Output:
   * if document updated or not.
@@ -103,7 +103,47 @@
     status: true,
     ts: ts
     }
-  3. _updateAlarmStatus(filter, update)
+  3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
 
 #### ackAlarmStatus
-#### _updateAlarmStatus
+* Purpose: ack alarm status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarm Id |
+| scadaId | String | scada Id |
+| deviceId | String | device Id |
+| tagName | String | tag Name |
+* Output:
+  * if document updated or not.
+* Logical description:
+  1. filter = {
+    a: alarmId,
+    s: scadaId,
+    d: deviceId,
+    t: tagName,
+    status: true,
+    acked: false
+    }
+  2. update = {
+    acked: true,
+    ackTs: new Date()
+    }
+  3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
+
+
+#### _updateAlarmStatus {#func_updateAlarmStatus}
+* Purpose: update alarm status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| filter | Object | filter |
+| update | Object | update object |
+
+* Output:
+  * if document updated or not.
+* Logical description:
+  1. findOneAndUpdate({rawResult: true})
+
