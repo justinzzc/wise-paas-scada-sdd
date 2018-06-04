@@ -1,0 +1,109 @@
+### MongoDB Schema \(scada\_AlarmStatus\) {#schema_AlarmStatus}
+
+| Column Name | Type | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| a | Number | alarm Id | Y ||
+| s | String | scada Id | Y ||
+| d | String | device Id | Y ||
+| t | String | tag Name | Y ||
+| status | Boolean | alarm is trigger || default is false |
+| acked | Boolean | is acked || default is false |
+| ts | Date | trigger or clear time || default is null |
+| ackTs | Date | ack time ||  default is null |
+| v | Object | alarm value || default is null |
+
+### AlarmStatus Object {#obj_AlarmStatus}
+| Column Name | Type |
+| :--- | :--- |
+| alarmId | Number |
+| scadaId | String |
+| deviceId | String |
+| tagName | Strin
+| status | Boolean |
+| acked | Boolean |
+| ts | Date |
+| ackTs | Date |
+| value | Object |
+
+### Method (alarmStatusHelper.js)
+#### getAlarmStatus
+* Purpose: get alarm's status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| params | Object | filter Object |
+| params.alarmId | Number | filter alarmId (totally compare) |
+| params.scadaId | String | filter scadaId(totally compare) |
+| params.deviceId | String  | filter deviceId(totally compare) |
+| params.tagName | String | filter tagName|
+| params.acked | Boolean | filter acked |
+| params.status | Boolean | filter status |
+
+* Output:
+  * Array of [AlarmStatus](#obj_AlarmStatus) Object
+* Logical description:
+  1. filter = {
+    a: alarmId,
+    s: scadaId,
+    d: deviceId,
+    t: tagName,
+    status: status,
+    acked: acked
+    }
+  2. Organize the output format = {
+    alarmId: $a,
+    scadaId: $s,
+    deviceId: $d,
+    tagName: $t,
+    value: $v,
+    acked: $acked,
+    status: $status,
+    ackeTs; $ackeTs,
+    ts: $ts
+    }
+    
+#### initAlarmStatus
+* Purpose: init alarm's status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarmId |
+| scadaId | String | scadaId |
+| deviceId | String | deviceId |
+| tagName | String | tagName |
+
+* Logical description:
+  1. findOneAndUpdate({upsert: true, setDefaultsOnInsert: true)
+
+#### triggerAlarmStatus
+* Purpose: trigger alarm's status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarmId |
+| scadaId | String | scadaId |
+| deviceId | String | deviceId |
+| tagName | String | tagName |
+| ts | Date | default new Date() |
+* Output:
+  * if document updated or not.
+* Logical description:
+  1. filter = {
+    a: alarmId,
+    s: scadaId,
+    d: deviceId,
+    t: tagName,
+    status: false,
+    ts: null || ts < ts
+    }
+  2. update = {
+    status: true,
+    ts: ts
+    }
+  3. _updateAlarmStatus(filter, update)
+
+#### ackAlarmStatus
+#### _updateAlarmStatus
