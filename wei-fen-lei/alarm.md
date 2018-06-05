@@ -124,5 +124,7 @@
 
 ### FAQ \(on Progress\)
 
+* 同一個scada下只能有一組code+message
+
 
 
