@@ -7,6 +7,7 @@
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | alarm\_id | integer | Y | Y |  | Y | \* auto\_increment \* UNIQUE |
+| scada\_id | varchar\(36\) | Y |  |  |  |  |
 | code | varchar\(16\) | Y |  |  |  | code+messagge不能重覆，在程式裡檔 |
 | message | varchar\(256\) | Y |  |  |  | code+messagge不能重覆，在程式裡檔 |
 | condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
@@ -19,13 +20,14 @@
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | alarm\_id | integer | Y | Y |  | Y |  |
-| scada\_id | varchar\(36\) | Y | Y |  | Y |  |
 | device\_id | varchar\(256\) | Y | Y |  | Y |  |
 | tag\_name | varchar\(128\) | Y | Y |  | Y |  |
 
 ### SPEC
 
-* **c  ode/message規則  **
+* **c  
+  ode/message規則  
+  **
 
   * 同一個scada下的code+message pair不能重覆
 
@@ -129,8 +131,6 @@
   * yes
 
 ### FAQ \(on Progress\)
-
-
 
 
 
