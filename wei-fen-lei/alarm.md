@@ -6,7 +6,7 @@
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| alarm\_id | integer | Y | Y | Y | Y | \* auto\_increment |
+| alarm\_id | integer | Y | Y | Y | Y |  |
 | scada\_id | varchar\(36\) | Y |  |  |  |  |
 | code | varchar\(16\) | Y |  |  |  | code+messagge不能重覆，在程式裡檔 |
 | message | varchar\(256\) | Y |  |  |  | code+messagge不能重覆，在程式裡檔 |
@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則        
+  ode/message規則          
   **
 
   * 同一個scada下的code+message pair不能重覆
