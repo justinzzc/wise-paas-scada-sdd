@@ -25,6 +25,12 @@
 
 ### SPEC
 
+* **c  ode/message規則  **
+
+  * 同一個scada下的code+message pair不能重覆
+
+  * 不同scada下可以定義相同的code+message pari
+
 * **condition**
 
   * above \(大於等於某個值，就觸發警報\)
@@ -124,7 +130,7 @@
 
 ### FAQ \(on Progress\)
 
-* 同一個scada下只能有一組code+message
+
 
 
 
