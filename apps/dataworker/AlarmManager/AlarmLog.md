@@ -170,7 +170,7 @@
     d: deviceId,
     t: tagName
     }
-  2. _deleteAlarmLog(filter)
+  2. [_deleteAlarmLog(filter)](#func_deleteAlarmLog)
 
 #### _deleteAlarmLog {#func_deleteAlarmLog}
 * Purpose: delete alarm log with filter
