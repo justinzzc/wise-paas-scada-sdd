@@ -102,7 +102,7 @@
 | tagName | String | tag Name |
 | ts | Date | default: new Date() |
 * Output:
-  * if document updated or not.
+  * if document udated or not.
 * Logical description:
   1. filter = {
     a: alarmId,
@@ -115,8 +115,8 @@
     }
   3. [_updateLastAlarmLog(filter, update)](#func_updateLastAlarmLog)
 
-#### ackAlarmStatus
-* Purpose: ack alarm status
+#### insertClearAlarmLog
+* Purpose: record clear record time
 * Input:
 
 | Name | Data Type | Description |
@@ -125,22 +125,20 @@
 | scadaId | String | scada Id |
 | deviceId | String | device Id |
 | tagName | String | tag Name |
+| ts | Date | default: new Date() |
 * Output:
-  * if document updated or not.
+  * if document udated or not.
 * Logical description:
   1. filter = {
     a: alarmId,
     s: scadaId,
     d: deviceId,
-    t: tagName,
-    status: true,
-    acked: false
+    t: tagName
     }
   2. update = {
-    acked: true,
-    ackTs: new Date()
+    clear: ts
     }
-  3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
+  3. [_updateLastAlarmLog(filter, update)](#func_updateLastAlarmLog)
 
 #### clearAlarmStatus
 * Purpose: clear alarm status
