@@ -171,6 +171,34 @@
     t: tagName
     }
   2. [_deleteAlarmLog(filter)](#func_deleteAlarmLog)
+  
+#### deleteAlarmLogByAlarmId
+* Purpose: delete alarm log by alarmId
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarm Id |
+
+* Logical description:
+  1. filter = {
+    a: alarmId
+    }
+  2. [_deleteAlarmLog(filter)](#func_deleteAlarmLog)
+
+#### deleteAlarmLogByScadaId
+* Purpose: delete alarm log by scadaId
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| scadaId | String | scada Id |
+
+* Logical description:
+  1. filter = {
+    s: scadaId
+    }
+  2. [_deleteAlarmLog(filter)](#func_deleteAlarmLog)
 
 #### _deleteAlarmLog {#func_deleteAlarmLog}
 * Purpose: delete alarm log with filter
