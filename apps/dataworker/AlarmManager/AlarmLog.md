@@ -171,8 +171,8 @@
     }
   3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
 
-#### _updateAlarmStatus {#func_updateAlarmStatus}
-* Purpose: update alarm status
+#### _updateLastAlarmLog {#func_updateLastAlarmLog}
+* Purpose: update alarm log
 * Input:
 
 | Name | Data Type | Description |
@@ -180,8 +180,6 @@
 | filter | Object | filter |
 | update | Object | update object |
 
-* Output:
-  * if document updated or not.
 * Logical description:
   1. findOneAndUpdate({rawResult: true})
 
