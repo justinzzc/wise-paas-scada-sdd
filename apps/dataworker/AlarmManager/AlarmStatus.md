@@ -161,20 +161,6 @@
     }
   3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
 
-#### _updateAlarmStatus {#func_updateAlarmStatus}
-* Purpose: update alarm status
-* Input:
-
-| Name | Data Type | Description |
-| :---: | :---: | :---: |
-| filter | Object | filter |
-| update | Object | update object |
-
-* Output:
-  * if document updated or not.
-* Logical description:
-  1. findOneAndUpdate({rawResult: true})
-
 #### deleteAlarmStatus
 * Purpose: delete alarm status
 * Input:
@@ -193,6 +179,61 @@
     d: deviceId,
     t: tagName
     }
-  2. remove(filter)
+  2. _deleteAlarmStatus(filter)
+
+#### deleteAlarmStatusByAlarmId
+* Purpose: delete alarm status by alarmId
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| alarmId | Number | alarm Id |
+
+* Logical description:
+  1. filter = {
+    a: alarmId
+    }
+  2. _deleteAlarmStatus(filter)
+
+#### deleteAlarmStatusByScadaId
+* Purpose: delete alarm status by scadaId
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| scadaId | String | scada Id |
+
+* Logical description:
+  1. filter = {
+    s: scadaId
+    }
+  2. _deleteAlarmStatus(filter)
+
+#### _deleteAlarmStatus
+* Purpose: delete alarm status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| filter | Object | filter Object |
+
+* Logical description:
+  1. remove(filter)
+  
+#### _updateAlarmStatus {#func_updateAlarmStatus}
+* Purpose: update alarm status
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| filter | Object | filter |
+| update | Object | update object |
+
+* Output:
+  * if document updated or not.
+* Logical description:
+  1. findOneAndUpdate({rawResult: true})
+
+
 
 
