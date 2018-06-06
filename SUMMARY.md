@@ -10,6 +10,8 @@
     * [Overview](apps/dataworker/overview.md)
     * [AlarmManager](apps/dataworker/AlarmManager/AlarmStatus.md)
       * [AlarmStatus](apps/dataworker/AlarmManager/AlarmStatus.md)
+      * [AlarmLog](apps/dataworker/AlarmManager/AlarmLog.md)
+      * [AlarmManager](apps/dataworker/AlarmManager/AlarmManager.md)
     * [FAQ](apps/dataworker/faq.md)
   * [API](apps/api/api.md)
     * [Overview](apps/api/api.md)
