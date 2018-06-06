@@ -140,35 +140,6 @@
     }
   3. [_updateLastAlarmLog(filter, update)](#func_updateLastAlarmLog)
 
-#### clearAlarmStatus
-* Purpose: clear alarm status
-* Input:
-
-| Name | Data Type | Description |
-| :---: | :---: | :---: |
-| alarmId | Number | alarm Id |
-| scadaId | String | scada Id |
-| deviceId | String | device Id |
-| tagName | String | tag Name |
-| ts | Date | default: new Date() |
-* Output:
-  * if document updated or not.
-* Logical description:
-  1. filter = {
-    a: alarmId,
-    s: scadaId,
-    d: deviceId,
-    t: tagName,
-    status: true,
-    ts: ts < ts
-    }
-  2. update = {
-    acked: false,
-    status: false,
-    ackTs: null
-    }
-  3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
-
 #### _updateLastAlarmLog {#func_updateLastAlarmLog}
 * Purpose: update alarm log
 * Input:
@@ -181,8 +152,8 @@
 * Logical description:
   1. findOneAndUpdate({rawResult: true})
 
-#### deleteAlarmStatus
-* Purpose: delete alarm status
+#### deleteAlarmLog
+* Purpose: delete alarm log
 * Input:
 
 | Name | Data Type | Description |
@@ -199,6 +170,17 @@
     d: deviceId,
     t: tagName
     }
-  2. remove(filter)
+  2. _deleteAlarmLog(filter)
+
+#### _deleteAlarmLog {#func_deleteAlarmLog}
+* Purpose: delete alarm log with filter
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| filter | Object | filter object |
+
+* Logical description:
+  1. remove(filter)
 
 
