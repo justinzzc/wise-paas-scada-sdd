@@ -90,8 +90,8 @@
     }
   2. insertMany(docs)
 
-#### triggerAlarmStatus
-* Purpose: trigger alarm's status
+#### insertAckAlarmLog
+* Purpose: record ack record time
 * Input:
 
 | Name | Data Type | Description |
@@ -108,15 +108,12 @@
     a: alarmId,
     s: scadaId,
     d: deviceId,
-    t: tagName,
-    status: false,
-    ts: null || ts < ts
+    t: tagName
     }
   2. update = {
-    status: true,
-    ts: ts
+    ack: ts
     }
-  3. [_updateAlarmStatus(filter, update)](#func_updateAlarmStatus)
+  3. [_updateLastAlarmLog(filter, update)](#func_updateLastAlarmLog)
 
 #### ackAlarmStatus
 * Purpose: ack alarm status
