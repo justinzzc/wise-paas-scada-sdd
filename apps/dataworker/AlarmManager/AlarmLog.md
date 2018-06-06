@@ -140,18 +140,6 @@
     }
   3. [_updateLastAlarmLog(filter, update)](#func_updateLastAlarmLog)
 
-#### _updateLastAlarmLog {#func_updateLastAlarmLog}
-* Purpose: update alarm log
-* Input:
-
-| Name | Data Type | Description |
-| :---: | :---: | :---: |
-| filter | Object | filter |
-| update | Object | update object |
-
-* Logical description:
-  1. findOneAndUpdate({rawResult: true})
-
 #### deleteAlarmLog
 * Purpose: delete alarm log
 * Input:
@@ -199,6 +187,18 @@
     s: scadaId
     }
   2. [_deleteAlarmLog(filter)](#func_deleteAlarmLog)
+  
+#### _updateLastAlarmLog {#func_updateLastAlarmLog}
+* Purpose: update alarm log
+* Input:
+
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| filter | Object | filter |
+| update | Object | update object |
+
+* Logical description:
+1. findOneAndUpdate({rawResult: true})
 
 #### _deleteAlarmLog {#func_deleteAlarmLog}
 * Purpose: delete alarm log with filter
