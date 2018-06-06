@@ -6,8 +6,8 @@
 | s | String | scada Id | Y ||
 | d | String | device Id | Y ||
 | t | String | tag Name | Y ||
-| ts | Date | trigger or clear time || default: null |
 | v | Object | alarm value || default: null |
+| ts | Date | trigger or clear time || default: null |
 | ack | Date | ack time || default: null|
 | clear | Date | clear time || default: null|
 
@@ -23,8 +23,8 @@
 | ackTs | Date |
 | clearTs | Date|
 
-### Method (alarmStatusHelper.js)
-#### getAlarmStatus
+### Method (alarmLogHelper.js)
+#### getAlarmLog
 * Purpose: get alarm's status
 * Input:
 
@@ -33,10 +33,10 @@
 | params | Object | filter Object |
 | params.alarmId | Number | filter alarmId (totally compare) |
 | params.scadaId | String | filter scadaId(totally compare) |
-| params.deviceId | String  | filter deviceId(totally compare) |
-| params.tagName | String | filter tagName|
-| params.acked | Boolean | filter acked |
-| params.status | Boolean | filter status |
+| params.startTs | Date | filter alarm ts |
+| params.endTs | Date | filter alarm ts. Default: new Date()|
+| params.count | Number | retrieve log count|
+| params.order | Boolean | data order by ts |
 
 * Output:
   * Array of [AlarmStatus](#obj_AlarmStatus) Object
@@ -46,8 +46,13 @@
     s: scadaId,
     d: deviceId,
     t: tagName,
-    status: status,
-    acked: acked
+    ts: {$gte: startTs, $lte: endTs},
+    }
+  2. sort = {
+    ts: order
+    }
+  3. limit = {
+    limit: count
     }
   2. Organize the output format = {
     alarmId: $a,
@@ -55,25 +60,35 @@
     deviceId: $d,
     tagName: $t,
     value: $v,
-    acked: $acked,
-    status: $status,
-    ackeTs; $ackeTs,
+    ackTs: $ack,
+    clearTs: $clear,
     ts: $ts
     }
     
-#### initAlarmStatus
-* Purpose: init alarm's status
+#### insertTriggerAlarmLog
+* Purpose: insert alarm trigger logs
 * Input:
 
 | Name | Data Type | Description |
 | :---: | :---: | :---: |
-| alarmId | Number | alarm Id |
-| scadaId | String | scada Id |
-| deviceId | String | device Id |
-| tagName | String | tag Name |
+| records | Array | array of record |
+| record.alarmId | Number | alarm Id |
+| record.scadaId | String | scada Id |
+| record.deviceId | String | device Id |
+| record.tagName | String | tag Name |
+| record.ts | Date | alarm trigger time. default: new Date() |
+| record.value | Object | tag value |
 
 * Logical description:
-  1. findOneAndUpdate({upsert: true, setDefaultsOnInsert: true)
+  1. doc = {
+    a: alarmId,
+    s: scadaId,
+    d: deviceId,
+    t: tagName,
+    ts: ts,
+    v: value
+    }
+  2.insertMany(docs)
 
 #### triggerAlarmStatus
 * Purpose: trigger alarm's status
