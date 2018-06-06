@@ -88,7 +88,7 @@
     ts: ts,
     v: value
     }
-  2.insertMany(docs)
+  2. insertMany(docs)
 
 #### triggerAlarmStatus
 * Purpose: trigger alarm's status
