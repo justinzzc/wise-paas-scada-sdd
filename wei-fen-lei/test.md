@@ -51,8 +51,10 @@
   * 只取出事**件點、參考點、多個記錄點**都有deviceRight的events
 
 * \[GET\] /EventLogs/info/{eventId}
+
   * 取得單一事件的設定細節，包含記錄測點
   * 只取出事**件點、參考點、多個記錄點**都有deviceRight的event, 否則回傳權限錯誤
+
 * \[DELETE\] /EventLogs/{eventId}
   * 刪除事件測點及其記錄測點
   * 只刪除**事件點、參考點、多個記錄**點都有deviceRight的event, 否則回傳權限錯誤
@@ -87,6 +89,11 @@
   * user\_allow\_device
     * 要檢查到device層級
   * 所有API都使用manage\_event \(scope\)
+
+* **連動刪除**
+  * 刪除project或scada時,會去連動刪除event的config/instance/log
+  * 但刪除device/tag時，不會去做連動，所以有可能發生event裡的device/tag的config已經不在的情況
+    * 有做驗證，若event裡的device/tag已經不在，則device/tag的value改成提示訊息
 
 ---
 
