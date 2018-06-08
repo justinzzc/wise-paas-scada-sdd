@@ -62,8 +62,33 @@
 - Array of [Alarm Status](#obj_AlarmStatus) Object
 
 * Logical description:
-  1. check startTs and endTs format
-  2. alarmLog.getAlarmLog({alarmId, scadaId, startTs, endTs, count, order})
+  1. alarmStatus.getAlarmStatus({alarmId, scadaId, deviceId, tagNAme, acked, status})
+  
+#### triggerAlarm{#func_alarm_triggerAlarm}
+* Purpose: Trigger Alarm
+* Input:
+| Name | Data Type | Description |
+| :---: | :---: | :---: |
+| records | Array | record |
+| record.alarmId | Number | alarm Id |
+| record.scadaId | String scada Id |
+| record.deviceId | String | filter device Id |
+| record.tagName | String | filter tagName |
+| record.value | Boolean | value |
+| record.ts | Boolean | trigger ts |
+* Logical description:
+  1. check if alarmId, scadaId, deviceId, tagName, value are exist
+  2. check ts format
+  3. update alarm status, return updated
+    - alarmStatus.triggerAlarmStatus(alarmId, scadaId, deviceId, tagName, ts)
+  4. if updated is true, then insert Trigger record
+    - alarmLog.inserTriggerAlarmLog(records)
+
+
+
+
+
+
 
 
 
