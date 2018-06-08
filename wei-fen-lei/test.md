@@ -38,21 +38,30 @@
 
   * 包含紀錄測點一起帶給這支api
   * 紀錄測點為array, 可以為空
+  * user\(token\)對選定的**事件點、參考點、多個記錄點**都需要有deviceRight，否則無法新增\(權限不足\)
 
 * \[GET\] /EventLogs/list
 
   * 取得列表，只回傳eventId/eventName/scadaId/description/instanceLaunched
+  * 只取出事**件點、參考點、多個記錄點**都有deviceRight的events
 
 * \[GET\] /EventLogs/list/{scadaId}
+
   * 取得相同scada的event列表，只回傳eventId/eventName/scadaId/description/instanceLaunched
+  * 只取出事**件點、參考點、多個記錄點**都有deviceRight的events
+
 * \[GET\] /EventLogs/info/{eventId}
   * 取得單一事件的設定細節，包含記錄測點
+  * 只取出事**件點、參考點、多個記錄點**都有deviceRight的event, 否則回傳權限錯誤
 * \[DELETE\] /EventLogs/{eventId}
-  刪除事件測點及其記錄測點
+  * 刪除事件測點及其記錄測點
+  * 只刪除**事件點、參考點、多個記錄**點都有deviceRight的event, 否則回傳權限錯誤
 * \[POST\] /EventLogs/syncInstance
-  選擇哪一個eventId要launch或close worker裡的event instance
+  * 選擇哪一個eventId要launch或close worker裡的event instance
+  * 只同步**事件點、參考點、多個記錄點**都有deviceRight的event, 否則回傳權限錯誤
 * \[POST\] /EventLogs/data
   * 取得紀錄點的值
+  * 只能取出**事件點、參考點、多個記錄點**都有deviceRight的event data, 否則回傳權限錯誤
 
 ### Note
 
