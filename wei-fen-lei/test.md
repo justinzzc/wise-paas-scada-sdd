@@ -35,18 +35,21 @@
 ### [API](#event-log-api) {#event-log-api}
 
 * \[POST\] /EventLogs
+
   * 包含紀錄測點一起帶給這支api
   * 紀錄測點為array, 可以為空
 
 * \[GET\] /EventLogs/list
+
   * 取得列表，只回傳eventId/eventName/scadaId/description/instanceLaunched
+
 * \[GET\] /EventLogs/list/{scadaId}
   * 取得相同scada的event列表，只回傳eventId/eventName/scadaId/description/instanceLaunched
 * \[GET\] /EventLogs/info/{eventId}
   * 取得單一事件的設定細節，包含記錄測點
-* \[  DELETE\] /EventLogs/{eventId}
+* \[DELETE\] /EventLogs/{eventId}
   刪除事件測點及其記錄測點
-* \[  POST\] /EventLogs/syncInstance
+* \[POST\] /EventLogs/syncInstance
   選擇哪一個eventId要launch或close worker裡的event instance
 * \[POST\] /EventLogs/data
   * 取得紀錄點的值
@@ -79,10 +82,6 @@
 ---
 
 ### FAQ
-
-
-
-
 
 
 
