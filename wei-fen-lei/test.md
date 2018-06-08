@@ -12,7 +12,7 @@
 | tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
 
 * event\_log\_list \(事件測點和參考測點\)
-  * 13\#
+  * 15\#
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -30,52 +30,35 @@
 | sample\_unit | integer | Y |  | 取樣間隔單位 |  | value: {1:秒, 2:分, 3:小時} |
 | sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
 | instance\_launched | boolean | Y |  | 是否透過eventManager啟動event instance |  | default:false |
+| ref\_text\_value | varchar\(256\) | N |  | 文字參考值 |  |  |
 
 ### [API](#event-log-api) {#event-log-api}
 
-* **create**
+* \[POST\] /EventLogs
+  * 包含紀錄測點一起帶給這支api
+  * 紀錄測點為array, 可以為空
 
-  * \[POST\] /EventLogs
-    * 包含紀錄測點一起帶給這支api
-    * 紀錄測點為array, 可以為空
-      * 空的話就只存本身\(事件測點\)的設定
-
-* **read**
-
-  * \[GET\] /EventLogs/list
-    * 取得列表，只回傳eventId/eventName/scadaId/description
-  * \[GET\] /EventLogs/info/{eventId}
-    * 取得單一事件細節，包含記錄測點
-  * \[POST\] /EventLogs/data
-    * 取得紀錄點的值
-
-* **update**
-
-  * \[PUT\] /EventLogs/{eventId}
-    * 更新特定事件，包含記錄測點
-    * 事件測點不能修改，所以不用傳scadaId/deviceId/tagName
-    * 回傳值要改成obj 包含event\_id，stacy那邊需要
-
-* **delete**
-
-  * \[DELETE\] /EventLogs/{eventId}
-    * 刪除事件測點及其記錄測點
+* \[GET\] /EventLogs/list
+  * 取得列表，只回傳eventId/eventName/scadaId/description/instanceLaunched
+* \[GET\] /EventLogs/list/{scadaId}
+  * 取得相同scada的event列表，只回傳eventId/eventName/scadaId/description/instanceLaunched
+* \[GET\] /EventLogs/info/{eventId}
+  * 取得單一事件的設定細節，包含記錄測點
+* \[  DELETE\] /EventLogs/{eventId}
+  刪除事件測點及其記錄測點
+* \[  POST\] /EventLogs/syncInstance
+  選擇哪一個eventId要launch或close worker裡的event instance
+* \[POST\] /EventLogs/data
+  * 取得紀錄點的值
 
 ### Note
 
-* **刪除或修改的的連動情境**
+* **刪除event會做的事情**
 
-  * \[PUT\] /EventLogs/{eventId}
-    * 修改事件名稱\(event\_name\)
-      * mongo要根據eventId更新data的事件名稱
-        * 不然改完名後的舊資料會撈不到
-      * 不用再去更新event\_name，因為stacy那邊會刪除再新增
-  * \[DELETE\] /EventLogs/{eventId}
-    * portal API刪除事件
-      * mongo要根據eventId刪除相關資料
-    * portal API刪除紀錄測點
-      * mongo要根據eventId/device\_id/tag\_name刪除相關資料
-        * 同上，不刪除相關資料會抓到舊資料
+  * 如果deleteData為true
+    * 會刪掉config/instance/data
+  * 如果deleteData為false
+    * 會刪掉config/instance
 
 * **eventLogRecord \(Array\)在insert/update的差別**
 
@@ -87,80 +70,19 @@
     * null arr
       * 不對紀錄測點做任何變動
 
-* **request validation**
-
-  * type要對/數量不能少/數量不能多
-  * 驗證相關測點或事件是否真的存在
-  * 測點間的關係驗證，例如離散點的參考點就要是離散點之類的
-
-* **user permission**
+* **permission**
 
   * user\_allow\_device
-    * 只要檢查到scada\_id的層級就好
-  * validScope - EditConfig
-    * Eventlog.createEventLog
-    * Eventlog.updateEventLog
-    * Eventlog.deleteEventLog
-  * validToken
-    * Eventlog.listEventLogInfoByScadaIdAndEventName
-    * Eventlog.listAllEventLogBasic
-  * validScope - GetValue
-    * Eventlog.getEventLogData
-
-* **把eventManager跟config setting分開**
-
-  * 我會在event\_log\_list加一欄位:instance\_launched \(boolean, default: false\)
-    * set true: 開啟或重啟
-    * set false: 關閉
-  * portal新增API
-    * POST /EventLogs/syncInstance
-      * type: launch/close
-    * DELETE /EvnetLogs/deleteData/{eventId}
+    * 要檢查到device層級
+  * 所有API都使用manage\_event \(scope\)
 
 ---
 
 ### FAQ
 
-選擇參考測點時，是限定同一scada裡的tag嗎
 
-1. * yes
-2. 和益開會時好像有在設定畫面裡拿掉幾個欄位?
 
-   * 遲滯範圍
 
-3. 有需要做到編輯event log的參考測點嗎?
-
-   * 要，新增跟刪除
-
-4. 事件之後紀錄之取樣數量&持續記錄，是可以指定取樣數量且同時選擇持續記錄嗎?
-
-   * 不行，只能二選一
-   * 如果取樣數量設3
-     * 連續觸發event的話，會取樣3個區間，直到重新觸發event後才會再取樣3次
-   * 選擇持續記錄
-     * 只要持續觸發event，就依照取樣間隔持續log
-
-5. 事件類型的種類有幾種?
-
-   * 2類共4種
-
-     * 類型
-
-       * 事件測點跟參考測點相比
-
-       * 事件測點跟參考值相比
-
-6. event\_sample\_amount和event\_sample\_keep\_log都設not null
-
-   * 但這兩個是二選一的關係，所以用程式去控制
-
-7. 我想說 event\_log\_list 的primary key 你覺得 加上scadaId如何?不然都不能取重複名稱XD
-
-   * ok, 把eventname和scada\_id都設pk
-
-8. 新增事件紀錄時，是要所有資訊都放再同一表單一同用一支api來傳，還是先建立事件紀錄，再新增紀錄測點呢?
-
-   * 同一支api一起建就好
 
 
 
