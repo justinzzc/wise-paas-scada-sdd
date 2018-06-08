@@ -40,7 +40,7 @@
 | params.count | Number | retrieve count. default: 1 |
 | params.order | Boolean | data order. default: true |
 * output
-- Array of [Alarm Log](#obj_AlarmStatus) Object
+- Array of [Alarm Log](#obj_AlarmLog) Object
 
 * Logical description:
   1. check startTs and endTs format

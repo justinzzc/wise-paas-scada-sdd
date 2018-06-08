@@ -11,7 +11,7 @@
 | ack | Date | ack time || default: null|
 | clear | Date | clear time || default: null|
 
-### AlarmStatus Object {#obj_AlarmStatus}
+### AlarmLog Object {#obj_AlarmLog}
 | Column Name | Type |
 | :--- | :--- |
 | alarmId | Number |
