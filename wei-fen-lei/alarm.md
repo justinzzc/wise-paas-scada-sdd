@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                
+  ode/message規則                  
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -83,6 +83,9 @@
     * 刪除整個instance
   * \[{scadaId: 'xxx', alarmId: 'xxx', tags: \[{deviceId:'xxx', tagName: 'xxx'}\]}\]
     * update用途，把tag移除該alarm的監控
+    * 只改tags,沒改config
+    * 如果是config/tags都有改, 就直接call update
+      * config/tags一起帶
 
 ### TODO
 
