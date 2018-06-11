@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則            
+  ode/message規則              
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -74,6 +74,14 @@
     * 跟eryn討論看看前端能不能只call一次就好，降低effort
   * * 也可以放在status裡
   * POST /Alarms/sync
+
+* stacy 做的delete alarm支援三種
+  * \[{scadaId: 'xxxx'}\]
+    * 刪除整個instance
+  * \[{scadaId:'xxxx', alarmId: 'xxxx'}\]
+    * 刪除整個instance
+  * \[{scadaId: 'xxx', alarmId: 'xxx', tags: \[{deviceId:'xxx', tagName: 'xxx'}\]}\]
+    * update用途，把tag移除該alarm的監控
 
 ### TODO
 
@@ -131,6 +139,7 @@
   * yes
 
 * 刪除config要刪除log嗎?
+
   * log一律都不要刪，但為了讓record有意義，所以保留code+message
 
 ### FAQ \(on Progress\)
