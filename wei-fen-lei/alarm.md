@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則          
+  ode/message規則            
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -129,6 +129,9 @@
 * 新增完config要直接啟動alarm instance嗎? 還是要像eventlog一樣，讓使用者可以控制
 
   * yes
+
+* 刪除config要刪除log嗎?
+  * log一律都不要刪，但為了讓record有意義，所以保留code+message
 
 ### FAQ \(on Progress\)
 
