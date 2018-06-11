@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則              
+  ode/message規則                
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -76,6 +76,7 @@
   * POST /Alarms/sync
 
 * stacy 做的delete alarm支援三種
+
   * \[{scadaId: 'xxxx'}\]
     * 刪除整個instance
   * \[{scadaId:'xxxx', alarmId: 'xxxx'}\]
