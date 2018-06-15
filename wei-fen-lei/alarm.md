@@ -8,8 +8,8 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | alarm\_id | integer | Y | Y | Y | Y |  |
 | scada\_id | varchar\(36\) | Y |  |  |  |  |
-| code | varchar\(16\) | Y |  |  |  | code+messagge在同一scada下不能重覆，在程式裡檔 |
-| message | varchar\(256\) | Y |  |  |  | code+messagge在同一scada下不能重覆，在程式裡檔 |
+| code | varchar\(16\) | Y |  |  |  | code在同一scada下不能重覆，在程式裡檔 |
+| message | varchar\(256\) | Y |  |  |  |  |
 | condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: out range, 5: in range} |
 | lower\_limit | double |  |  |  |  |  |
 | upper\_limit | double |  |  |  |  |  |
@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                          
+  ode/message規則                            
   **
 
   * 同一個scada下的code+message pair不能重覆
