@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                            
+  ode/message規則                              
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -86,6 +86,21 @@
     * 只改tags,沒改config
     * 如果是config/tags都有改, 就直接call update
       * config/tags一起帶
+
+* filter
+  * alarm log
+    * 選tag就要給device
+    * 至少要給scadaId
+      * 全部給太多了
+    * options
+      * project/scada
+      * project/scada/device
+      * project/scada/device/tag
+      * project/scada/alarmId
+  * alarm status
+    * 選tag就要給devcie
+    * 可以都不給
+    * 
 
 ### TODO
 
