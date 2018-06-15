@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                    
+  ode/message規則                      
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -149,10 +149,8 @@
   * log一律都不要刪，但為了讓record有意義，所以保留code+message
 
 * alarm log filter
-  * filter set 1
-    * scada/alarm/time
-  * filter set 2
-    * scada/device/tag/time
+
+  * scada/alarm/device/tag/time/code\(完整比對\)
 
 ### FAQ \(on Progress\)
 
