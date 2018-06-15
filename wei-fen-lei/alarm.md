@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                  
+  ode/message規則                    
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -114,7 +114,7 @@
 
 * 要做update，要討論下那些欄位可以動那些不行?
 
-  * 都可以更新
+  * alarmId/scadaId
 
 * current alarm list裡，只秀tag就好了嗎?這樣會不會分不清是哪個scada/device?
 
@@ -128,15 +128,17 @@
 
 * alarm ack的那個頁面 有要做order嗎?
 
-  * 從前端做
+  * 先不用做，如果要做就從前端做
 
 * 有要做刪除alarm嗎?
 
+  * 要，設備要去刪，worker也要刪
+
 * 需要作連動刪除?
 
-  * 要連動把alarm\_tag裡的record刪掉
+  * 要連動把alarm\_tag裡的tag刪掉
 
-  * 但要不要去同步stacy那邊的再說
+  * worker的東西也要同步
 
 * 新增完config要直接啟動alarm instance嗎? 還是要像eventlog一樣，讓使用者可以控制
 
@@ -145,6 +147,12 @@
 * 刪除config要刪除log嗎?
 
   * log一律都不要刪，但為了讓record有意義，所以保留code+message
+
+* alarm log filter
+  * filter set 1
+    * scada/alarm/time
+  * filter set 2
+    * scada/device/tag/time
 
 ### FAQ \(on Progress\)
 
