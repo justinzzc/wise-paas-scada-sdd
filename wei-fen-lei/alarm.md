@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                        
+  ode/message規則                          
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -128,7 +128,7 @@
 
 * alarm ack的那個頁面 有要做order嗎?
 
-  * 先不用做，如果要做就從前端做
+  * 先不用，固定排序
 
 * 有要做刪除alarm嗎?
 
@@ -147,10 +147,6 @@
 * 刪除config要刪除log嗎?
 
   * log一律都不要刪，但為了讓record有意義，所以保留code+message
-
-* alarm log filter
-
-  * scada/alarm/device/tag/time/code\(完整比對\)
 
 ### FAQ \(on Progress\)
 
