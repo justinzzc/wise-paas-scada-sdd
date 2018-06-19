@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                                  
+  ode/message規則                                    
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -169,7 +169,8 @@
 
   * log一律都不要刪，但為了讓record有意義，所以保留code+message
 
-*  相同alarmId/scadaId的config\(但可能lowerLimit/upperLimit不一樣\)重複insert，你那邊會怎處理？新的蓋舊的？還是？
+* 相同alarmId/scadaId的config\(但可能lowerLimit/upperLimit不一樣\)重複insert，你那邊會怎處理？新的蓋舊的？還是？
+
   * 不處理 insert一樣的 不會更新
 
 ### FAQ \(on Progress\)
