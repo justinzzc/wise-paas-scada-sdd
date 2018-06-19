@@ -26,7 +26,7 @@
 ### SPEC
 
 * **c  
-  ode/message規則                                    
+  ode/message規則                                      
   **
 
   * 同一個scada下的code+message pair不能重覆
