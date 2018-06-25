@@ -25,7 +25,7 @@
 
 ### SPEC
 
-* **code/message規則                                          
+* **code/message規則                                            
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -73,6 +73,7 @@
     * 跟eryn討論看看前端能不能只call一次就好，降低effort
   * * 也可以放在status裡
   * POST /Alarms/sync
+  * POST /Alarms/ack
 
 * stacy 做的delete alarm支援三種
 
