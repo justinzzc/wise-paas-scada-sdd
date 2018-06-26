@@ -25,7 +25,7 @@
 
 ### SPEC
 
-* **code/message規則                                            
+* **code/message規則                                              
   **
 
   * 同一個scada下的code+message pair不能重覆
@@ -68,6 +68,7 @@
   * PUT /Alarms/{alarm\_id}
     * 如果要更新的alarm已經是launche，則call stacy做的upate
     * 如果要更新的alarm不是launch狀態ˋ，則指更新cfg, lauch狀態保留給使用者自己呼叫起來
+  * DELETE /Alarms/{alarm\_id}
   * POST /Alarms/log
   * POST /Alarms/status
     * 跟eryn討論看看前端能不能只call一次就好，降低effort
