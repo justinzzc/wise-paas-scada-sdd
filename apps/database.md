@@ -21,6 +21,10 @@
 | 13 | user\_allow\_device | 設備儀器列表 |
 | 14 | sys\_parameters | 系統參數 |
 | 15 | scada\_parameters | 節點參數 |
+| 16 | event\_log\_list | 事件設定值、事件測點和參考測點 |
+| 17 | event\_log\_record | 紀錄測點 |
+| 18 | alarm\_list | 警報設定 |
+| 19 | alarm\_tag | 警報點 |
 
 * project\_list
 
@@ -170,6 +174,59 @@
 | scada\_id | varchar\(36\) | Y | Y | 參數名稱 | Y |
 | param\_name | varchar\(32\) | Y | Y | 參數值 |  |
 | param\_value | varchar\(256\) | N |  |  |  |
+
+* event\_log\_list
+
+| Column Name | Type | Not Null | PK | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| event\_id | integer | Y | Y |  | Y | AUTO\_INCREMENT |
+| event\_name | varchar\(128\) | Y |  | 事件紀錄名稱 |  |  |
+| scada\_id | varchar\(36\) | Y |  | 事件測點的節點識別碼 |  |  |
+| description | varchar\(256\) | N |  | 事件描述 |  |  |
+| device\_id | varchar\(256\) | Y |  | 事件測點的設備識別名 |  |  |
+| tag\_name | varchar\(128\) | Y |  | 事件測點名稱 |  |  |
+| event\_type | integer | Y |  | 事件類型 |  | {1:&gt;=參考值, 2:&lt;=參考值, 3:==參考值, 4:&gt;=參考測點, 5:&lt;=參考測點, 6:==參考測點, 7:依取樣間隔紀錄} |
+| ref\_value | double | N |  | 參考值 |  |  |
+| ref\_device\_id | varchar\(256\) | N |  | 參考測點的設備識別名 |  |  |
+| ref\_tag\_name | varchar\(128\) | N |  | 參考測點名稱 |  |  |
+| sample\_interval | integer | Y |  | 取樣間隔 |  |  |
+| sample\_unit | integer | Y |  | 取樣間隔單位 |  | value: {1:秒, 2:分, 3:小時} |
+| sample\_amount | integer | Y |  | 事件之後紀錄之取樣數量 |  | 值如果為0，代表「持續記錄」 |
+| instance\_launched | boolean | Y |  | 是否透過eventManager啟動event instance |  | default:false |
+| ref\_text\_value | varchar\(256\) | N |  | 文字參考值 |  |  |
+
+
+* event\_log\_record
+
+| Column Name | Type | Not Null | PK | Description | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| event\_id | integer | Y | Y |  | Y |  |
+| device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |  |
+| tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
+
+
+* alarm\_list
+
+| Column Name | Type | Not Null | PK | auto increment | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| alarm\_id | integer | Y | Y | Y | Y |  |
+| scada\_id | varchar\(36\) | Y |  |  |  |  |
+| code | varchar\(16\) | Y |  |  |  | code在同一scada下不能重覆，在程式裡檔 |
+| message | varchar\(256\) | Y |  |  |  |  |
+| condition\_type | integer | Y |  |  |  | {1: above, 2: below, 3: equal, 4: in range, 5: out range} |
+| lower\_limit | double |  |  |  |  |  |
+| upper\_limit | double |  |  |  |  |  |
+| instance\_launched | boolean | Y |  |  |  | default: false |
+
+
+* alarm\_tag
+
+| Column Name | Type | Not Null | PK | auto increment | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| alarm\_id | integer | Y | Y |  | Y |  |
+| device\_id | varchar\(256\) | Y | Y |  | Y |  |
+| tag\_name | varchar\(128\) | Y | Y |  | Y |  |
+
 
 * E-R Diagram
 
