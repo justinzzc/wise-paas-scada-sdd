@@ -13,16 +13,14 @@
 | 5 | tag\_analog | 類比點資訊 |
 | 6 | tag\_discrete | 離散點資訊 |
 | 7 | tag\_text | 文字點資訊 |
-| 8 | alarm\_analog | 類比點警報資訊 |
-| 9 | alarm\_discrete | 離散點警報資訊 |
-| 10 | role | 角色列表 |
-| 11 | scope | 權限列表 |
-| 12 | scope\_role | 權限-角色關係 |
-| 13 | user\_info | 帳戶資訊 |
-| 14 | user\_scope | 帳戶-權限關係 |
-| 15 | user\_allow\_device | 設備儀器列表 |
-| 16 | sys\_parameters | 系統參數 |
-| 17 | scada\_parameters | 節點參數 |
+| 8 | role | 角色列表 |
+| 9 | scope | 權限列表 |
+| 10 | scope\_role | 權限-角色關係 |
+| 11 | user\_info | 帳戶資訊 |
+| 12 | user\_scope | 帳戶-權限關係 |
+| 13 | user\_allow\_device | 設備儀器列表 |
+| 14 | sys\_parameters | 系統參數 |
+| 15 | scada\_parameters | 節點參數 |
 
 * project\_list
 
@@ -68,7 +66,6 @@
 | device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
 | tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
 | tag\_description | varchar\(256\) | N |  | 測點敘述 |  |
-| alarm\_status | boolean | Y |  | 是否有警報屬性 |  |
 | tag\_type | integer | Y |  | 測點類型 |  |
 | array\_size | integer | Y |  | 陣列大小 |  |
 | data\_log | boolean | Y |  | 資料紀錄 |  |
@@ -110,38 +107,6 @@
 | scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
 | device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
 | tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
-
-* alarm\_analog
-
-| Column Name | Type | Not Null | PK | Description | Index |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
-| device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
-| tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
-| hh\_priority | integer | Y |  | HH Priority |  |
-| hh\_alarm | double | Y |  | HH Alarm Limit |  |
-| hi\_priority | integer | Y |  | High Priority |  |
-| hi\_alarm | double | Y |  | High Alarm Limit |  |
-| lo\_priority | integer | Y |  | Low Priority |  |
-| lo\_alarm | double | Y |  | Low Alarm Limit |  |
-| ll\_priority | integer | Y |  | LL Priority |  |
-| ll\_alarm | double | Y |  | LL Alarm Limit |  |
-
-* alarm\_discrete
-
-| Column Name | Type | Not Null | PK | Description | Index |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| scada\_id | varchar\(36\) | Y | Y | 節點識別碼 | Y |
-| device\_id | varchar\(256\) | Y | Y | 設備識別名 | Y |
-| tag\_name | varchar\(128\) | Y | Y | 測點名稱 | Y |
-| alarm\_priority\_0 | integer | Y |  | 警報狀態0 |  |
-| alarm\_priority\_1 | integer | Y |  | 警報狀態1 |  |
-| alarm\_priority\_2 | integer | Y |  | 警報狀態2 |  |
-| alarm\_priority\_3 | integer | Y |  | 警報狀態3 |  |
-| alarm\_priority\_4 | integer | Y |  | 警報狀態4 |  |
-| alarm\_priority\_5 | integer | Y |  | 警報狀態5 |  |
-| alarm\_priority\_6 | integer | Y |  | 警報狀態6 |  |
-| alarm\_priority\_7 | integer | Y |  | 警報狀態7 |  |
 
 * role
 
