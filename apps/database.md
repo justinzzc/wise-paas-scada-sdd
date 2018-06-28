@@ -2,7 +2,7 @@
 
 ---
 
-目前正式的資料表總計16個 \(之後配合會新增1個,預計17個表格\)
+目前正式的資料表總計17個 \(之後配合會新增2個\(Alarm\),預計19個表格\)
 
 | No. | Table Name | Table Description |
 | :--- | :--- | :--- |
@@ -195,7 +195,6 @@
 | instance\_launched | boolean | Y |  | 是否透過eventManager啟動event instance |  | default:false |
 | ref\_text\_value | varchar\(256\) | N |  | 文字參考值 |  |  |
 
-
 * event\_log\_record
 
 | Column Name | Type | Not Null | PK | Description | Index | Notes |
@@ -203,7 +202,6 @@
 | event\_id | integer | Y | Y |  | Y |  |
 | device\_id | varchar\(256\) | Y | Y | 紀錄測點的設備識別名 | Y |  |
 | tag\_name | varchar\(128\) | Y | Y | 紀錄測點名稱 | Y |  |
-
 
 * alarm\_list
 
@@ -218,7 +216,6 @@
 | upper\_limit | double |  |  |  |  |  |
 | instance\_launched | boolean | Y |  |  |  | default: false |
 
-
 * alarm\_tag
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
@@ -226,7 +223,6 @@
 | alarm\_id | integer | Y | Y |  | Y |  |
 | device\_id | varchar\(256\) | Y | Y |  | Y |  |
 | tag\_name | varchar\(128\) | Y | Y |  | Y |  |
-
 
 * E-R Diagram
 
