@@ -25,7 +25,7 @@
 
 ### Requirement
 
-* **code規則                                                
+* **code規則                                                  
   **
 
   * 同一個scada下的code不能重覆，不同scada下可以定義相同的code
@@ -55,19 +55,22 @@
   * POST /Alarms
   * GET /Alarms
   * PUT /Alarms/{alarm\_id}
+
     * 如果alarm的instanceLaunched是true才call utility function
 
   * DELETE /Alarms/{alarm\_id}
+
   * POST /Alarms/data
   * POST /Alarms/status
 
   * POST /Alarms/syncInstance
+
   * POST /Alarms/ack
 
 * stacy 做的delete alarm支援三種
 
   * \[{scadaId: 'xxxx'}\]
-    * 刪除整個instance
+    * 刪除該scada下的所有alarm
   * \[{scadaId:'xxxx', alarmId: 'xxxx'}\]
     * 刪除整個instance
   * \[{scadaId: 'xxx', alarmId: 'xxx', tags: \[{deviceId:'xxx', tagName: 'xxx'}\]}\]
@@ -111,7 +114,7 @@
 
   * 不處理
 
-* utility delete 
+* utility delete
 
 
 
