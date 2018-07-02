@@ -2,6 +2,8 @@
 
 ---
 
+* `cf login -a api.wise-paas.com`
+
 * 在PCF上的測試流程
 
   * clone project
