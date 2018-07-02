@@ -25,8 +25,7 @@
 
 ### Requirement
 
-* **code規則                                                  
-  **
+* **code規則                                                  **
 
   * 同一個scada下的code不能重覆，不同scada下可以定義相同的code
 
@@ -61,13 +60,14 @@
   * DELETE /Alarms/{alarm\_id}
 
   * POST /Alarms/data
+
   * POST /Alarms/status
 
   * POST /Alarms/syncInstance
 
   * POST /Alarms/ack
 
-* stacy 做的delete alarm支援三種
+* **utility alarm delete**
 
   * \[{scadaId: 'xxxx'}\]
     * 刪除該scada下的所有alarm
@@ -79,26 +79,18 @@
     * 如果是config/tags都有改, 就直接call update
       * config/tags一起帶
 
-* filter
+* **filter**
 
   * alarm log
     * 選tag就要給device
     * 至少要給scadaId
-      * 全部給太多了
-    * options
-      * project/scada
-      * project/scada/device
-      * project/scada/device/tag
-      * project/scada/alarmId
   * alarm status
     * 選tag就要給devcie
     * 可以都不給
 
-* 連動刪除
+* **連動刪除**
 
-  * 刪除project或scada也會刪除下面的alarm
-
-  * 跟event一樣
+  * project/scada/device/tag
 
 ### FAQ
 
@@ -113,8 +105,6 @@
 * 相同alarmId/scadaId的config\(但可能lowerLimit/upperLimit不一樣\)重複insert，utility那邊會怎處理?
 
   * 不處理
-
-* utility delete
 
 
 
