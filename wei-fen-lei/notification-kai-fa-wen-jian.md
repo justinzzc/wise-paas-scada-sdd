@@ -7,9 +7,9 @@
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | notification\_id | integer | Y | Y | Y | Y |  |
-| name | varchar\(64\) | Y |  |  |  | UNIQUE |
+| name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | type | integer | Y |  |  |  | {1: line, 2: email, 3: wechat } |
-| send\_list | Array | Y |  |  |  |  |
+| send\_list | Array \(text\[\]\) | Y |  |  |  |  |
 
 * alarm\_notification
 
