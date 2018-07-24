@@ -17,6 +17,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | alarm\_id | integer | Y | Y |  |  |  |
 | notification\_id | integer | Y | Y |  |  |  |
+| trigger\_type | integer | Y | Y |  |  | {1: happend} |
 
 * sys\_parameters
 
