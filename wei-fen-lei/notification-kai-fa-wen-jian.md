@@ -8,7 +8,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | notification\_id | integer | Y | Y | Y | Y |  |
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
-| type | integer | Y |  |  |  | {1: line, 2: email, 3: wechat } |
+| type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | send\_list | Array \(text\[\]\) |  |  |  |  |  |
 
 * alarm\_notification
