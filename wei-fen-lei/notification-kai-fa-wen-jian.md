@@ -28,7 +28,9 @@
 
   * migrate裡也要加，參考manager\_alarm
 
-  * 
+* others
+
+  * sendList的上限也是32
 
 
 
