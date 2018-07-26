@@ -9,7 +9,7 @@
 | notification\_id | integer | Y | Y | Y | Y |  |
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
-| send\_list | Array \(text\[\]\) |  |  |  |  |  |
+| send\_list | Array \(varchar\(256\)\[\]\) |  |  |  |  |  |
 
 * alarm\_notification
 
