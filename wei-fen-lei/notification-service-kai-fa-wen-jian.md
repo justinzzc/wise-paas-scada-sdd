@@ -7,6 +7,7 @@
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | config\_id | integer | Y | Y | Y | Y |  |
+| type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | config | varchar\(512\) | Y |  |  |  | 下面有example |
 
 * notification\_list
@@ -68,14 +69,14 @@
 
   * DELETE / notification/{notification\_id} 刪除notification
 
-  * POST /smtpConfig - 建立smtpConfig  
-     \(第一階段限制該table只能一組config\)
+  * POST /notificationConfig - 建立notificationConfig  
+     \(透過api限制一種type在table只能有一筆record\)
 
-  * GET /smtpConfig - 取出smtpConfig
+  * GET /notificationConfig - 取出notificationConfig
 
-  * PUT /smtpConfig/{smtp\_id} - 更新smtpConfig
+  * PUT /notificationConfig/{config\_id} - 更新notificationConfig
 
-  * 第一階段不開放刪除smtp config api
+  * 不開放刪除notificationConfig  api
 
   * POST /notification/send 送出通知 \(要在body裡帶notification\_id\)
 
