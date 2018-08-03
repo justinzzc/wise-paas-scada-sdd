@@ -11,7 +11,7 @@
 | port | integer | Y |  |  |  |  |
 | secure | boolean | Y |  |  |  |  |
 | user\_name | varchar\(128\) | Y |  |  |  |  |
-| password | varchar\(256\) 因為是存加密後的結果，長度較長 | Y |  |  |  | crypto-js [https://github.com/brix/crypto-js](https://github.com/brix/crypto-js)  |
+| password | varchar\(256\) 因為是存加密後的結果，長度較長 | Y |  |  |  | crypto-js [https://github.com/brix/crypto-js](https://github.com/brix/crypto-js) |
 | from\_mail\_addr | varchar\(256\) | Y |  |  |  |  |
 | subject | varchar\(256\) | N |  |  |  |  |
 
@@ -35,7 +35,7 @@
 
   * delete notify
 
-  * create smtp\_config 
+  * create smtp\_config
 
   * get smtp\_config
 
@@ -53,9 +53,10 @@
 
   * DELETE / notification/{notification\_id} 刪除notification
 
-  * P    OST /smtpConfig - 建立smtpConfig     \(第一階段限制該table只能一組config\)
+  * POST /smtpConfig - 建立smtpConfig  
+     \(第一階段限制該table只能一組config\)
 
-  * GET /smtpConfig - 取出smtpConfig
+  * GET /smtpConfig - 取出smtpConfig
 
   * PUT /smtpConfig/{smtp\_id} - 更新smtpConfig
 
