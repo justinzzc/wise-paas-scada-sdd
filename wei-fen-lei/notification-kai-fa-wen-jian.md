@@ -6,14 +6,13 @@
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| host | integer | Y | Y | Y | Y |  |
-| port |  |  |  |  |  |  |
-| secure |  |  |  |  |  |  |
-| user |  |  |  |  |  |  |
-| password |  |  |  |  |  |  |
-| name | varchar\(128\) | Y |  |  |  | UNIQUE |
-| type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
-| send\_list | Array \(varchar\(256\)\[\]\) |  |  |  |  |  |
+| host | string | Y | Y | Y | Y |  |
+| port | integer |  |  |  |  |  |
+| secure | boolean |  |  |  |  |  |
+| user\_name | string |  |  |  |  |  |
+| password | string\(md5\) |  |  |  |  | 加密方式1. md5, 2. jwt token with secret |
+| from\_mail\_addr | string |  |  |  |  |  |
+| subject | string |  |  |  |  |  |
 
 * alarm\_notification
 
