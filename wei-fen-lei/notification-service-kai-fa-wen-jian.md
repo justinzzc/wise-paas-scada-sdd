@@ -2,18 +2,12 @@
 
 ### DB Schema {#db-schema}
 
-* smtp\_config
+* notification\_config
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| smtp\_id | integer | Y | Y | Y | Y |  |
-| host | varchar\(256\) | Y |  |  |  |  |
-| port | integer | Y |  |  |  |  |
-| secure | boolean | Y |  |  |  |  |
-| user\_name | varchar\(128\) | Y |  |  |  |  |
-| password | varchar\(256\) 因為是存加密後的結果，長度較長 | Y |  |  |  | crypto-js [https://github.com/brix/crypto-js](https://github.com/brix/crypto-js) |
-| from\_mail\_addr | varchar\(256\) | Y |  |  |  |  |
-| subject | varchar\(256\) | N |  |  |  |  |
+| config\_id | integer | Y | Y | Y | Y |  |
+| config |  |  |  |  |  | 下面有example |
 
 * notification\_list
 
@@ -23,7 +17,27 @@
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | send\_list | Array \(varchar\(256\)\[\]\) | N |  |  |  |  |
-| smtp\_id | integer | N |  |  |  |  |
+| config\_id | integer | N |  |  |  |  |
+
+* notification\_config
+  * smtp
+
+```
+{
+"host":"smtp.gmail.com",
+"port":465,
+"secure":true,
+"account": "scada.notify@gmail.com",
+"password": "1qaz@WSX3edc",
+"sender":"SCADA Notification <scada.notify@gmail.com>",
+"subject": "test"
+}
+```
+
+* password加解密
+
+  * | crypto-js [https://github.com/brix/crypto-js](https://github.com/brix/crypto-js) |
+    | :--- |
 
 * dao function
 
@@ -64,7 +78,9 @@
 
   * POST /notification/send 送出通知 \(要在body裡帶notification\_id\)
 
-  * 測試通知的api 第一階段先不做嗎
+    * notification\_id array, ex\[1,2,3,4\]
+
+  * email sen測試通知的api 第一階段先不做嗎
 
 * 限制
 
