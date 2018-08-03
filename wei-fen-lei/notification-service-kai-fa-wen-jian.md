@@ -3,6 +3,8 @@
 ### DB Schema {#db-schema}
 
 * notification\_config
+* 為什麼這張表還要type?
+  * 
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -84,6 +86,8 @@
     * 討論一下流程
 
   * email sen測試通知的api 第一階段先不做嗎
+
+    * 測試的api要多帶收的人email
 
 * 限制
 
