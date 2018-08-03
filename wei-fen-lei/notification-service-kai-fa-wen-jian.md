@@ -11,7 +11,7 @@
 | port | varchar\(128\) | Y |  |  |  | UNIQUE |
 | secure | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | user\_name | Array \(varchar\(256\)\[\]\) |  |  |  |  |  |
-| password |  |  |  |  |  |  |
+| password |  |  |  |  |  | crypto-js https://github.com/brix/crypto-js |
 | from\_mail\_addr |  |  |  |  |  |  |
 | subject |  |  |  |  |  |  |
 
@@ -24,8 +24,6 @@
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | send\_list | Array \(varchar\(256\)\[\]\) |  |  |  |  |  |
 | smtp\_id |  |  |  |  |  |  |
-
-
 
 * 限制
 
