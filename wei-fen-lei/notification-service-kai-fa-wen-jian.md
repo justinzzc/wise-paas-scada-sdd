@@ -2,15 +2,20 @@
 
 ### DB Schema {#db-schema}
 
+* smtp_config
+
+| Column Name | Type | Not Null | PK | auto increment | Index | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| notification\_id | integer | Y | Y | Y | Y |  |
+| name | varchar\(128\) | Y |  |  |  | UNIQUE |
+| type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
+| send\_list | Array \(varchar\(256\)\[\]\) |  |  |  |  |  |
+
 * notification\_list
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| host | integer | Y | Y | Y | Y |  |
-| port |  |  |  |  |  |  |
-| secure |  |  |  |  |  |  |
-| user |  |  |  |  |  |  |
-| password |  |  |  |  |  |  |
+| notification\_id | integer | Y | Y | Y | Y |  |
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | send\_list | Array \(varchar\(256\)\[\]\) |  |  |  |  |  |
