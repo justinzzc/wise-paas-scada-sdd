@@ -7,7 +7,7 @@
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | config\_id | integer | Y | Y | Y | Y |  |
-| config |  |  |  |  |  | 下面有example |
+| config | varchar\(512\) | Y |  |  |  | 下面有example |
 
 * notification\_list
 
@@ -25,11 +25,12 @@
 ```
 {
 "host":"smtp.gmail.com",
-"port":465,
-"secure":true,
-"account": "scada.notify@gmail.com",
-"password": "1qaz@WSX3edc",
-"sender":"SCADA Notification <scada.notify@gmail.com>",
+"port":465,"secure":true,
+    "auth":{
+        "user":"scada.notify@gmail.com",
+        "pass":"1qaz@WSX3edc"
+    },
+"FromMailAddr":"SCADA Notification <scada.notify@gmail.com>",
 "subject": "test"
 }
 ```
