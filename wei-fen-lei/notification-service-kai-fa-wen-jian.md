@@ -81,6 +81,7 @@
   * POST /notification/send 送出通知 \(要在body裡帶notification\_id\)
 
     * notification\_id array, ex\[1,2,3,4\]
+    * 討論一下流程
 
   * email sen測試通知的api 第一階段先不做嗎
 
