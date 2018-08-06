@@ -10,11 +10,11 @@
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | config | varchar\(512\) | Y |  |  |  | 下面有example |
 
-* notification\_list
+* group\_list
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| notification\_id | integer | Y | Y | Y | Y |  |
+| group\_id | integer | Y | Y | Y | Y |  |
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | send\_list | Array \(varchar\(256\)\[\]\) | N |  |  |  |  |
