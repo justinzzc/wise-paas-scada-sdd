@@ -3,8 +3,6 @@
 ### DB Schema {#db-schema}
 
 * notification\_config
-* 為什麼這張表還要type?
-  * 之後支援多組config時，要做type型態檢查，例如email type的config不能配line type的notification
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
