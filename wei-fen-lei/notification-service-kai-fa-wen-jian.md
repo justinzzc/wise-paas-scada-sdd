@@ -18,7 +18,7 @@
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
 | send\_list | Array \(varchar\(256\)\[\]\) | N |  |  |  |  |
-| config\_id | integer | N |  |  |  |  |
+| config\_id | integer | Y |  |  |  |  |
 
 * notification\_config
   * smtp
@@ -96,6 +96,12 @@
     * send list的數量 \(scada portal是訂32\)
 
   * 一樣在notification schema新增一個sys\_parameter資料表存這些?
+
+* 如果一開始都沒有setting \(line\)，那就再第一個人trigger時建立
+
+* TODOS
+
+  * dbmigrate在一開始就先觸發
 
 
 
