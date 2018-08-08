@@ -61,51 +61,58 @@
 
 ### API
 
-* api
+* POST /Group - 建立Group
 
-  * POST /Group - 建立Group
+```
+// request body
+{
+    name: "test",
+    description: "test",
+    type: 1,
+    send_list: [
+        {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}, 
+        {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}
+    ],
+    config: {
+        "host":"smtp.gmail.com",
+        "port":465,
+        "secure":true,
+        "user":"scada.notify@gmail.com",
+        "pass":"1qaz@WSX3edc"
+        "FromMailAddr":"SCADA Notification <scada.notify@gmail.com>",
+        "subject": "test"
+    }
+}
+```
+
+* GET /Group - 取出Group
+
+* PUT /Group/{group\_id} - 更新Group
+
+* DELETE / Group/{group\_id} 刪除Group
+
+* POST /Group/send 送出通知 \(要在body裡帶group\_id\)
+
+  * subject可不帶，但config裡就要設定，兩者都沒時，報錯
 
   ```
-  {
-      name: "test",
-      description: "test",
-      type: 1,
-      send_list: [
-          {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}, 
-          {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}
-      ],
-      config: {
-          "host":"smtp.gmail.com",
-          "port":465,
-          "secure":true,
-          "user":"scada.notify@gmail.com",
-          "pass":"1qaz@WSX3edc"
-          "FromMailAddr":"SCADA Notification <scada.notify@gmail.com>",
-          "subject": "test"
-      }
-  }
+  // request body
+  [{
+    "groupId": 1,
+    "msg": "test",
+    "subject": "test"
+  },{
+    "groupId": 2,
+    "msg": "test"
+  }]
   ```
 
-  * GET /Group - 取出Group
+### TODO
 
-  * PUT /Group/{group\_id} - 更新Group
+* 密碼安全機制
+  * GET /Group 時不給password
 
-  * DELETE / Group/{group\_id} 刪除Group
-
-  * POST /Group/send 送出通知 \(要在body裡帶group\_id\)
-
-    * subject可不帶，但config裡就要設定，兩者都沒時，報錯
-
-  * ```
-    [{
-      "groupId": 1,
-      "msg": "test",
-      "subject": "test"
-    },{
-      "groupId": 2,
-      "msg": "test"
-    }]
-    ```
+  * 但Update時要怎麼做?
 
 
 
