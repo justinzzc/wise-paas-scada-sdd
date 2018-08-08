@@ -78,7 +78,7 @@
         "port":465,
         "secure":true,
         "username":"scada.notify@gmail.com",
-        "password":"1qaz@WSX3edc"
+        "password":"1qaz@WSX3edc",
         "senderEmail":"SCADA Notification <scada.notify@gmail.com>",
         "emailSubject": "test"
     }
