@@ -6,7 +6,7 @@
 
 | Column Name | Type | Not Null | PK | auto increment | Index | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| group\_id | integer | Y | Y | Y | Y |  |
+| group\_id | varchar\(??\) | Y | Y | Y | Y |  |
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | description | varchar\(256\) | N |  |  |  |  |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
