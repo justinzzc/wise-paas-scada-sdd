@@ -44,6 +44,8 @@
   * | crypto-js [https://github.com/brix/crypto-js](https://github.com/brix/crypto-js) |
     | :--- |
 
+### dbmanager
+
 * dao function
 
   * create notify
@@ -62,33 +64,53 @@
 
   * delete smtp_config_
 
+### API
+
 * api
 
-  * POST /notification - 建立notification
+  * POST /Group - 建立Group
 
-  * GET /notification - 取出notifications
+  ```
+  {
+      name: "test",
+      description: "test",
+      type: 1,
+      send_list: [
+          {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}, 
+          {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}
+      ],
+      config: {
+          "host":"smtp.gmail.com",
+          "port":465,
+          "secure":true,
+          "user":"scada.notify@gmail.com",
+          "pass":"1qaz@WSX3edc"
+          "FromMailAddr":"SCADA Notification <scada.notify@gmail.com>",
+          "subject": "test"
+      }
+  }
+  ```
 
-  * PUT /notification/{notification\_id} - 更新notification
+  * GET /Group - 取出Group
 
-  * DELETE / notification/{notification\_id} 刪除notification
+  * PUT /Group/{group\_id} - 更新Group
 
-  * POST /notificationConfig - 建立notificationConfig  
-     \(透過api限制一種type在table只能有一筆record\)
+  * DELETE / Group/{group\_id} 刪除Group
 
-  * GET /notificationConfig - 取出notificationConfig
+  * POST /Group/send 送出通知 \(要在body裡帶group\_id\)
 
-  * PUT /notificationConfig/{config\_id} - 更新notificationConfig
+    * subject可不帶，但config裡就要設定，兩者都沒時，報錯
 
-  * 不開放刪除notificationConfig  api
-
-  * POST /notification/send 送出通知 \(要在body裡帶notification\_id\)
-
-    * notification\_id array, ex\[1,2,3,4\]
-    * 討論一下流程
-
-  * email sen測試通知的api 第一階段先不做嗎
-
-    * 測試的api要多帶收的人email
+  * ```
+    [{
+      "groupId": 1,
+      "msg": "test",
+      "subject": "test"
+    },{
+      "groupId": 2,
+      "msg": "test"
+    }]
+    ```
 
 * 限制
 
