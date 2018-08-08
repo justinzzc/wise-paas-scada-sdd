@@ -69,7 +69,7 @@
     name: "test",
     description: "test",
     type: 1,
-    send_list: [
+    sendList: [
         {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}, 
         {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}
     ],
