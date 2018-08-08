@@ -77,8 +77,8 @@
         "host":"smtp.gmail.com",
         "port":465,
         "secure":true,
-        "user":"scada.notify@gmail.com",
-        "pass":"1qaz@WSX3edc"
+        "username":"scada.notify@gmail.com",
+        "password":"1qaz@WSX3edc"
         "senderEmail":"SCADA Notification <scada.notify@gmail.com>",
         "emailSubject": "test"
     }
