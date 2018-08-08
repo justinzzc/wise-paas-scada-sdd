@@ -1,10 +1,5 @@
 # Notificaion
 
-### TODO {#db-schema}
-
-1. 改寫SCHEMA
-2. 讓STVEN檢查DB SCHEMA和API INTERFACE
-
 ### DB Schema {#db-schema}
 
 * group\_list
