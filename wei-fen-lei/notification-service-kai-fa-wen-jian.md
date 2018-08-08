@@ -10,8 +10,8 @@
 | name | varchar\(128\) | Y |  |  |  | UNIQUE |
 | description | varchar\(256\) | N |  |  |  |  |
 | type | integer | Y |  |  |  | {1: email, 2:line, 3: wechat } |
+| config | jsonb | N |  |  |  |  |
 | send\_list | Array \(jsonb\) | N |  |  |  | 下面有example |
-| config | jsonb | N |  |  |  | 下面有example |
 
 * send\_list
 
@@ -117,7 +117,7 @@
 
   * GET /Group 時不給password
 
-  * 但Update時要怎麼做? 
+  * 但Update時要怎麼做?
 
 
 
