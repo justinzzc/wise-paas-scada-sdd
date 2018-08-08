@@ -112,21 +112,5 @@
     }]
     ```
 
-* 限制
-
-  * 是否一樣要設上限值?
-
-    * 通知的數量 \(scada portal是訂32\)
-
-    * send list的數量 \(scada portal是訂32\)
-
-  * 一樣在notification schema新增一個sys\_parameter資料表存這些?
-
-* 如果一開始都沒有setting \(line\)，那就再第一個人trigger時建立
-
-* TODOS
-
-  * dbmigrate在一開始就先觸發
-
 
 
