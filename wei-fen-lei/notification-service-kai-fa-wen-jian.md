@@ -111,13 +111,13 @@
 
 * 密碼安全機制
 
-  * https://github.com/brix/crypto-js\#aes-encryption
+  * [https://github.com/brix/crypto-js\#aes-encryption](https://github.com/brix/crypto-js#aes-encryption)
 
   * 存進db前先加密, 取出時再解密
 
   * GET /Group 時不給password
 
-  * 但Update時要怎麼做?
+  * 但Update時要怎麼做? 
 
 
 
