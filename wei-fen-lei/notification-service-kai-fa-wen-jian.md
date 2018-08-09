@@ -62,32 +62,51 @@
 ### API
 
 * POST /Group - 建立Group
+  * type是email\(1\)的話就要填config裡相關欄位, line\(2\)/wechat\(3\)就不用帶config
+  * sendTarget依照type帶不同的值, 像是email addr/ token...
 
 ```
 // request body
 {
-    name: "test",
-    description: "test",
-    type: 1,
-    sendList: [
-        {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}, 
-        {firstName: "test1", lastName: "ccc", sendTarget: "werwer@werwer.werw"}
-    ],
-    config: {
-        "host":"smtp.gmail.com",
-        "port":465,
-        "secure":true,
-        "username":"scada.notify@gmail.com",
-        "password":"1qaz@WSX3edc",
-        "senderEmail":"SCADA Notification <scada.notify@gmail.com>",
-        "emailSubject": "test"
+  "name": "string(128)",
+  "description": "string(256)",
+  "type": number(1|2|3),
+  "config": {
+    "host": "string(256)",
+    "port": 0,
+    "secure": true,
+    "username": "string(128)",
+    "password": "string(128)",
+    "senderEmail": "string(256)",
+    "emailSubject": "string(256)"
+  },
+  "sendList": [
+    {
+      "firstName": "string(32)",
+      "lastName": "string(32)",
+      "sendTarget": "string(256)"
     }
+  ]
 }
 ```
 
 * GET /Group - 取出Group
 
+  * 安全考量不會回傳password
+
 * PUT /Group/{group\_id} - 更新Group
+
+  * 規則跟insert一樣
+
+  * config欄位一定要全帶或都不帶
+
+  * sendList一定要全帶或都不帶
+
+  * 其他欄位有改到再帶
+
+  * config.password 有改到再帶
+
+    * 這個UI要不要加上確認新密碼功能? 要找何益討論
 
 * DELETE / Group/{group\_id} 刪除Group
 
@@ -120,6 +139,8 @@
   * 但Update時要怎麼做?
 
   * 換smtp密碼時 要有密碼確認
+
+
 
 
 
