@@ -110,6 +110,19 @@
 
 * DELETE / Group/{group\_id} 刪除Group
 
+* POST / Group/test
+
+  * 這跟當初討論的不太依樣，當初是說test/send都在同一支就好
+
+  * 但流程上，user是在group建立前就要測試了，所以沒有goupId可以測
+
+  ```
+  {
+    "type": 1,
+    "sendList": []
+  }
+  ```
+
 * POST /Group/send 送出通知 \(要在body裡帶group\_id\)
 
   * subject可不帶，但config裡就要設定，兩者都沒時，報錯
