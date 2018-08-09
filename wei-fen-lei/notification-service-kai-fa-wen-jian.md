@@ -106,7 +106,7 @@
 
   * config.password 有改到再帶
 
-    * 這個UI要不要加上確認新密碼功能? 要找何益討論
+    * 這個UI要不要加上確認新密碼功能? 要找和益討論
 
 * DELETE / Group/{group\_id} 刪除Group
 
@@ -139,8 +139,6 @@
   * 但Update時要怎麼做?
 
   * 換smtp密碼時 要有密碼確認
-
-
 
 
 
