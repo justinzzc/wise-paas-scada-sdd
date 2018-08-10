@@ -165,5 +165,9 @@
 
 * 把SRP從SSO刪除，並再pcf重新跑過整個流程srp register sso
 
+* url 叫作
+
+  portal-notification.wise-paas.com
+
 
 
