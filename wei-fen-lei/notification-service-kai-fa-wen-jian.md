@@ -171,9 +171,10 @@
 
 * 連同scada一起改sso規則
 
-* 跟stacy討論line functiion
+* 跟stacy
 
   * 有辦法把line的response傳出來嗎 因為可能要回報給user, 例如token不合法之類的
+  * email送失敗，我是用smtp.gmail.com這組測的
 
 
 
