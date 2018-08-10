@@ -163,5 +163,7 @@
 
 * createAt/editAt
 
+* 把SRP從SSO刪除，並再pcf重新跑過整個流程srp register sso
+
 
 
