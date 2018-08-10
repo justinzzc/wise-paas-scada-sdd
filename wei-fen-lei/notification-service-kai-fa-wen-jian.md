@@ -169,5 +169,7 @@
 
   portal-notification.wise-paas.com
 
+* 連同scada一起改sso規則
+
 
 
