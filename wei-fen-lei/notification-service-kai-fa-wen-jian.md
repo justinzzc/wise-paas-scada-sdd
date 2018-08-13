@@ -187,5 +187,9 @@
 
 * last name/first name要改成非必要
 
+* email規則補上
+
+  * config - username
+
 
 
