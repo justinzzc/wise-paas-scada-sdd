@@ -177,5 +177,8 @@
   * email送失敗，我是用smtp.gmail.com這組測的
   * uility要有我ssoToken存mongo的部分
 
+* 把srp name改成notification
+  * 刪掉原本的
+
 
 
