@@ -183,5 +183,7 @@
 
 * 加上TSL/SSL機制
 
+* postgres不能存特殊符號 例如 roy's line
+
 
 
