@@ -185,5 +185,7 @@
 
 * postgres不能存特殊符號 例如 roy's line
 
+* last name/first name要改成非必要
+
 
 
