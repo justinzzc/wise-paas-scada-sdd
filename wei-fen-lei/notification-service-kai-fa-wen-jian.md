@@ -191,5 +191,9 @@
 
   * config - username
 
+* require 改成一版寫法佈要路徑
+* 用npm link來開發
+* 檢查mongo token
+* 
 
 
