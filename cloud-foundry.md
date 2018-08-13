@@ -28,5 +28,7 @@
       !/node_modules/wise-paas-scada-dbmanager/
       ```
 
+https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html\#deprecated
 
+cf改版
 
