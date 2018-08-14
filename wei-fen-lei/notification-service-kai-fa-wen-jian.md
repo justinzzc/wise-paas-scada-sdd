@@ -167,6 +167,8 @@
 
 * const在build的時候被壓縮 但scada部會
 
+* 部屬時不用infuxdb
+
 ### Features
 
 
