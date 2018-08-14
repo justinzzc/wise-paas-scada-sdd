@@ -165,6 +165,8 @@
 
 * 寫文件
 
+* 修改package.json 固定板號
+
 ### Features
 
 
