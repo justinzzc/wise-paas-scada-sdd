@@ -194,9 +194,12 @@
 * require 改成一版寫法佈要路徑
 
 * 用npm link來開發
+
 * 檢查mongo token
+
 * 如果type不是1, 卻有帶config, 就不要存到db
 
-* 
+* delete 應該要顯示not found
+
 
 
