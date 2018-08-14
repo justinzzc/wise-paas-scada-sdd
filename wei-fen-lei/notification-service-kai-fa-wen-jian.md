@@ -165,6 +165,8 @@
 
 * 修改package.json 固定板號
 
+* const在build的時候被壓縮 但scada部會
+
 ### Features
 
 
