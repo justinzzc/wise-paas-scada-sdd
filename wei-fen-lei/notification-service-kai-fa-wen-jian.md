@@ -153,53 +153,17 @@
 
   * 換smtp密碼時 要有密碼確認
 
-* OTHERS
-
-  * dbmigrate
-
-  * SSO
-
-  * PCF
-
-* createAt/editAt
-
-* 把SRP從SSO刪除，並再pcf重新跑過整個流程srp register sso
-
-* url 叫作
-
-  portal-notification.wise-paas.com
-
-* 連同scada一起改sso規則
-
-* 跟stacy
-
-  * 有辦法把line的response傳出來嗎 因為可能要回報給user, 例如token不合法之類的
-  * email送失敗，我是用smtp.gmail.com這組測的
-  * uility要有我ssoToken存mongo的部分
-
-* 把srp name改成notification
-
-  * 刪掉原本的
-
-* 加上TSL/SSL機制
-
 * postgres不能存特殊符號 例如 roy's line
 
-* last name/first name要改成非必要
-
-* email規則補上
-
-  * config - username
-
-* require 改成一版寫法佈要路徑
-
-* 用npm link來開發
-
-* 檢查mongo token
-
-* 如果type不是1, 卻有帶config, 就不要存到db
-
 * delete 應該要顯示not found
+
+* 刪掉g\_notify
+
+### Features
+
+
+
+
 
 
 
