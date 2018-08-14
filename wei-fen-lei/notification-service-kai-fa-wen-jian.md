@@ -145,13 +145,11 @@
 
   * [https://github.com/brix/crypto-js\#aes-encryption](https://github.com/brix/crypto-js#aes-encryption)
 
-  * 存進db前先加密, 取出時再解密
+  * 目前只有套用在smtp password
 
-  * GET /Group 時不給password
+  * 存進db前先加密, 要使用該passowrd寄信時，再解密
 
-  * 但Update時要怎麼做?
-
-  * 換smtp密碼時 要有密碼確認
+  * 因為有duplicate/update等功能，固密碼可以取出，但是以加密過的字串取出
 
 * postgres不能存特殊符號 例如 roy's line
 
