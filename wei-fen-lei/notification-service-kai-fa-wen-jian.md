@@ -169,8 +169,13 @@
 
 * 部屬時不用infuxdb
 
-* 
-### Features
+* eryn
+
+  * 新的sso user登入時 跳出的修改密碼視窗是壞掉的
+
+  * 沒有登出
+
+* ### Features
 
 
 
