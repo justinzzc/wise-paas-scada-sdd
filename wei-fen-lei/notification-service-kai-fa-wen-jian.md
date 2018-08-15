@@ -177,6 +177,8 @@
 
 * server code ugilify
 
+  * https://stackoverflow.com/questions/45533101/how-to-use-uglify-es-with-gulp
+
 * ### Features
 
 
