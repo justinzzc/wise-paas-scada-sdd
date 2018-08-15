@@ -165,10 +165,6 @@
 
 * 修改package.json 固定板號
 
-* const在build的時候被壓縮 但scada部會
-
-* 部屬時不用infuxdb
-
 * eryn
 
   * 新的sso user登入時 跳出的修改密碼視窗是壞掉的
