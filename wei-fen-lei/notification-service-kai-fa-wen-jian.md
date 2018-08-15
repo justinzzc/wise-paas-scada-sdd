@@ -171,6 +171,8 @@
 
   * 沒有登出
 
+* 補上git readme
+
 * ### Features
 
 
