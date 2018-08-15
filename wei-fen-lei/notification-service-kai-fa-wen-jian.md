@@ -171,6 +171,8 @@
 
   * 沒有登出
 
+  * UI沒版號?
+
 * 補上git readme
 
 * ### Features
