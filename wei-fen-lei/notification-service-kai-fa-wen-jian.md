@@ -177,8 +177,10 @@
 
 * server code ugilify
 
-  * https://stackoverflow.com/questions/45533101/how-to-use-uglify-es-with-gulp
+  * [https://stackoverflow.com/questions/45533101/how-to-use-uglify-es-with-gulp](https://stackoverflow.com/questions/45533101/how-to-use-uglify-es-with-gulp)
 
+* ssl/tls
+  * 輸入可以大小寫 但回傳一律傳大寫
 * ### Features
 
 
