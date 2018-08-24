@@ -58,8 +58,10 @@
 * ### 缺點
 
   * 當API兩版本的介面\(要傳的參數\)有差異時，此方法就不能用了，此方式的前提是介面一樣，只有API內部的邏輯有不同時適用
-  * 因為API的驗證是用loopback model validate，如果版本間對於某個model的定義不同，那勢必要拆檔案，而且remote method定義就沒辦法共用\(像上面這樣\)，維護上會有困難
+  * 因為API的驗證是用loopback model validate，如果版本間對於某個model的定義不同，那勢必要拆檔案，這樣一來此方法也不能用了
+
     * ex.  以POST /Groups 為例\(新建Groups\)，POST Request body會轉成GroupCreateInstance
+
       ```
       Group.remoteMethod('createGroup', {
           http: { path: '/', verb: 'post' },
@@ -105,7 +107,10 @@
         "methods": {}
       }
       ```
+
     * 但假設在下一個版本時，GroupCreateInstance裡的name改成groupName, 這樣的話就需要新增一個GroupCreateInstanceV2的model\(json檔\)，而且remoteMethod的路由定義也不能用同一個了，因為該定義需要指定reqeust body會轉成那一種model
+
+  * 假設兩版本間的API介面、用到的model都一樣，但api裡用到不同的node module，這樣一來專案就會越來越肥, dependency越來越多
 
 
 
