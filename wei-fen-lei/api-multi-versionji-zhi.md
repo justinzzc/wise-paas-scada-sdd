@@ -1,6 +1,4 @@
-# API Multi Version
-
-## Solution 1
+# API Multi Version - 相同Eedpoint \(不採用\)
 
 * 在整個Model定義路由規則
 
@@ -109,6 +107,8 @@
 * ### 適用情境
 
   * api版本間的介面/用到的model/相依套件都一樣時，僅流程/邏輯上微幅修改時，就適用此做法
+
+
 
 ## 
 
