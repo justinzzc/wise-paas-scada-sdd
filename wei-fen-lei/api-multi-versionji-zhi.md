@@ -113,7 +113,8 @@
   * 假設兩版本間的API介面、用到的model都一樣，但api裡用到不同的node module，這樣一來專案就會越來越肥, dependency越來越多
 * ### 優點
 
-* 架構較為乾淨
+  * 架構較為乾淨
+
   * api endpoint不用分別建立
 
 
