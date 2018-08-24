@@ -55,12 +55,12 @@
           cb(null, false);
       }
   ```
+* ### 缺點
 
-* 缺點
   * 當API兩版本的介面\(要傳的參數\)有差異時，此方法就不能用了，此方式的前提是介面一樣，只有API內部的邏輯有不同時適用
   * 因為API的驗證是用loopback model validate，如果版本間對於某個model的定義不同，那勢必要拆檔案，而且remote method定義就沒辦法共用\(像上面這樣\)，維護上會有困難
     * ex.  POST Request body會轉成GroupCreateInstance
-    * ```
+     ```
       Group.remoteMethod('createGroup', {
           http: { path: '/', verb: 'post' },
           accepts: [
@@ -71,42 +71,40 @@
           description: 'Create new group'
         });
       ```
-
-* ```
-  {
-    "name": "GroupCreateInstance",
-    "base": "Model",
-    "strict": true,
-    "properties": {
-      "name": {
-        "type": "string",
-        "required": true
-      },
-      "description": {
-        "type": "string",
-        "required": false
-      },
-      "type": {
-        "type": "number",
-        "required": true
-      },
-      "config": {
-        "type": "GroupConfigInstance"
-      },
-      "sendList": {
-        "type": [
-          "GroupSendObject"
-        ]
+      ```
+      {
+        "name": "GroupCreateInstance",
+        "base": "Model",
+        "strict": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "description": {
+            "type": "string",
+            "required": false
+          },
+          "type": {
+            "type": "number",
+            "required": true
+          },
+          "config": {
+            "type": "GroupConfigInstance"
+          },
+          "sendList": {
+            "type": [
+              "GroupSendObject"
+            ]
+          }
+        },
+        "validations": [],
+        "relations": {},
+        "acls": [],
+        "methods": {}
       }
-    },
-    "validations": [],
-    "relations": {},
-    "acls": [],
-    "methods": {}
-  }
-  ```
-
-* 但假設在下一個版本時，GroupCreateInstance裡的name改成groupName, 這樣的話就需要新增一個GroupCreateInstanceV2的model\(json檔\)，而且remoteMethod的路由定義也不能用同一個了，因為該定義需要指定reqeust body會轉成那一種model
+      ```
+    * 但假設在下一個版本時，GroupCreateInstance裡的name改成groupName, 這樣的話就需要新增一個GroupCreateInstanceV2的model\(json檔\)，而且remoteMethod的路由定義也不能用同一個了，因為該定義需要指定reqeust body會轉成那一種model
 
 
 
