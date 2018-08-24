@@ -59,8 +59,8 @@
 
   * 當API兩版本的介面\(要傳的參數\)有差異時，此方法就不能用了，此方式的前提是介面一樣，只有API內部的邏輯有不同時適用
   * 因為API的驗證是用loopback model validate，如果版本間對於某個model的定義不同，那勢必要拆檔案，而且remote method定義就沒辦法共用\(像上面這樣\)，維護上會有困難
-    * ex.  POST Request body會轉成GroupCreateInstance
-     ```
+    * ex.  以POST /Groups 為例\(新建Groups\)，POST Request body會轉成GroupCreateInstance
+      ```
       Group.remoteMethod('createGroup', {
           http: { path: '/', verb: 'post' },
           accepts: [
@@ -71,6 +71,7 @@
           description: 'Create new group'
         });
       ```
+
       ```
       {
         "name": "GroupCreateInstance",
