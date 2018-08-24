@@ -43,6 +43,6 @@
   * [Notification Service 開發文件](wei-fen-lei/notification-service-kai-fa-wen-jian.md)
   * [wise-paas-scada-dbmigrate](wei-fen-lei/wise-paas-scada-dbmigrate.md)
   * [Make CF node.js buildpack](wei-fen-lei/make-cf-nodejs-buildpack.md)
-  * [API Multi Version機制](wei-fen-lei/api-multi-versionji-zhi.md)
+  * [API Multi Version機制 - 相同Eedpoint \(不採用\)](wei-fen-lei/api-multi-versionji-zhi.md)
   * [Remove deprecated alarm stuff](wei-fen-lei/remove-deprecated-alarm-stuff.md)
 
