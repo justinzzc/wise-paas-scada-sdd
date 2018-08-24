@@ -1,15 +1,5 @@
 # API Multi Version
 
-* swagger上一律使用最新版
-  * 因為不同版本的reqeust body / response format都會不一樣
-* POST 
-* 缺點
-  * 因為API的驗證很多都是用loopback model validate，如果有多個版本並存，連帶的model也可能不能重用，需要為了相容舊的版本而手動產生很多model
-  * 例如我新增group的model是GroupCreateInstance, 但假設新板的model有修改，這時就要去新增一份GroupCreateInstance\_V的model檔，
-  * 而且多版本間的API 介面如果有差異的話，就得用hard code的方式新增很多的api route, 像GET就是
-  * 主因是不同版本的api, 除了介面不同外, 可能連相依的模組/檔案/model等等都不同
-    * 這樣同一份專案裡就會很肥, 而且命名上會很複雜,這樣命名會變成用\_V1這種方式來區分版本
-
 ## Solution 1
 
 * 在整個Model定義路由規則
@@ -57,7 +47,7 @@
   ```
 * ### 缺點
 
-  * 當API兩版本的介面\(要傳的參數\)有差異時，此方法就不能用了，此方式的前提是介面一樣，只有API內部的邏輯有不同時適用
+  * 當API兩版本的介面\(要傳的參數\)有差異時，此方法就不能用了
   * 因為API的驗證是用loopback model validate，如果版本間對於某個model的定義不同，那勢必要拆檔案，這樣一來此方法也不能用了
 
     * ex.  以POST /Groups 為例\(新建Groups\)，POST Request body會轉成GroupCreateInstance
