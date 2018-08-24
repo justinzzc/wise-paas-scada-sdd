@@ -111,6 +111,10 @@
     * 但假設在下一個版本時，GroupCreateInstance裡的name改成groupName, 這樣的話就需要新增一個GroupCreateInstanceV2的model\(json檔\)，而且remoteMethod的路由定義也不能用同一個了，因為該定義需要指定reqeust body會轉成那一種model
 
   * 假設兩版本間的API介面、用到的model都一樣，但api裡用到不同的node module，這樣一來專案就會越來越肥, dependency越來越多
+* ### 優點
+
+* 架構較為乾淨
+  * api endpoint不用分別建立
 
 
 
