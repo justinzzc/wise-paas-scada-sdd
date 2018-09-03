@@ -6,6 +6,17 @@
 * const.js不用整份複製給多版本
   * 但可以在裡面定義多版本
 * gen_yml要處理yml tag, ex. group\_V\_1\_1 =&gt; group v1.1_
+* 需要有多版本目錄的地方
+  * common/errors
+    * error.js不用, 是error共用元件
+  * common/helpers
+  * common/models
+  * server/models
+* 只要是model, model name就不能重複
+
+### Ref
+
+* https://groups.google.com/forum/\#!topic/loopbackjs/pDIQUEYENDM
 
 
 
