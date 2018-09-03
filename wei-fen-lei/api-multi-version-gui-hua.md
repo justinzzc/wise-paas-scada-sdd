@@ -16,7 +16,7 @@
 
 ### Ref
 
-* https://groups.google.com/forum/\#!topic/loopbackjs/pDIQUEYENDM
+* [https://groups.google.com/forum/\#!topic/loopbackjs/pDIQUEYENDM](https://groups.google.com/forum/#!topic/loopbackjs/pDIQUEYENDM)
 
 
 
