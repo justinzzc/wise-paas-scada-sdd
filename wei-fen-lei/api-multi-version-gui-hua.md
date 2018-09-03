@@ -14,9 +14,7 @@
   * server/models
     * 這個是不是 不用也複製一份, 有需要再複製就好
 * 只要是model, model name就不能重複
-* 
-### Ref
-
+* ### Ref
 * [https://groups.google.com/forum/\#!topic/loopbackjs/pDIQUEYENDM](https://groups.google.com/forum/#!topic/loopbackjs/pDIQUEYENDM)
 
 
