@@ -19,6 +19,6 @@
     * swagger
         * 目前survey到的都是把code裡面的註解轉成swagger, 還沒找到像loopback那種把method的參數轉成doc的工具
 * 討論
-    * Dashboard Team目前使用的是Macaron (因為[Grafana](http://grafana.org/)使用這套)
+    * Dashboard Team目前使用的是[Macaron](https://github.com/go-macaron/macaron)(因為[Grafana](http://grafana.org/)使用這套)
         * 跟Gin很類似, 也是提供核心的一些web module, 但star數差了10倍, gin兩萬, macaron兩千, 擔心資源不足
 
